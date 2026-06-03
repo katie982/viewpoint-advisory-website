@@ -457,6 +457,110 @@
       background-color: var(--accent);
     }
 
+    .stack-section {
+      background: var(--cream);
+      padding: 4rem 3rem;
+    }
+
+    .stack-section .stack-container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .stack-header {
+      max-width: 680px;
+      margin-bottom: 2.5rem;
+    }
+
+    .stack-header .section-eyebrow {
+      color: var(--accent);
+      letter-spacing: 0.2em;
+    }
+
+    .stack-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(280px, 420px);
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .stack-image-wrap {
+      position: sticky;
+      top: calc(90px + 1rem);
+      align-self: start;
+    }
+
+    .stack-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px;
+      box-shadow: 0 20px 45px rgba(30, 40, 32, 0.08);
+      object-fit: cover;
+    }
+
+    .stack-copy {
+      display: grid;
+      gap: 1.75rem;
+    }
+
+    .stack-intro p,
+    .stack-layer-body,
+    .stack-summary p {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--charcoal);
+      line-height: 1.75;
+      margin: 0;
+    }
+
+    .stack-divider {
+      height: 1px;
+      background: var(--stone);
+      margin: 2rem 0;
+    }
+
+    .stack-layer {
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--stone);
+    }
+
+    .stack-layer:last-child {
+      border-bottom: none;
+    }
+
+    .stack-layer-heading {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.75rem;
+      margin-bottom: 0.45rem;
+    }
+
+    .stack-layer-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 300;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .stack-layer-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 300;
+      color: var(--charcoal);
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    .stack-summary {
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--stone);
+      margin-top: 1rem;
+    }
+
     /* HOW I WORK — redesigned */
     .how-principles {
       display: grid;
@@ -936,6 +1040,10 @@
       /* General sections */
       section { padding: 4.5rem 1.5rem; }
       .divider { margin: 0 1.5rem; }
+      .stack-section { padding: 4rem 1.5rem; }
+      .stack-grid { grid-template-columns: 1fr; }
+      .stack-image-wrap { position: static; top: auto; }
+      .stack-image { max-width: 100%; }
 
       /* About */
       .about { grid-template-columns: 1fr; gap: 2rem; }
@@ -996,6 +1104,10 @@
       /* General sections */
       section { padding: 3.5rem 1.1rem; }
       .divider { margin: 0 1.1rem; }
+      .stack-section { padding: 3.5rem 1.1rem; }
+      .stack-grid { grid-template-columns: 1fr; }
+      .stack-image-wrap { position: static; top: auto; }
+      .stack-image { max-width: 100%; }
 
       /* Stats */
       .stats-section { padding: 3.5rem 1.1rem 4rem; }
@@ -1066,7 +1178,7 @@
     </button>
     <ul class="nav-links" id="nav-links">
       <li><a href="#about">About Me</a></li>
-      <li><a href="the-stack">The Stack</a></li>
+      <li><a href="#the-stack">The Stack</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#how">How I Work</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -1108,98 +1220,67 @@
 
 
   <!-- THE VIEWPOINT STACK SECTION -->
-<!-- Insert this after the Hero section, before "By The Numbers" -->
- 
-<section id="the-stack" style="background-color: var(--cream); padding: 4rem 3rem; position: relative;">
-  <div style="max-width: 1400px; margin: 0 auto;">
-  <div class="stack-container">
+  <section id="the-stack" class="stack-section">
+    <div class="stack-container">
       <div class="stack-header">
-        <p class="section-eyebrow" style="color: var(--accent); letter-spacing: 0.2em;">THE STACK</p>
-        <h2 class="section-headline" style="font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 300; color: var(--charcoal); margin: 0 0 2rem 0; line-height: 1.2; margin-top: 0.75rem;">
-          Breaking down <em style="color: var(--accent); font-style: italic;">The Viewpoint Stack</em>
+        <p class="section-eyebrow">THE STACK</p>
+        <h2 class="section-headline">
+          Breaking down <em>The Viewpoint Stack</em>
         </h2>
       </div>
- 
-    <!-- Two-Column Layout -->
-    <div style="display: grid; grid-template-columns: 800px 1fr; gap: 4rem; align-items: start;">
- 
-      <!-- Image Column (Sticky) -->
-      <div style="position: sticky; top: 100px;">
-        <img src="./The_Viewpoint_Stack.png" alt="The Viewpoint Stack: Vision, Leadership, Organizational Clarity, Operational Infrastructure" style="width: 800px; height: auto; display: block;">
-      </div>
- 
-      <!-- Text Column -->
-      <div>
- 
-        <!-- Intro -->
-        <div style="margin-bottom: 2.5rem;">
-          <p style="font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 300; color: var(--charcoal); line-height: 1.7; margin: 0 0 1rem 0;">
-            Most organizations fail in the gap between strategy and execution. That's not a strategy problem—it's an operating system problem.
-          </p>
-          <p style="font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 300; color: var(--charcoal); line-height: 1.7; margin: 0;">
-            The Viewpoint Stack is a four-layer framework built on the belief that you can design your organization the same way you'd design a product—with intention, discipline, and a view of the whole system. Each layer depends on the one below it. When one breaks, execution collapses downstream.
-          </p>
-        </div>
- 
-        <!-- Divider -->
-        <div style="height: 1px; background-color: var(--stone); margin: 2.5rem 0;"></div>
- 
-        <!-- Layer 1 -->
-        <div style="margin-bottom: 2rem;">
-          <div style="display: flex; align-items: baseline; margin-bottom: 0.4rem;">
-            <span style="font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 300; color: var(--accent); margin-right: 0.75rem;">01</span>
-            <h4 style="font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 300; color: var(--charcoal); margin: 0;">Vision: Strategic Goal Setting</h4>
+
+      <div class="stack-grid">
+        <div class="stack-copy">
+          <div class="stack-intro">
+            <p>Most organizations fail in the gap between strategy and execution. That's not a strategy problem—it’s an operating system problem.</p>
+            <p>The Viewpoint Stack is a four-layer framework built on the belief that you can design your organization the same way you’d design a product—with intention, discipline, and a view of the whole system. Each layer depends on the one below it. When one breaks, execution collapses downstream.</p>
           </div>
-          <p style="font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 300; color: var(--charcoal); line-height: 1.7; margin: 0;">
-            Without a shared North Star, every team optimizes locally. I help your leadership team define what you're building, translate it into measurable goals, and cascade them so every person knows how their work connects to the bigger picture.
-          </p>
-        </div>
- 
-        <!-- Layer 2 -->
-        <div style="margin-bottom: 2rem;">
-          <div style="display: flex; align-items: baseline; margin-bottom: 0.4rem;">
-            <span style="font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 300; color: var(--accent); margin-right: 0.75rem;">02</span>
-            <h4 style="font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 300; color: var(--charcoal); margin: 0;">Leadership: Leadership Alignment</h4>
+
+          <div class="stack-divider"></div>
+
+          <div class="stack-layer">
+            <div class="stack-layer-heading">
+              <span class="stack-layer-number">01</span>
+              <h4 class="stack-layer-title">Vision: Strategic Goal Setting</h4>
+            </div>
+            <p class="stack-layer-body">Without a shared North Star, every team optimizes locally. I help your leadership team define what you're building, translate it into measurable goals, and cascade them so every person knows how their work connects to the bigger picture.</p>
           </div>
-          <p style="font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 300; color: var(--charcoal); line-height: 1.7; margin: 0;">
-            Misaligned leadership feels like slowness and looks like wheel-spinning. I work with your executive team to align on priorities and decision-making, then build the rhythms that keep that alignment tight over time.
-          </p>
-        </div>
- 
-        <!-- Layer 3 -->
-        <div style="margin-bottom: 2rem;">
-          <div style="display: flex; align-items: baseline; margin-bottom: 0.4rem;">
-            <span style="font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 300; color: var(--accent); margin-right: 0.75rem;">03</span>
-            <h4 style="font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 300; color: var(--charcoal); margin: 0;">Organizational Clarity: Structure & Decision Rights</h4>
+
+          <div class="stack-layer">
+            <div class="stack-layer-heading">
+              <span class="stack-layer-number">02</span>
+              <h4 class="stack-layer-title">Leadership: Leadership Alignment</h4>
+            </div>
+            <p class="stack-layer-body">Misaligned leadership feels like slowness and looks like wheel-spinning. I work with your executive team to align on priorities and decision-making, then build the rhythms that keep that alignment tight over time.</p>
           </div>
-          <p style="font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 300; color: var(--charcoal); line-height: 1.7; margin: 0;">
-            Most companies inherit structure by accident. I design it on purpose—explicit roles tied to outcomes, clear decision rights, and accountability frameworks so people know exactly what they own.
-          </p>
-        </div>
- 
-        <!-- Layer 4 -->
-        <div style="margin-bottom: 2.5rem;">
-          <div style="display: flex; align-items: baseline; margin-bottom: 0.4rem;">
-            <span style="font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 300; color: var(--accent); margin-right: 0.75rem;">04</span>
-            <h4 style="font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 300; color: var(--charcoal); margin: 0;">Operational Infrastructure: The Systems That Scale</h4>
+
+          <div class="stack-layer">
+            <div class="stack-layer-heading">
+              <span class="stack-layer-number">03</span>
+              <h4 class="stack-layer-title">Organizational Clarity: Structure & Decision Rights</h4>
+            </div>
+            <p class="stack-layer-body">Most companies inherit structure by accident. I design it on purpose—explicit roles tied to outcomes, clear decision rights, and accountability frameworks so people know exactly what they own.</p>
           </div>
-          <p style="font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 300; color: var(--charcoal); line-height: 1.7; margin: 0;">
-            The foundation. I consolidate disconnected rhythms, metrics, and communication structures into one integrated operating system—so teams move with velocity and leaders have real-time visibility into what matters.
-          </p>
+
+          <div class="stack-layer">
+            <div class="stack-layer-heading">
+              <span class="stack-layer-number">04</span>
+              <h4 class="stack-layer-title">Operational Infrastructure: The Systems That Scale</h4>
+            </div>
+            <p class="stack-layer-body">The foundation. I consolidate disconnected rhythms, metrics, and communication structures into one integrated operating system—so teams move with velocity and leaders have real-time visibility into what matters.</p>
+          </div>
+
+          <div class="stack-summary">
+            <p>I don't hand you four separate projects. I diagnose which layers are broken and rebuild them as one system.</p>
+          </div>
         </div>
- 
-        <!-- Closing -->
-        <div style="padding-top: 2rem; border-top: 1px solid var(--stone);">
-          <p style="font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 300; color: var(--charcoal); line-height: 1.7; margin: 0;">
-            I don't hand you four separate projects. I diagnose which layers are broken and rebuild them as one system.
-          </p>
+
+        <div class="stack-image-wrap">
+          <img class="stack-image" src="./The_Viewpoint_Stack.png" alt="The Viewpoint Stack: Vision, Leadership, Organizational Clarity, Operational Infrastructure">
         </div>
- 
       </div>
     </div>
- 
-  </div>
-</section>
+  </section>
 
   <!-- BY THE NUMBERS -->
   <section id="stats" class="stats-section">
@@ -1278,7 +1359,7 @@
       </div>
       <div class="about-right">
         <div class="about-text">
-          <p>With 15+ years as a strategic operator at high-growth companies like Vistaprint, TripAdvisor, Chegg, and Hummingbird Healthcare, I've learned that a strategy is only as good as the operating system behind it. That experience across e-commerce, travel, edtech, and healthcare has shown me that execution problems look remarkably similar regardless of industry — and so do the structural solutions.</p>
+          <p>I'm Katie Dasso, founder of Viewpoint Advisory Group, LLC. With 15+ years as a strategic operator at high-growth companies like Vistaprint, TripAdvisor, and Chegg, I've learned that a strategy is only as good as the operating system behind it.</p>
           <p>What sets my approach apart is my background in Product. I view every organization as a product that must be designed with intention, iterated with discipline, and built for scale. Whether I'm standing up a PMO from scratch, closing a $30M revenue gap, or slashing global team inefficiency by 64%, I apply the same rigor you'd bring to your most critical product build:</p>
           <ul style="list-style: none; margin: 1.75rem 0; color: var(--warm-grey);">
             <li style="margin-bottom: 1rem;"><strong style="color: var(--charcoal);">Deep Systems Thinking:</strong> I don't just fix symptoms; I rebuild the engine.</li>
