@@ -1177,11 +1177,11 @@
       <span></span>
     </button>
     <ul class="nav-links" id="nav-links">
-      <li><a href="#about">About Me</a></li>
-      <li><a href="#the-stack">The Stack</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#how">How I Work</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about" data-path="/about-me">About Me</a></li>
+      <li><a href="#the-stack" data-path="/the-stack">The Stack</a></li>
+      <li><a href="#services" data-path="/services">Services</a></li>
+      <li><a href="#how" data-path="/how-i-work">How I Work</a></li>
+      <li><a href="#contact" data-path="/contact">Contact</a></li>
     </ul>
   </nav>
 
@@ -1195,7 +1195,7 @@
       <p class="hero-sub">
         Most strategies fail in the gap between intent and execution. I bring 15 years of product thinking to that gap — diagnosing what's structurally broken and rebuilding it so your organization can move with real velocity.
       </p>
-      <a href="#contact" class="hero-cta">Let's Talk</a>
+      <a href="#contact" class="hero-cta" data-path="/contact">Let's Talk</a>
     </div>
     <div class="hero-image-wrap">
       <div class="hero-image-bg"></div>
@@ -1596,18 +1596,72 @@ I offer fractional and project-based engagements designed to turn organizational
       if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
     };
 
-    // Smooth scroll offset for all anchor links
+    const sectionRoutes = {
+      'about-me': 'about',
+      'the-stack': 'the-stack',
+      'services': 'services',
+      'how-i-work': 'how',
+      'contact': 'contact',
+      'stats': 'stats'
+    };
+
+    function getSectionIdFromPath(path) {
+      if (!path) return null;
+      const trimmed = path.replace(/\/+$|^\/+/, '');
+      const lastSegment = trimmed.split('/').pop();
+      return sectionRoutes[lastSegment] || null;
+    }
+
+    function getPathForSection(sectionId) {
+      const entry = Object.entries(sectionRoutes).find(([, id]) => id === sectionId);
+      return entry ? `/${entry[0]}` : null;
+    }
+
+    function scrollToSection(sectionId, updatePath = false, replacePath = false, pathOverride = null) {
+      const target = document.getElementById(sectionId);
+      if (!target) return;
+      const navHeight = document.querySelector('nav').offsetHeight;
+      const top = target.getBoundingClientRect().top + window.scrollY - navHeight - 8;
+      window.scrollTo({ top, behavior: 'smooth' });
+      if (updatePath) {
+        const destinationPath = pathOverride || getPathForSection(sectionId);
+        if (destinationPath) {
+          if (replacePath) history.replaceState({}, '', destinationPath);
+          else history.pushState({}, '', destinationPath);
+        }
+      }
+    }
+
+    function handleRoutePath(path, replacePath = false) {
+      const sectionId = getSectionIdFromPath(path);
+      if (!sectionId) return;
+      scrollToSection(sectionId, true, replacePath, path);
+    }
+
+    // Smooth scroll offset for all anchor links and path-based nav links
     document.querySelectorAll('a[href^="#"]').forEach(link => {
       link.addEventListener('click', e => {
         const target = document.querySelector(link.getAttribute('href'));
         if (!target) return;
         e.preventDefault();
         closeNav();
-        const navHeight = document.querySelector('nav').offsetHeight;
-        const top = target.getBoundingClientRect().top + window.scrollY - navHeight - 8;
-        window.scrollTo({ top, behavior: 'smooth' });
+        const sectionId = link.getAttribute('href').slice(1);
+        scrollToSection(sectionId, !!link.dataset.path, false);
       });
     });
+
+    window.addEventListener('popstate', () => {
+      handleRoutePath(window.location.pathname, false);
+    });
+
+    const routeParam = new URLSearchParams(window.location.search).get('route');
+    const initialPath = routeParam || window.location.pathname;
+    const initialSection = getSectionIdFromPath(initialPath);
+    if (initialSection) {
+      window.addEventListener('load', () => {
+        scrollToSection(initialSection, true, true, initialPath);
+      });
+    }
 
     if (navToggle && navLinks) {
       navToggle.addEventListener('click', () => {
