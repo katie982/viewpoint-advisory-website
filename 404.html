@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Redirecting...</title>
+  <script>
+    const knownRoutes = ['about-me', 'the-stack', 'services', 'how-i-work', 'contact', 'stats'];
+    const path = window.location.pathname.replace(/\/+$/, '');
+    const slug = path.split('/').pop();
+    if (knownRoutes.includes(slug)) {
+      const query = '?route=' + encodeURIComponent(path);
+      window.location.replace('./' + query);
+    } else {
+      window.location.replace('./');
+    }
+  </script>
+</head>
+<body>
+  <p>Redirecting...</p>
+</body>
+</html>
