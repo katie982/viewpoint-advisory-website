@@ -1052,6 +1052,11 @@
       /* Footer */
       footer { padding: 1.8rem 1.1rem; }
       footer p { font-size: 0.7rem; }
+
+      /* Stack Section */
+      #the-stack { padding: 3rem 1.5rem; }
+      #the-stack > div { grid-template-columns: 1fr !important; }
+      #the-stack img { width: 100% !important; max-width: 550px; }
     }
   </style>
 </head>
@@ -1120,11 +1125,11 @@
     </h2>
  
     <!-- Two-Column Layout: Image Left, Text Right -->
-    <div style="display: grid; grid-template-columns: 550px 1fr; gap: 3rem; align-items: start; margin-bottom: 3rem;">
+    <div style="display: grid; grid-template-columns: minmax(400px, 550px) 1fr; gap: 3rem; align-items: start; margin-bottom: 3rem;">
       
       <!-- Image Column -->
       <div style="flex-shrink: 0;">
-        <img src="./The_Viewpoint_Stack.png" alt="The Viewpoint Stack: Vision, Leadership, Organizational Clarity, Operational Infrastructure" style="width: 550px; height: auto; display: block;">
+        <img src="./The_Viewpoint_Stack.png" alt="The Viewpoint Stack: Vision, Leadership, Organizational Clarity, Operational Infrastructure" style="width: 100%; max-width: 550px; height: auto; display: block;">
       </div>
  
       <!-- Text Column -->
