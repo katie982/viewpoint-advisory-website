@@ -25,11 +25,15 @@
       --cream: #f8f6f0;
       --warm-white: #ffffff;
       --stone: #e4e0d4;
+      --taupe: #c0b89e;
       --charcoal: #1e2820;
       --warm-grey: #5a6855;
       --accent: #4a6845;
+      --accent-light: #7a9875;
     }
     body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--charcoal); line-height: 1.7; font-weight: 300; }
+
+    /* Nav */
     nav {
       position: sticky; top: 0; z-index: 10; display: flex; justify-content: space-between; align-items: center;
       padding: 1.25rem 4rem; border-bottom: 1px solid var(--stone); background: rgba(248,246,240,0.94); backdrop-filter: blur(8px);
@@ -38,133 +42,232 @@
     .nav-links { list-style: none; display: flex; gap: 1.6rem; }
     .nav-links a { text-decoration: none; color: var(--warm-grey); font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 400; }
     .nav-links a.active, .nav-links a:hover { color: var(--charcoal); }
+
+    /* Hero */
     header { padding: 6rem 4rem 2.5rem; border-bottom: 1px solid var(--stone); }
     .eyebrow { font-size: 0.7rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; font-weight: 400; }
     h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4.8vw, 3.8rem); line-height: 1.15; font-weight: 300; }
     h1 em { color: var(--accent); font-style: italic; }
     .intro { margin-top: 1.25rem; max-width: 760px; color: var(--warm-grey); }
-    .overview {
-      max-width: 1300px;
-      margin: 0 auto;
-      padding: 2.5rem 4rem 0;
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.4rem;
-    }
-    .stack-map {
-      max-width: 1300px;
-      margin: 0 auto;
-      padding: 2.5rem 4rem 0;
-    }
-    .stack-map-wrap {
-      border: 1px solid var(--stone);
-      background: var(--warm-white);
-      padding: 1.4rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-    .stack-map h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.7rem;
-      line-height: 1.2;
-      font-weight: 300;
-      margin-bottom: 0.6rem;
-    }
-    .stack-map p { color: var(--warm-grey); }
-    .stack-visual {
-      margin-top: 1rem;
-      border: 1px solid var(--stone);
-      background: var(--cream);
-      padding: 0.75rem;
-    }
-    .stack-visual img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-    .stack-visual figcaption {
-      margin-top: 0.6rem;
-      font-size: 0.68rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--warm-grey);
-    }
-    .stack-key {
-      list-style: none;
-      display: grid;
-      gap: 0.55rem;
-    }
-    .stack-key li {
-      color: var(--warm-grey);
-      display: flex;
-      gap: 0.5rem;
-      align-items: flex-start;
-    }
-    .stack-key li::before {
-      content: '';
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: var(--accent);
-      margin-top: 0.6em;
-      flex-shrink: 0;
-    }
-    .grid {
+
+    /* Two-column layout: pyramid (left, sticky) + cards (right) */
+    .layout {
       max-width: 1300px;
       margin: 0 auto;
       padding: 3rem 4rem 4rem;
       display: grid;
-      grid-template-columns: repeat(3, minmax(230px, 1fr));
-      gap: 1.2rem;
+      grid-template-columns: minmax(360px, 48%) 1fr;
+      gap: 2.5rem;
+      align-items: start;
     }
-    .card { border: 1px solid var(--stone); background: var(--warm-white); padding: 1.4rem; display: flex; flex-direction: column; gap: 0.8rem; }
-    .card-link {
-      text-decoration: none;
-      color: inherit;
-      transition: background-color 0.2s, border-color 0.2s, transform 0.2s;
-      cursor: pointer;
+
+    /* Left column: Stack pyramid */
+    .stack-side {
+      position: sticky;
+      top: 5.5rem; /* below nav */
     }
-    .card-link:hover {
-      background: var(--accent);
-      border-color: var(--accent);
-      transform: translateY(-2px);
-    }
-    .card-link:focus-visible {
-      outline: 2px solid var(--accent);
-      outline-offset: 2px;
-    }
-    .meta { font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--warm-grey); font-weight: 400; }
-    .focus-map {
-      border: 1px solid var(--stone);
-      background: rgba(74, 104, 69, 0.06);
-      padding: 0.55rem 0.65rem;
-      font-size: 0.68rem;
-      letter-spacing: 0.12em;
+    .stack-side-header {
+      font-size: 0.7rem;
+      letter-spacing: 0.24em;
       text-transform: uppercase;
       color: var(--accent);
+      margin-bottom: 0.75rem;
+      font-weight: 400;
+    }
+    .stack-side-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.55rem;
+      line-height: 1.2;
+      font-weight: 300;
+      margin-bottom: 0.6rem;
+    }
+    .stack-side-intro {
+      color: var(--warm-grey);
+      font-size: 0.92rem;
+      margin-bottom: 1.25rem;
+    }
+    .stack-image-wrapper {
+      position: relative;
+      border: 1px solid var(--stone);
+      background: var(--warm-white);
+      padding: 0.75rem;
+    }
+    .stack-image-wrapper img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .stack-overlay {
+      position: absolute;
+      top: 0.75rem;
+      left: 0.75rem;
+      width: calc(100% - 1.5rem);
+      height: calc(100% - 1.5rem);
+    }
+    .stack-region {
+      fill: transparent;
+      cursor: pointer;
+      transition: fill 0.2s;
+    }
+    .stack-region:hover, .stack-region.active {
+      fill: rgba(74, 104, 69, 0.32);
+      stroke: var(--accent);
+      stroke-width: 2;
+    }
+    .stack-tooltip {
+      min-height: 1.2rem;
+      margin-top: 0.75rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+      color: var(--accent);
+      font-weight: 400;
+    }
+    .stack-tooltip strong {
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.7rem;
+    }
+
+    /* Right column: cards stacked vertically */
+    .cards { display: grid; gap: 1.25rem; }
+
+    .card {
+      border: 1px solid var(--stone);
+      background: var(--warm-white);
+      padding: 1.75rem 1.75rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s, background-color 0.25s;
+      cursor: pointer;
+    }
+    /* Unified hover + highlight: solid forest green card with cream text overrides */
+    .card:hover, .card.highlighted {
+      border: 3px solid var(--accent);
+      background: var(--accent);
+      box-shadow: 0 18px 44px rgba(74,104,69,0.32);
+      transform: translateY(-2px);
+    }
+    /* Text overrides when card is in highlighted/hover state */
+    .card:hover .card-meta, .card.highlighted .card-meta,
+    .card:hover .layer-label, .card.highlighted .layer-label {
+      color: var(--cream);
+      opacity: 0.85;
+    }
+    .card:hover .layer-value, .card.highlighted .layer-value,
+    .card:hover .card-title, .card.highlighted .card-title,
+    .card:hover .card-metric, .card.highlighted .card-metric,
+    .card:hover .card-link, .card.highlighted .card-link {
+      color: var(--cream);
+    }
+    .card:hover .sublayer-value, .card.highlighted .sublayer-value {
+      color: var(--cream);
+      opacity: 0.92;
+    }
+    .card:hover .cross-row .layer-label, .card.highlighted .cross-row .layer-label {
+      color: var(--cream);
+      opacity: 0.65;
+    }
+    .card:hover .cross-row .sublayer-value, .card.highlighted .cross-row .sublayer-value {
+      color: var(--cream);
+      opacity: 0.78;
+    }
+    .card:hover .card-desc, .card.highlighted .card-desc {
+      color: var(--cream);
+      opacity: 0.86;
+    }
+    .card:hover .layer-block, .card.highlighted .layer-block {
+      border-color: rgba(248, 246, 240, 0.22);
+    }
+    .card-meta {
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--warm-grey);
+      font-weight: 400;
+    }
+
+    /* Layer mapping block on each card */
+    .layer-block {
+      border-top: 1px solid var(--stone);
+      border-bottom: 1px solid var(--stone);
+      padding: 0.9rem 0;
+      display: grid;
+      gap: 0.6rem;
+    }
+    .layer-row { display: grid; grid-template-columns: 8.5rem 1fr; gap: 0.85rem; align-items: baseline; }
+    .layer-label {
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--warm-grey);
+      font-weight: 500;
+      padding-top: 0.1rem;
+    }
+    .layer-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 400;
+      line-height: 1.3;
+      color: var(--accent);
+    }
+    .sublayer-value {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.88rem;
+      color: var(--charcoal);
       font-weight: 400;
       line-height: 1.5;
     }
-    .title { font-family: 'Cormorant Garamond', serif; font-size: 1.55rem; line-height: 1.2; font-weight: 300; }
-    .desc { color: var(--warm-grey); }
-    .link {
+    .cross-row .layer-label { color: var(--accent-light); }
+    .cross-row .sublayer-value {
+      color: var(--warm-grey);
+      font-style: italic;
+      font-weight: 300;
+    }
+
+    /* Card title + metric */
+    .card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.85rem;
+      line-height: 1.15;
+      font-weight: 300;
+      margin-top: 0.2rem;
+    }
+    .card-metric {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-style: italic;
+      color: var(--accent);
+      font-weight: 400;
+      line-height: 1.3;
+    }
+    .card-desc {
+      color: var(--warm-grey);
+      font-size: 0.95rem;
+    }
+    .card-link {
       color: var(--accent);
       font-size: 0.74rem;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      font-weight: 400;
+      font-weight: 500;
       margin-top: auto;
+      padding-top: 0.5rem;
     }
-    .card-link:hover .meta,
-    .card-link:hover .title,
-    .card-link:hover .desc,
-    .card-link:hover .link { color: var(--warm-white); }
-    .card-link:hover .focus-map {
-      border-color: rgba(248, 246, 240, 0.45);
-      background: rgba(248, 246, 240, 0.12);
-      color: var(--warm-white);
+
+    /* Placeholder card (subtle different) */
+    .card.placeholder {
+      background: transparent;
+      border-style: dashed;
     }
+    .card.placeholder:hover {
+      background: rgba(74, 104, 69, 0.03);
+    }
+
+    /* FAQ */
     .faq {
       max-width: 1300px;
       margin: 0 auto;
@@ -173,7 +276,7 @@
     .faq-wrap {
       border: 1px solid var(--stone);
       background: var(--warm-white);
-      padding: 1.4rem;
+      padding: 1.75rem 1.75rem 1.5rem;
     }
     .faq-wrap h2 {
       font-family: 'Cormorant Garamond', serif;
@@ -188,118 +291,30 @@
       font-size: 0.72rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      font-weight: 400;
+      font-weight: 500;
       color: var(--accent);
       margin-bottom: 0.35rem;
     }
     .faq-item p { color: var(--warm-grey); }
+
+    /* Footer */
     footer { border-top: 1px solid var(--stone); padding: 1.8rem 4rem; color: var(--warm-grey); font-size: 0.8rem; }
-    .stack-section {
-      max-width: 1300px;
-      margin: 0 auto;
-      padding: 2.5rem 4rem 0;
+
+    /* Responsive */
+    @media (max-width: 1050px) {
+      .layout { grid-template-columns: 1fr; }
+      .stack-side { position: static; max-width: 540px; margin: 0 auto; }
     }
-    .stack-container {
-      border: 1px solid var(--stone);
-      background: var(--warm-white);
-      padding: 1.4rem;
-    }
-    .stack-container > article {
-      margin-bottom: 1.5rem;
-    }
-    .stack-container h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.7rem;
-      line-height: 1.2;
-      font-weight: 300;
-      margin-bottom: 0.6rem;
-    }
-    .stack-container p {
-      color: var(--warm-grey);
-      margin-bottom: 0.75rem;
-    }
-    .stack-visual-large {
-      margin-bottom: 1.5rem;
-    }
-    .stack-image-wrapper {
-      position: relative;
-      margin-bottom: 1rem;
-      border: 1px solid var(--stone);
-      background: var(--cream);
-      padding: 0.75rem;
-    }
-    .stack-image-wrapper img {
-      width: 100%;
-      height: auto;
-      display: block;
-      max-height: 500px;
-      object-fit: contain;
-    }
-    .stack-overlay {
-      position: absolute;
-      top: 0.75rem;
-      left: 0.75rem;
-      width: calc(100% - 1.5rem);
-      height: calc(100% - 1.5rem);
-      cursor: pointer;
-    }
-    .stack-region {
-      fill: transparent;
-      stroke: none;
-      cursor: pointer;
-      transition: fill 0.2s;
-    }
-    .stack-region:hover {
-      fill: rgba(74, 104, 69, 0.15);
-    }
-    .stack-tooltip {
-      min-height: 1.5rem;
-      margin-bottom: 0.75rem;
-      font-size: 0.9rem;
-      color: var(--accent);
-      font-weight: 500;
-      line-height: 1.4;
-    }
-    .stack-visual-large figcaption {
-      margin-top: 0.6rem;
-      font-size: 0.68rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--warm-grey);
-    }
-    .stack-container .stack-key {
-      list-style: none;
-      display: grid;
-      gap: 0.55rem;
-    }
-    .stack-container .stack-key li {
-      color: var(--warm-grey);
-      display: flex;
-      gap: 0.5rem;
-      align-items: flex-start;
-    }
-    .stack-container .stack-key li::before {
-      content: '';
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: var(--accent);
-      margin-top: 0.6em;
-      flex-shrink: 0;
-    }
-    .card.highlighted {
-      border-color: var(--accent);
-      background: rgba(74, 104, 69, 0.04);
-    }
-    @media (max-width: 1050px) { .grid { grid-template-columns: repeat(2, minmax(240px, 1fr)); } }
     @media (max-width: 960px) {
       nav { padding: 1rem 1.25rem; }
       .nav-links { gap: 0.8rem; flex-wrap: wrap; justify-content: flex-end; }
       header { padding: 4rem 1.25rem 2rem; }
-      .overview { grid-template-columns: 1fr; padding: 2rem 1.25rem 0; }
-      .stack-map { padding: 2rem 1.25rem 0; }
-      .stack-map-wrap { grid-template-columns: 1fr; }
-      .grid { grid-template-columns: 1fr; padding: 2rem 1.25rem; }
+      .layout { padding: 2rem 1.25rem 3rem; gap: 1.75rem; }
+      .layer-row { grid-template-columns: 7rem 1fr; gap: 0.6rem; }
+      .layer-label { font-size: 0.58rem; }
+      .card { padding: 1.4rem; }
+      .card-title { font-size: 1.65rem; }
+      .card-metric { font-size: 1.1rem; }
       .faq { padding: 0 1.25rem 2.5rem; }
       footer { padding: 1.5rem 1.25rem; }
     }
@@ -320,59 +335,91 @@
   <header>
     <p class="eyebrow">Case Studies</p>
     <h1>Execution proof, not just <em>strategy claims</em>.</h1>
-    <p class="intro">These examples show how operating model design, leadership alignment, and AI-ready infrastructure translated into measurable business outcomes.</p>
+    <p class="intro">Every engagement maps to one or more layers of the Viewpoint Stack&trade; — the framework I use to design organizations the way you'd design a product. Each case study below shows the layer it primarily addressed and the sublayer that produced the result.</p>
   </header>
 
-  <section class="stack-section">
-    <div class="stack-container">
-      <article>
-        <h2>How these case studies map to the Viewpoint Stack</h2>
-        <p>The Viewpoint Stack is the organizational product framework behind this work: Vision, Alignment, Organizational Clarity, and Operational Infrastructure. Hover over a sublayer to see which case studies it relates to.</p>
-      </article>
-      <figure class="stack-visual-large">
-        <div class="stack-image-wrapper">
-          <img src="Viewpoint%20Stack.png" alt="The Viewpoint Stack framework: Vision, Alignment, Organizational Clarity, and Operational Infrastructure" id="stackImage" />
-          <svg class="stack-overlay" id="stackOverlay" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid meet">
-            <!-- Operational Infrastructure sublayers -->
-            <rect class="stack-region" data-focus="core-processes" x="50" y="420" width="300" height="120" />
-            <rect class="stack-region" data-focus="ai-enablement" x="400" y="420" width="300" height="120" />
-          </svg>
-        </div>
-        <div class="stack-tooltip" id="stackTooltip"></div>
-        <figcaption>Hover over a focus area to see related case studies</figcaption>
+  <section class="layout">
+    <!-- LEFT: Sticky Stack visualization -->
+    <aside class="stack-side">
+      <p class="stack-side-header">The Viewpoint Stack&trade;</p>
+      <h2 class="stack-side-title">The framework behind every engagement.</h2>
+      <p class="stack-side-intro">Hover or tap a layer to highlight the case studies that primarily addressed it.</p>
+      <figure class="stack-image-wrapper">
+        <img src="Viewpoint%20Stack.png" alt="The Viewpoint Stack framework: Vision, Alignment, Organizational Clarity, and Operational Infrastructure" />
+        <svg class="stack-overlay" viewBox="0 0 800 800" preserveAspectRatio="xMidYMid meet">
+          <!-- Polygon regions calibrated against the actual pyramid silhouette in the 2400x2400 source.
+               Pyramid apex at ~(400,162) (=y=485 in 2400px), base at ~y=655 (=y=1955 in 2400px). -->
+          <!-- All polygons computed from linear regression of pyramid edges in the 2400x2400 source.
+               Pyramid apex at viewBox (400, 162). Base spans (91, 649) to (709, 649).
+               Left edge: x = -0.6342*y + 502.4 (viewBox coords)
+               Right edge: x =  0.6349*y + 297.2 (viewBox coords) -->
+          <!-- VISION: upward-pointing triangle. Apex at star (above pyramid), base at pyramid apex. -->
+          <polygon class="stack-region" data-layer="vision" data-label="Vision · Strategic Goal Setting"
+                   points="400,20 300,162 500,162" />
+          <!-- ALIGNMENT: triangle from pyramid apex to bottom of dark band -->
+          <polygon class="stack-region" data-layer="alignment" data-label="Alignment · Leadership accountability"
+                   points="400,162 320,287 480,287" />
+          <!-- ORG CLARITY: trapezoid along pyramid edges, contained within the green band -->
+          <polygon class="stack-region" data-layer="organizational-clarity" data-label="Organizational Clarity · Function definition · Role clarity · Decision rights"
+                   points="317,293 483,293 604,483 196,483" />
+          <!-- OPS INFRA: trapezoid along pyramid edges, ending at the pyramid base -->
+          <polygon class="stack-region" data-layer="operational-infrastructure" data-label="Operational Infrastructure · Core processes · Operating rhythms · KPI definition + visibility · Communication systems"
+                   points="192,489 608,489 709,649 91,649" />
+        </svg>
       </figure>
-      <ul class="stack-key">
-        <li><strong>Primary Layer:</strong> The highest-leverage part of the stack the engagement addressed first.</li>
-        <li><strong>Focus Sublayer:</strong> The specific operating mechanism that shifted outcomes, such as leadership cadence, decision rights, or delivery system architecture.</li>
-        <li><strong>Cross-Layer Effects:</strong> Most engagements touch multiple layers, but the Focus label marks the core intervention point.</li>
-      </ul>
+      <p class="stack-tooltip" id="stackTooltip"></p>
+    </aside>
+
+    <!-- RIGHT: Case study cards -->
+    <div class="cards">
+      <a class="card" href="case-studies/project-lift.html" data-primary="operational-infrastructure" aria-label="Read the Project Lift case study">
+        <p class="card-meta">Healthcare SaaS · Series B</p>
+        <div class="layer-block">
+          <div class="layer-row">
+            <span class="layer-label">Primary Layer</span>
+            <span class="layer-value">Operational Infrastructure</span>
+          </div>
+          <div class="layer-row">
+            <span class="layer-label">Focus Sublayers</span>
+            <span class="sublayer-value">Core processes · Operating rhythms · Communication systems</span>
+          </div>
+        </div>
+        <h3 class="card-title">Project Lift</h3>
+        <p class="card-metric">$27M contracted in four months.</p>
+        <p class="card-desc">From PMF pressure to new revenue by building a repeatable delivery operating model and the cadence to run it across five clients in parallel.</p>
+        <span class="card-link">Read Case Study →</span>
+      </a>
+
+      <a class="card" href="case-studies/productoperations.html" data-primary="organizational-clarity" data-cross="operational-infrastructure" aria-label="Read the AI-Ready Feature Catalog case study">
+        <p class="card-meta">Healthtech · AI Enablement</p>
+        <div class="layer-block">
+          <div class="layer-row">
+            <span class="layer-label">Primary Layer</span>
+            <span class="layer-value">Organizational Clarity</span>
+          </div>
+          <div class="layer-row">
+            <span class="layer-label">Focus Sublayers</span>
+            <span class="sublayer-value">Role clarity · Decision rights</span>
+          </div>
+          <div class="layer-row cross-row">
+            <span class="layer-label">Cross-Layer Effects</span>
+            <span class="sublayer-value">Operational Infrastructure &rarr; Core processes</span>
+          </div>
+        </div>
+        <h3 class="card-title">AI-Ready Feature Catalog</h3>
+        <p class="card-metric">10-hour decision &rarr; 1-hour self-service workflow.</p>
+        <p class="card-desc">Built a feature catalog with role-specific views and decision rights so Sales and Service Delivery could search, configure, and price features themselves — without looping in Product.</p>
+        <span class="card-link">Read Case Study →</span>
+      </a>
+
+      <a class="card placeholder" href="contact.html" aria-label="Contact Viewpoint Advisory Group about relevant case study work">
+        <p class="card-meta">More examples</p>
+        <h3 class="card-title">Curious about a specific engagement type?</h3>
+        <p class="card-desc">New engagement writeups are in progress. If you'd like to see work at a particular layer of the stack — Vision, Alignment, Organizational Clarity, or Operational Infrastructure — let's talk.</p>
+        <span class="card-link">Ask About Relevant Work &rarr;</span>
+      </a>
     </div>
   </section>
-
-  <main class="grid">
-    <a class="card card-link" href="case-studies/project-lift.html" aria-label="Read the Project Lift case study">
-      <p class="meta">Healthcare SaaS · Series B</p>
-      <p class="focus-map">Focus · Operational Infrastructure → Core Processes, Operating Systems</p>
-      <h2 class="title">Project Lift</h2>
-      <p class="desc">From PMF pressure to new revenue by building a repeatable delivery operating model in four months.</p>
-      <span class="link">Read Case Study</span>
-    </a>
-
-    <a class="card card-link" href="case-studies/productoperations.html" aria-label="Read the AI-Ready Feature Catalog case study">
-      <p class="meta">Healthtech · AI Enablement</p>
-      <p class="focus-map">Focus · Operational Infrastructure → Core Processes + AI Enablement</p>
-      <h2 class="title">AI-Ready Feature Catalog</h2>
-      <p class="desc">Transformed manual pricing and staffing decisions into a 1-hour self-service workflow grounded in product data.</p>
-      <span class="link">Read Case Study</span>
-    </a>
-
-    <a class="card card-link" href="contact.html" aria-label="Contact Viewpoint Advisory Group about relevant case study work">
-      <p class="meta">More examples</p>
-      <h2 class="title">Additional case studies coming soon</h2>
-      <p class="desc">New engagement writeups are in progress and will be published here as they are finalized.</p>
-      <span class="link">Ask About Relevant Work</span>
-    </a>
-  </main>
 
   <section class="faq">
     <div class="faq-wrap">
@@ -393,71 +440,97 @@
   </section>
 
   <footer>
-    <p>© 2026 Viewpoint Advisory Group, LLC. All rights reserved.</p>
+    <p>&copy; 2026 Viewpoint Advisory Group, LLC. All rights reserved.</p>
   </footer>
 
   <script>
-    const stackData = {
-      'core-processes': {
-        label: 'Core Processes, Operating Systems',
-        cases: ['project-lift', 'ai-feature-catalog']
-      },
-      'ai-enablement': {
-        label: 'Core Processes + AI Enablement',
-        cases: ['ai-feature-catalog']
-      }
-    };
-
-    const caseStudies = {
-      'project-lift': { title: 'Project Lift', element: null },
-      'ai-feature-catalog': { title: 'AI-Ready Feature Catalog', element: null }
-    };
-
-    // Initialize
     document.addEventListener('DOMContentLoaded', function() {
-      // Find case study cards
-      const cards = document.querySelectorAll('.card');
-      cards.forEach(card => {
-        const link = card.getAttribute('href');
-        if (link && link.includes('project-lift')) {
-          caseStudies['project-lift'].element = card;
-        } else if (link && link.includes('productoperations')) {
-          caseStudies['ai-feature-catalog'].element = card;
-        }
-      });
-
-      // Setup stack region interactions
       const regions = document.querySelectorAll('.stack-region');
       const tooltip = document.getElementById('stackTooltip');
+      const cards = document.querySelectorAll('.card[data-primary]');
+
+      function highlightLayer(layer) {
+        // Highlight matching cards only — no dimming of others (parity with card-hover behavior)
+        cards.forEach(card => {
+          const primary = card.dataset.primary;
+          const cross = card.dataset.cross || '';
+          if (primary === layer || cross === layer) {
+            card.classList.add('highlighted');
+          } else {
+            card.classList.remove('highlighted');
+          }
+        });
+      }
+
+      function clearHighlight() {
+        cards.forEach(card => card.classList.remove('highlighted'));
+      }
+
+
+      // Bidirectional: hovering a card highlights its primary layer in the pyramid
+      function activatePyramidLayer(layer) {
+        regions.forEach(r => {
+          if (r.dataset.layer === layer) {
+            r.classList.add('active');
+            const parts = r.dataset.label.split(' · ');
+            tooltip.innerHTML = parts.length > 1
+              ? `<strong>${parts[0]}</strong> &middot; ${parts.slice(1).join(' &middot; ')}`
+              : `<strong>${r.dataset.label}</strong>`;
+          } else {
+            r.classList.remove('active');
+          }
+        });
+      }
+
+      cards.forEach(card => {
+        const primary = card.dataset.primary;
+        if (!primary) return;
+        card.addEventListener('mouseenter', function() {
+          activatePyramidLayer(primary);
+        });
+        card.addEventListener('mouseleave', function() {
+          regions.forEach(r => r.classList.remove('active'));
+          tooltip.innerHTML = '';
+        });
+      });
 
       regions.forEach(region => {
         region.addEventListener('mouseenter', function() {
-          const focus = this.getAttribute('data-focus');
-          const data = stackData[focus];
-          
-          if (data) {
-            tooltip.innerHTML = `<strong>Focus:</strong> ${data.label}`;
-            
-            // Highlight related case studies
-            Object.keys(caseStudies).forEach(key => {
-              if (caseStudies[key].element) {
-                if (data.cases.includes(key)) {
-                  caseStudies[key].element.classList.add('highlighted');
-                } else {
-                  caseStudies[key].element.classList.remove('highlighted');
-                }
-              }
-            });
-          }
+          const layer = this.dataset.layer;
+          const label = this.dataset.label;
+          // Format tooltip: split on first ' · ' so "Layer" gets bold, sublayers stay regular
+          const parts = label.split(' · ');
+          tooltip.innerHTML = parts.length > 1
+            ? `<strong>${parts[0]}</strong> &middot; ${parts.slice(1).join(' &middot; ')}`
+            : `<strong>${label}</strong>`;
+          regions.forEach(r => r.classList.remove('active'));
+          this.classList.add('active');
+          highlightLayer(layer);
         });
 
         region.addEventListener('mouseleave', function() {
           tooltip.innerHTML = '';
-          Object.keys(caseStudies).forEach(key => {
-            if (caseStudies[key].element) {
-              caseStudies[key].element.classList.remove('highlighted');
-            }
-          });
+          regions.forEach(r => r.classList.remove('active'));
+          clearHighlight();
+        });
+
+        // Touch support
+        region.addEventListener('click', function(e) {
+          e.preventDefault();
+          const layer = this.dataset.layer;
+          const isActive = this.classList.contains('active');
+          regions.forEach(r => r.classList.remove('active'));
+          if (isActive) {
+            clearHighlight();
+            tooltip.innerHTML = '';
+          } else {
+            this.classList.add('active');
+            const parts = this.dataset.label.split(' · ');
+            tooltip.innerHTML = parts.length > 1
+              ? `<strong>${parts[0]}</strong> &middot; ${parts.slice(1).join(' &middot; ')}`
+              : `<strong>${this.dataset.label}</strong>`;
+            highlightLayer(layer);
+          }
         });
       });
     });
