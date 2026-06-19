@@ -49,6 +49,49 @@
     h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4.8vw, 3.8rem); line-height: 1.15; font-weight: 300; color: var(--cream); }
     h1 em { color: var(--accent-light); font-style: italic; }
     .intro { margin-top: 1.25rem; max-width: 760px; color: var(--cream); opacity: 0.85; }
+    .intro-link {
+      color: var(--cream);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(248,246,240,0.45);
+      transition: border-bottom-color 0.2s, color 0.2s;
+    }
+    .intro-link:hover { border-bottom-color: var(--cream); color: var(--accent-light); }
+
+
+    /* Banner above the service cards: "Learn the framework first" */
+    .framework-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 1.1rem 4rem 0;
+      text-decoration: none;
+      color: var(--charcoal);
+      transition: color 0.2s;
+    }
+    .framework-banner:hover { color: var(--accent); }
+    .framework-banner:hover .banner-cta { border-bottom-color: var(--accent); }
+    .banner-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--warm-grey);
+    }
+    .banner-cta {
+      font-size: 0.74rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: var(--accent);
+      border-bottom: 1px solid transparent;
+      padding-bottom: 0.15rem;
+      transition: border-bottom-color 0.2s;
+    }
+    @media (max-width: 640px) {
+      .framework-banner { flex-direction: column; align-items: flex-start; gap: 0.4rem; padding: 1rem 1.25rem 0; }
+    }
 
     /* Services list */
     .services {
@@ -201,6 +244,92 @@
     }
     .closing-cta a.btn:hover { background: var(--accent); }
 
+
+    /* How I Work section — horizontal 5-card grid mirroring the homepage */
+    .how-i-work {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 3.5rem 4rem 1rem;
+    }
+    .how-i-work-header { max-width: 760px; margin-bottom: 2.25rem; }
+    .hiw-eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      font-weight: 400;
+    }
+    .hiw-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+      line-height: 1.2;
+      font-weight: 300;
+      color: var(--charcoal);
+      margin-bottom: 1rem;
+    }
+    .hiw-title em { color: var(--accent); font-style: italic; }
+    .hiw-intro { color: var(--warm-grey); max-width: 640px; }
+    /* 5-column horizontal grid (matches homepage) */
+    .hiw-principles {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0;
+      border-top: 1px solid var(--stone);
+    }
+    .hiw-principle-card {
+      padding: 2.5rem 2rem 2.5rem 0;
+      border-right: 1px solid var(--stone);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .hiw-principle-card:first-child { padding-left: 0; }
+    .hiw-principle-card:last-child {
+      border-right: none;
+      padding-right: 0;
+      padding-left: 2rem;
+    }
+    .hiw-principle-card:not(:first-child):not(:last-child) { padding-left: 2rem; }
+    .hiw-principle-icon { display: flex; align-items: center; margin-bottom: 0.25rem; }
+    .hiw-principle-icon svg { display: block; width: 32px; height: 32px; }
+    .hiw-principle-title {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.02rem;
+      font-weight: 500;
+      color: var(--charcoal);
+      line-height: 1.35;
+    }
+    .hiw-principle-body {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 300;
+      color: var(--warm-grey);
+      line-height: 1.7;
+    }
+    /* Responsive — homepage-style breakpoints */
+    @media (max-width: 1100px) {
+      .hiw-principles { grid-template-columns: repeat(3, 1fr); }
+      .hiw-principle-card:nth-child(3) { border-right: none; padding-right: 0; }
+      .hiw-principle-card:nth-child(4) { padding-left: 0; border-right: 1px solid var(--stone); padding-top: 2.5rem; }
+      .hiw-principle-card:nth-child(5) { border-right: none; padding-right: 0; padding-top: 2.5rem; }
+    }
+    @media (max-width: 720px) {
+      .how-i-work { padding: 2.5rem 1.25rem 0.5rem; }
+      .hiw-principles { grid-template-columns: 1fr 1fr; }
+      .hiw-principle-card {
+        padding: 1.75rem 1.25rem 1.75rem 0 !important;
+        border-right: none;
+        border-bottom: 1px solid var(--stone);
+      }
+      .hiw-principle-card:nth-child(odd) { border-right: 1px solid var(--stone); }
+      .hiw-principle-card:nth-child(even) {
+        padding-left: 1.25rem !important;
+        padding-right: 0 !important;
+      }
+      .hiw-principle-card:last-child { border-bottom: none; }
+    }
+
     footer { border-top: 1px solid var(--stone); padding: 1.8rem 4rem; color: var(--warm-grey); font-size: 0.8rem; }
 
     /* Responsive */
@@ -232,8 +361,13 @@
   <header>
     <p class="eyebrow">Services</p>
     <h1>Three engagements. <em>One operating discipline.</em></h1>
-    <p class="intro">Each engagement maps to a different layer of the Viewpoint Stack&trade; — from defining the strategy to building the system that runs it. Start where the gap is.</p>
+    <p class="intro">Each engagement maps to a different layer of the <a href="framework.html" class="intro-link">Viewpoint Stack&trade;</a> — from defining the strategy to building the system that runs it. Start where the gap is.</p>
   </header>
+
+      <a href="framework.html" class="framework-banner">
+      <span class="banner-label">New to the Viewpoint Stack?</span>
+      <span class="banner-cta">See the full breakdown &rarr;</span>
+    </a>
 
   <section class="services">
 
@@ -323,6 +457,71 @@
       </div>
     </article>
 
+  </section>
+
+  <section class="how-i-work">
+    <div class="how-i-work-header">
+      <p class="hiw-eyebrow">How I Work</p>
+      <h2 class="hiw-title">High trust. High impact. <em>Low overhead.</em></h2>
+      <p class="hiw-intro">I embed directly with leadership teams, reduce drag, and build systems that drive outcomes. The engagement model is designed for fast-moving teams that need execution, not theater.</p>
+    </div>
+    <div class="hiw-principles">
+      <article class="hiw-principle-card">
+        <div class="hiw-principle-icon">
+          <svg width="32" height="32" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="3" y="17" width="22" height="4" rx="1" stroke="#4a6845" stroke-width="1.5" fill="none"/>
+            <rect x="6" y="12" width="16" height="4" rx="1" stroke="#4a6845" stroke-width="1.5" fill="none"/>
+            <rect x="9" y="7" width="10" height="4" rx="1" stroke="#4a6845" stroke-width="1.5" fill="none"/>
+          </svg>
+        </div>
+        <h3 class="hiw-principle-title">Organizations are products</h3>
+        <p class="hiw-principle-body">I treat every operating model the way a great product leader treats a build &mdash; designed with intention, iterated with discipline, and always in service of the people who depend on it.</p>
+      </article>
+      <article class="hiw-principle-card">
+        <div class="hiw-principle-icon">
+          <svg width="32" height="32" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="14" cy="14" r="3" fill="#4a6845"/>
+            <circle cx="14" cy="14" r="7" stroke="#4a6845" stroke-width="1.5" fill="none"/>
+            <circle cx="14" cy="14" r="11" stroke="#4a6845" stroke-width="1" fill="none" opacity="0.4"/>
+          </svg>
+        </div>
+        <h3 class="hiw-principle-title">Small by design</h3>
+        <p class="hiw-principle-body">I work with a limited number of clients at a time. You get real attention, not a junior team member.</p>
+      </article>
+      <article class="hiw-principle-card">
+        <div class="hiw-principle-icon">
+          <svg width="32" height="32" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="10" cy="14" r="7" stroke="#4a6845" stroke-width="1.5" fill="none"/>
+            <circle cx="18" cy="14" r="7" stroke="#4a6845" stroke-width="1.5" fill="none"/>
+          </svg>
+        </div>
+        <h3 class="hiw-principle-title">Embedded, not arms-length</h3>
+        <p class="hiw-principle-body">I work inside your leadership team &mdash; in your meetings, your Slack, your reality &mdash; not from the outside looking in.</p>
+      </article>
+      <article class="hiw-principle-card">
+        <div class="hiw-principle-icon">
+          <svg width="32" height="32" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <line x1="7" y1="21" x2="17" y2="11" stroke="#4a6845" stroke-width="1.5" stroke-linecap="round"/>
+            <rect x="16" y="5" width="8" height="5" rx="1" transform="rotate(45 16 5)" stroke="#4a6845" stroke-width="1.5" fill="none"/>
+            <line x1="7" y1="21" x2="10" y2="18" stroke="#4a6845" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="hiw-principle-title">Built for builders</h3>
+        <p class="hiw-principle-body">I thrive in fast-moving, high-growth environments where ambiguity is the norm and the answer is usually &ldquo;we need to build that.&rdquo;</p>
+      </article>
+      <article class="hiw-principle-card">
+        <div class="hiw-principle-icon">
+          <svg width="32" height="32" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="14" cy="14" r="10" stroke="#4a6845" stroke-width="1.5" fill="none"/>
+            <circle cx="14" cy="14" r="5" stroke="#4a6845" stroke-width="1.5" fill="none"/>
+            <line x1="14" y1="14" x2="24" y2="4" stroke="#4a6845" stroke-width="1.5" stroke-linecap="round"/>
+            <polyline points="20,4 24,4 24,8" stroke="#4a6845" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+        </div>
+        <h3 class="hiw-principle-title">Outcomes over outputs</h3>
+        <p class="hiw-principle-body">I'm not here to produce decks. I'm here to make sure the right things get built, aligned, and executed.</p>
+      </article>
+    </div>
   </section>
 
   <section class="closing-cta">
