@@ -86,6 +86,47 @@
       margin-top: 0.6em;
       flex-shrink: 0;
     }
+    .stack-map {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 2.5rem 4rem 0;
+    }
+    .stack-map-wrap {
+      border: 1px solid var(--stone);
+      background: var(--warm-white);
+      padding: 1.4rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .stack-map h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.7rem;
+      line-height: 1.2;
+      font-weight: 300;
+      margin-bottom: 0.6rem;
+    }
+    .stack-map p { color: var(--warm-grey); }
+    .stack-key {
+      list-style: none;
+      display: grid;
+      gap: 0.55rem;
+    }
+    .stack-key li {
+      color: var(--warm-grey);
+      display: flex;
+      gap: 0.5rem;
+      align-items: flex-start;
+    }
+    .stack-key li::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+      margin-top: 0.6em;
+      flex-shrink: 0;
+    }
     .grid {
       max-width: 1300px;
       margin: 0 auto;
@@ -96,6 +137,17 @@
     }
     .card { border: 1px solid var(--stone); background: var(--warm-white); padding: 1.4rem; display: flex; flex-direction: column; gap: 0.8rem; }
     .meta { font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--warm-grey); font-weight: 400; }
+    .focus-map {
+      border: 1px solid var(--stone);
+      background: rgba(74, 104, 69, 0.06);
+      padding: 0.55rem 0.65rem;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 400;
+      line-height: 1.5;
+    }
     .title { font-family: 'Cormorant Garamond', serif; font-size: 1.55rem; line-height: 1.2; font-weight: 300; }
     .desc { color: var(--warm-grey); }
     .link {
@@ -143,6 +195,8 @@
       .nav-links { gap: 0.8rem; flex-wrap: wrap; justify-content: flex-end; }
       header { padding: 4rem 1.25rem 2rem; }
       .overview { grid-template-columns: 1fr; padding: 2rem 1.25rem 0; }
+      .stack-map { padding: 2rem 1.25rem 0; }
+      .stack-map-wrap { grid-template-columns: 1fr; }
       .grid { grid-template-columns: 1fr; padding: 2rem 1.25rem; }
       .faq { padding: 0 1.25rem 2.5rem; }
       footer { padding: 1.5rem 1.25rem; }
@@ -184,9 +238,26 @@
     </article>
   </section>
 
+  <section class="stack-map">
+    <div class="stack-map-wrap">
+      <article>
+        <h2>How these case studies map to the Viewpoint Stack</h2>
+        <p>The Viewpoint Stack is the organizational product framework behind this work: Vision, Alignment, Organizational Clarity, and Operational Infrastructure. Each case study includes a Focus label that identifies the primary layer and sublayer where the intervention was concentrated.</p>
+      </article>
+      <article>
+        <ul class="stack-key">
+          <li><strong>Primary Layer:</strong> The highest-leverage part of the stack the engagement addressed first.</li>
+          <li><strong>Focus Sublayer:</strong> The specific operating mechanism that shifted outcomes, such as leadership cadence, decision rights, or delivery system architecture.</li>
+          <li><strong>Cross-Layer Effects:</strong> Most engagements touch multiple layers, but the Focus label marks the core intervention point.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
   <main class="grid">
     <article class="card">
       <p class="meta">Healthcare SaaS · Series B</p>
+      <p class="focus-map">Focus · Alignment → Leadership Operating Cadence</p>
       <h2 class="title">Project Lift</h2>
       <p class="desc">From PMF pressure to new revenue by building a repeatable delivery operating model in four months.</p>
       <a class="link" href="case-studies/project-lift.html">Read Case Study</a>
@@ -194,6 +265,7 @@
 
     <article class="card">
       <p class="meta">Healthtech · AI Enablement</p>
+      <p class="focus-map">Focus · Operational Infrastructure → Delivery System Architecture</p>
       <h2 class="title">AI-Ready Feature Catalog</h2>
       <p class="desc">Transformed manual pricing and staffing decisions into a 1-hour self-service workflow grounded in product data.</p>
       <a class="link" href="case-studies/productoperations.html">Read Case Study</a>
