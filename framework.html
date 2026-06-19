@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Viewpoint Stack | Viewpoint Advisory Group</title>
+  <meta name="description" content="The Viewpoint Stack: A four-layer framework for building operating systems designed with intention, discipline, and a view of the whole system." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://viewpointadvisorygroup.com/framework.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="The Viewpoint Stack | Viewpoint Advisory Group" />
+  <meta property="og:description" content="A four-layer framework for designing your organization like a product—with intention, discipline, and a view of the whole system." />
+  <meta property="og:url" content="https://viewpointadvisorygroup.com/framework.html" />
+  <meta property="og:image" content="https://viewpointadvisorygroup.com/headshot.jpeg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Viewpoint Stack | Viewpoint Advisory Group" />
+  <meta name="twitter:description" content="A four-layer framework for designing your organization like a product—with intention, discipline, and a view of the whole system." />
+  <meta name="twitter:image" content="https://viewpointadvisorygroup.com/headshot.jpeg" />
+  <link rel="icon" type="image/png" href="assets/favicon.png?v=5" />
+  <link rel="shortcut icon" href="favicon.ico?v=5" />
+  <link rel="apple-touch-icon" href="assets/favicon.png?v=5" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Montserrat:wght@200;400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #f8f6f0;
+      --warm-white: #ffffff;
+      --stone: #e4e0d4;
+      --taupe: #c0b89e;
+      --charcoal: #1e2820;
+      --warm-grey: #5a6855;
+      --accent: #4a6845;
+      --accent-light: #7a9875;
+    }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--charcoal);
+      font-weight: 300;
+      line-height: 1.75;
+    }
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 4rem;
+      border-bottom: 1px solid var(--stone);
+      background: rgba(248, 246, 240, 0.94);
+      backdrop-filter: blur(8px);
+    }
+    .brand {
+      text-decoration: none;
+      color: var(--charcoal);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    .nav-links { list-style: none; display: flex; gap: 1.6rem; }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--warm-grey);
+      font-size: 0.74rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+    .nav-links a.active, .nav-links a:hover { color: var(--charcoal); }
+    .hero {
+      padding: 6rem 4rem 3rem;
+      border-bottom: 1px solid var(--stone);
+      background: #1e2820;
+    }
+    .eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--accent-light);
+      margin-bottom: 1rem;
+      font-weight: 400;
+    }
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      line-height: 1.15;
+      font-weight: 300;
+      max-width: 900px;
+    }
+    h1 em { color: var(--accent-light); font-style: italic; }
+
+    /* Stack Styles */
+    .section-eyebrow {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 300;
+      margin-bottom: 1.2rem;
+    }
+
+    .section-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--charcoal);
+      margin-bottom: 1.5rem;
+    }
+
+    .section-headline em { font-style: italic; color: var(--accent); }
+
+    .stack-section {
+      background: var(--cream);
+      padding: 4rem 3rem;
+    }
+
+    .stack-section .stack-container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .stack-header {
+      max-width: 680px;
+      margin-bottom: 2.5rem;
+    }
+
+    .stack-header .section-eyebrow {
+      color: var(--accent);
+      letter-spacing: 0.2em;
+    }
+
+    .stack-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(280px, 420px);
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .stack-image-wrap {
+      position: sticky;
+      top: calc(90px + 1rem);
+      align-self: start;
+    }
+
+    .stack-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px;
+      box-shadow: 0 20px 45px rgba(30, 40, 32, 0.08);
+      object-fit: cover;
+    }
+
+    .stack-copy {
+      display: grid;
+      gap: 1.75rem;
+    }
+
+    .stack-intro p,
+    .stack-layer-body,
+    .stack-summary p {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--charcoal);
+      line-height: 1.75;
+      margin: 0;
+    }
+
+    .stack-divider {
+      height: 1px;
+      background: var(--stone);
+      margin: 2rem 0;
+    }
+
+    .stack-layer {
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--stone);
+    }
+
+    .stack-layer:last-child {
+      border-bottom: none;
+    }
+
+    .stack-layer-heading {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.75rem;
+      margin-bottom: 0.45rem;
+    }
+
+    .stack-layer-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 300;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .stack-layer-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 300;
+      color: var(--charcoal);
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    .stack-summary {
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--stone);
+      margin-top: 1rem;
+    }
+
+    footer {
+      margin-top: 2rem;
+      border-top: 1px solid var(--stone);
+      padding: 1.8rem 4rem;
+      color: var(--warm-grey);
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 960px) {
+      nav { padding: 1rem 1.25rem; }
+      .nav-links { gap: 0.8rem; flex-wrap: wrap; justify-content: flex-end; }
+      .hero { padding: 4rem 1.25rem 2.5rem; }
+      .stack-section { padding: 4rem 1.5rem; }
+      .stack-grid { grid-template-columns: 1fr; }
+      .stack-image-wrap { position: static; top: auto; }
+      .stack-image { max-width: 100%; }
+      footer { padding: 1.5rem 1.25rem; }
+    }
+
+    @media (max-width: 640px) {
+      .stack-section { padding: 3.5rem 1.1rem; }
+      .stack-grid { grid-template-columns: 1fr; }
+      .stack-image-wrap { position: static; top: auto; }
+      .stack-image { max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="brand" href="index.html">Viewpoint Advisory Group</a>
+    <ul class="nav-links">
+      <li><a href="about.html">About Me</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a class="active" href="framework.html">The Framework</a></li>
+      <li><a href="case-studies.html">Case Studies</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <p class="eyebrow">Framework</p>
+    <h1>Breaking down <em>The Viewpoint Stack</em></h1>
+  </header>
+
+  <main>
+    <!-- THE VIEWPOINT STACK SECTION -->
+    <section id="the-stack" class="stack-section">
+      <div class="stack-container">
+        <div class="stack-header">
+          <p class="section-eyebrow">THE STACK</p>
+          <h2 class="section-headline">
+            A four-layer framework <em>built on operating discipline</em>
+          </h2>
+        </div>
+
+        <div class="stack-grid">
+          <div class="stack-copy">
+            <div class="stack-intro">
+              <p>Most organizations fail in the gap between strategy and execution. That's not a strategy problem—it's an operating system problem.</p>
+              <div style="height: 1.5rem;"></div>
+
+              <p>The Viewpoint Stack is a four-layer framework built on the belief that you can design your organization the same way you'd design a product—with intention, discipline, and a view of the whole system. Each layer depends on the one below it. When one breaks, execution collapses downstream.</p>
+            </div>
+
+            <div class="stack-divider"></div>
+
+            <div class="stack-layer">
+              <div class="stack-layer-heading">
+                <span class="stack-layer-number">01</span>
+                <h4 class="stack-layer-title">Vision: Strategic Goal Setting</h4>
+              </div>
+              <p class="stack-layer-body">Without a shared North Star, every team optimizes locally. I help your leadership team define what you're building, translate it into measurable goals, and cascade them so every person knows how their work connects to the bigger picture.</p>
+            </div>
+
+            <div class="stack-layer">
+              <div class="stack-layer-heading">
+                <span class="stack-layer-number">02</span>
+                <h4 class="stack-layer-title">Alignment: Leadership Alignment</h4>
+              </div>
+              <p class="stack-layer-body">Misaligned leadership feels like slowness and looks like wheel-spinning. I work with your executive team to align on priorities and decision-making, then build the rhythms that keep that alignment tight over time.</p>
+            </div>
+
+            <div class="stack-layer">
+              <div class="stack-layer-heading">
+                <span class="stack-layer-number">03</span>
+                <h4 class="stack-layer-title">Organizational Clarity: Structure & Decision Rights</h4>
+              </div>
+              <p class="stack-layer-body">Most companies inherit structure by accident. I design it on purpose—explicit roles tied to outcomes, clear decision rights, and accountability frameworks so people know exactly what they own.</p>
+            </div>
+
+            <div class="stack-layer">
+              <div class="stack-layer-heading">
+                <span class="stack-layer-number">04</span>
+                <h4 class="stack-layer-title">Operational Infrastructure: The Systems That Scale</h4>
+              </div>
+              <p class="stack-layer-body">The foundation. I consolidate disconnected rhythms, metrics, and communication structures into one integrated operating system—so teams move with velocity and leaders have real-time visibility into what matters.</p>
+            </div>
+
+            <div class="stack-summary">
+              <p>I don't hand you four separate projects. I diagnose which layers are broken and rebuild them as one system.</p>
+            </div>
+          </div>
+
+          <div class="stack-image-wrap">
+            <img class="stack-image" src="./Viewpoint%20Stack.png" alt="The Viewpoint Stack: Vision, Leadership, Organizational Clarity, Operational Infrastructure">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Viewpoint Advisory Group. All rights reserved.</p>
+  </footer>
+</body>
+</html>

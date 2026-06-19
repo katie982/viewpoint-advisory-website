@@ -4,17 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Services | Viewpoint Advisory Group</title>
-  <meta name="description" content="Explore Viewpoint Advisory Group services: strategic goal setting, leadership alignment, organizational clarity, and operational infrastructure." />
+  <meta name="description" content="Three engagement types from Viewpoint Advisory Group: The Strategic Reset, The Systems Diagnostic, and The Build — each anchored in the Viewpoint Stack framework." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://viewpointadvisorygroup.com/services.html" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Services | Viewpoint Advisory Group" />
-  <meta property="og:description" content="Explore Viewpoint Advisory Group services: strategic goal setting, leadership alignment, organizational clarity, and operational infrastructure." />
+  <meta property="og:description" content="Three engagement types from Viewpoint Advisory Group: The Strategic Reset, The Systems Diagnostic, and The Build — each anchored in the Viewpoint Stack framework." />
   <meta property="og:url" content="https://viewpointadvisorygroup.com/services.html" />
   <meta property="og:image" content="https://viewpointadvisorygroup.com/headshot.jpeg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Services | Viewpoint Advisory Group" />
-  <meta name="twitter:description" content="Explore Viewpoint Advisory Group services: strategic goal setting, leadership alignment, organizational clarity, and operational infrastructure." />
+  <meta name="twitter:description" content="Three engagement types from Viewpoint Advisory Group: The Strategic Reset, The Systems Diagnostic, and The Build — each anchored in the Viewpoint Stack framework." />
   <meta name="twitter:image" content="https://viewpointadvisorygroup.com/headshot.jpeg" />
   <link rel="icon" type="image/png" href="assets/favicon.png?v=5" />
   <link rel="shortcut icon" href="favicon.ico?v=5" />
@@ -29,8 +29,11 @@
       --charcoal: #1e2820;
       --warm-grey: #5a6855;
       --accent: #4a6845;
+      --accent-light: #7a9875;
     }
     body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--charcoal); line-height: 1.7; font-weight: 300; }
+
+    /* Nav */
     nav {
       position: sticky; top: 0; z-index: 10; display: flex; justify-content: space-between; align-items: center;
       padding: 1.25rem 4rem; border-bottom: 1px solid var(--stone); background: rgba(248,246,240,0.94); backdrop-filter: blur(8px);
@@ -39,28 +42,177 @@
     .nav-links { list-style: none; display: flex; gap: 1.6rem; }
     .nav-links a { text-decoration: none; color: var(--warm-grey); font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 400; }
     .nav-links a.active, .nav-links a:hover { color: var(--charcoal); }
-    header { padding: 6rem 4rem 2.5rem; border-bottom: 1px solid var(--stone); background: #1e2820; }
-    .eyebrow { font-size: 0.7rem; letter-spacing: 0.24em; text-transform: uppercase; color: #7a9875; margin-bottom: 1rem; font-weight: 400; }
-    h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4.8vw, 3.8rem); line-height: 1.15; font-weight: 300; color: var(--warm-white); }
-    h1 em { color: #7a9875; font-style: italic; }
-    .intro { margin-top: 1.25rem; max-width: 760px; color: var(--warm-white); }
-    .grid {
-      max-width: 1300px; margin: 0 auto; padding: 3rem 4rem 4rem;
-      display: grid; grid-template-columns: repeat(2, minmax(260px, 1fr)); gap: 1.2rem;
+
+    /* Hero (dark charcoal — distinctive vs case studies) */
+    header { padding: 6rem 4rem 3.5rem; background: var(--charcoal); border-bottom: 1px solid rgba(192,184,158,0.18); }
+    .eyebrow { font-size: 0.7rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--accent-light); margin-bottom: 1rem; font-weight: 400; }
+    h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4.8vw, 3.8rem); line-height: 1.15; font-weight: 300; color: var(--cream); }
+    h1 em { color: var(--accent-light); font-style: italic; }
+    .intro { margin-top: 1.25rem; max-width: 760px; color: var(--cream); opacity: 0.85; }
+
+    /* Services list */
+    .services {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 3rem 4rem 1.5rem;
+      display: grid;
+      gap: 1.4rem;
     }
-    .card { border: 1px solid var(--stone); background: var(--warm-white); padding: 1.5rem; }
-    .num { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: var(--accent); margin-bottom: 0.6rem; }
-    .label { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--warm-grey); margin-bottom: 0.6rem; font-weight: 400; }
-    .title { font-family: 'Cormorant Garamond', serif; font-size: 1.55rem; font-weight: 300; margin-bottom: 0.65rem; line-height: 1.2; }
-    .card p { color: var(--warm-grey); }
-    .bullets { list-style: none; margin-top: 1rem; display: grid; gap: 0.45rem; }
-    .bullets li::before { content: '\2022 '; color: var(--accent); }
+
+    .service {
+      border: 1px solid var(--stone);
+      background: var(--warm-white);
+      padding: 2.5rem;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 3rem;
+      transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+    }
+    .service:hover {
+      border-color: var(--accent);
+      box-shadow: 0 18px 44px rgba(74,104,69,0.10);
+    }
+
+    /* Left column: number + title + stack mapping */
+    .service-header { display: flex; flex-direction: column; gap: 0.85rem; }
+    .service-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.4rem;
+      line-height: 1;
+      color: var(--accent);
+      font-weight: 300;
+    }
+    .service-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.95rem;
+      line-height: 1.15;
+      font-weight: 400;
+      color: var(--charcoal);
+    }
+    .service-subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--accent);
+      font-weight: 300;
+      line-height: 1.3;
+    }
+    .stack-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.4rem;
+    }
+    .stack-badge {
+      font-size: 0.6rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: rgba(74, 104, 69, 0.08);
+      border: 1px solid rgba(74, 104, 69, 0.20);
+      padding: 0.35rem 0.6rem;
+      font-weight: 500;
+      line-height: 1.2;
+    }
+    .stack-badge.muted {
+      color: var(--warm-grey);
+      background: rgba(90, 104, 85, 0.06);
+      border-color: rgba(90, 104, 85, 0.18);
+    }
+
+    /* Right column: the three labeled blocks */
+    .service-body { display: grid; gap: 1.5rem; align-content: start; }
+    .block-label {
+      font-size: 0.66rem;
+      letter-spacing: 0.20em;
+      text-transform: uppercase;
+      color: var(--warm-grey);
+      font-weight: 500;
+      margin-bottom: 0.45rem;
+    }
+    .block-body {
+      font-size: 1rem;
+      color: var(--charcoal);
+      line-height: 1.65;
+    }
+    .block-body.outcome {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-style: italic;
+      color: var(--accent);
+      line-height: 1.4;
+      font-weight: 400;
+    }
+    .service-cta {
+      margin-top: 0.4rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      text-decoration: none;
+      color: var(--accent);
+      font-size: 0.75rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 500;
+      align-self: flex-start;
+      border-bottom: 1px solid transparent;
+      padding-bottom: 0.15rem;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .service-cta:hover {
+      color: var(--charcoal);
+      border-bottom-color: var(--charcoal);
+    }
+
+    /* Bottom CTA band */
+    .closing-cta {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 3rem 4rem 5rem;
+      text-align: center;
+    }
+    .closing-cta h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+      line-height: 1.2;
+      font-weight: 300;
+      color: var(--charcoal);
+      margin-bottom: 1rem;
+      max-width: 640px;
+      margin-inline: auto;
+    }
+    .closing-cta h2 em { color: var(--accent); font-style: italic; }
+    .closing-cta p {
+      color: var(--warm-grey);
+      max-width: 560px;
+      margin: 0 auto 2rem;
+    }
+    .closing-cta a.btn {
+      display: inline-block;
+      background: var(--charcoal);
+      color: var(--cream);
+      padding: 1rem 2.2rem;
+      text-decoration: none;
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: background-color 0.2s;
+    }
+    .closing-cta a.btn:hover { background: var(--accent); }
+
     footer { border-top: 1px solid var(--stone); padding: 1.8rem 4rem; color: var(--warm-grey); font-size: 0.8rem; }
+
+    /* Responsive */
     @media (max-width: 960px) {
       nav { padding: 1rem 1.25rem; }
       .nav-links { gap: 0.8rem; flex-wrap: wrap; justify-content: flex-end; }
-      header { padding: 4rem 1.25rem 2rem; }
-      .grid { grid-template-columns: 1fr; padding: 2rem 1.25rem; }
+      header { padding: 4rem 1.25rem 2.5rem; }
+      .services { padding: 2rem 1.25rem 0.5rem; gap: 1rem; }
+      .service { grid-template-columns: 1fr; gap: 1.5rem; padding: 1.6rem; }
+      .service-num { font-size: 2.6rem; }
+      .service-title { font-size: 1.65rem; }
+      .closing-cta { padding: 2.5rem 1.25rem 3.5rem; }
       footer { padding: 1.5rem 1.25rem; }
     }
   </style>
@@ -71,6 +223,7 @@
     <ul class="nav-links">
       <li><a href="about.html">About Me</a></li>
       <li><a class="active" href="services.html">Services</a></li>
+      <li><a href="framework.html">The Framework</a></li>
       <li><a href="case-studies.html">Case Studies</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
@@ -78,62 +231,108 @@
 
   <header>
     <p class="eyebrow">Services</p>
-    <h1>What I <em>build</em>.</h1>
-    <p class="intro">Fractional and project-based engagements designed to turn organizational ambiguity into executable reality using the Viewpoint Stack.</p>
+    <h1>Three engagements. <em>One operating discipline.</em></h1>
+    <p class="intro">Each engagement maps to a different layer of the Viewpoint Stack&trade; — from defining the strategy to building the system that runs it. Start where the gap is.</p>
   </header>
 
-  <main class="grid">
-    <article class="card">
-      <p class="num">01</p>
-      <p class="label">Vision</p>
-      <h2 class="title">Strategic Goal Setting</h2>
-      <p>I partner with your leadership team to define measurable goals and translate them into clear strategic direction.</p>
-      <ul class="bullets">
-        <li>OKR design and alignment</li>
-        <li>Strategic planning and enablement</li>
-        <li>Revenue gap closure and acceleration</li>
-      </ul>
+  <section class="services">
+
+    <!-- 01 — The Strategic Reset -->
+    <article class="service" id="strategic-reset">
+      <div class="service-header">
+        <p class="service-num">01</p>
+        <h2 class="service-title">The Strategic Reset</h2>
+        <p class="service-subtitle">Vision + Leadership Alignment</p>
+        <div class="stack-badges">
+          <span class="stack-badge">Vision</span>
+          <span class="stack-badge">Alignment</span>
+        </div>
+      </div>
+      <div class="service-body">
+        <div>
+          <p class="block-label">The Problem I Solve</p>
+          <p class="block-body">Leadership knows where they want to go, but the strategy lives in someone's head — or a deck nobody opened twice. Goals shift quarter to quarter, and the leadership team isn't actually rowing in the same direction, even when they think they are.</p>
+        </div>
+        <div>
+          <p class="block-label">What I Do</p>
+          <p class="block-body">I work directly with your leadership team to define measurable goals, translate ambition into a real strategic plan, and align the team around priorities, decision frameworks, and accountability.</p>
+        </div>
+        <div>
+          <p class="block-label">What You Walk Away With</p>
+          <p class="block-body outcome">A strategic plan your leadership team actually agrees on — and the operating cadence to keep it alive past the offsite.</p>
+        </div>
+        <a href="contact.html?service=strategic-reset" class="service-cta">Start a Conversation &rarr;</a>
+      </div>
     </article>
 
-    <article class="card">
-      <p class="num">02</p>
-      <p class="label">Alignment</p>
-      <h2 class="title">Leadership Alignment</h2>
-      <p>I align executive teams around priorities, decision frameworks, and accountability rhythms.</p>
-      <ul class="bullets">
-        <li>Cross-functional alignment</li>
-        <li>Leadership operating cadence</li>
-        <li>Fractional CPO / COO / CSO support</li>
-      </ul>
+    <!-- 02 — The Systems Diagnostic -->
+    <article class="service" id="systems-diagnostic">
+      <div class="service-header">
+        <p class="service-num">02</p>
+        <h2 class="service-title">The Systems Diagnostic</h2>
+        <p class="service-subtitle">Across the Viewpoint Stack&trade;</p>
+        <div class="stack-badges">
+          <span class="stack-badge muted">Vision</span>
+          <span class="stack-badge muted">Alignment</span>
+          <span class="stack-badge muted">Org Clarity</span>
+          <span class="stack-badge muted">Operational Infrastructure</span>
+        </div>
+      </div>
+      <div class="service-body">
+        <div>
+          <p class="block-label">The Problem I Solve</p>
+          <p class="block-body">Something's not working, and everyone has a theory — but the theories don't agree, and nobody's stepped back to look at the whole system. Without that view, you end up fixing symptoms instead of causes.</p>
+        </div>
+        <div>
+          <p class="block-label">What I Do</p>
+          <p class="block-body">I go inside the business and talk to the people closest to the work, mapping what I find against the Viewpoint Stack to find the real constraint limiting execution — not just the loudest complaint.</p>
+        </div>
+        <div>
+          <p class="block-label">What You Walk Away With</p>
+          <p class="block-body outcome">A clear, prioritized view of what's actually broken, why, and what to fix first.</p>
+        </div>
+        <a href="contact.html?service=systems-diagnostic" class="service-cta">Start a Conversation &rarr;</a>
+      </div>
     </article>
 
-    <article class="card">
-      <p class="num">03</p>
-      <p class="label">Organizational Clarity</p>
-      <h2 class="title">Structure and Decision Rights</h2>
-      <p>I establish role clarity, ownership boundaries, and decision rights to eliminate execution drag.</p>
-      <ul class="bullets">
-        <li>Role and accountability design</li>
-        <li>Decision rights frameworks</li>
-        <li>Organizational design</li>
-      </ul>
+    <!-- 03 — The Build -->
+    <article class="service" id="the-build">
+      <div class="service-header">
+        <p class="service-num">03</p>
+        <h2 class="service-title">The Build</h2>
+        <p class="service-subtitle">Organizational Clarity + Operational Infrastructure</p>
+        <div class="stack-badges">
+          <span class="stack-badge">Organizational Clarity</span>
+          <span class="stack-badge">Operational Infrastructure</span>
+        </div>
+      </div>
+      <div class="service-body">
+        <div>
+          <p class="block-label">The Problem I Solve</p>
+          <p class="block-body">You know what's broken — a decision bottleneck, an unclear handoff, a metric nobody trusts — but knowing isn't the same as having it fixed. Recommendations pile up. Nothing changes day to day.</p>
+        </div>
+        <div>
+          <p class="block-label">What I Do</p>
+          <p class="block-body">I scope a project around the specific gap, design the system it needs — role clarity, decision rights, a delivery process, an operating rhythm, a metrics structure — and build it with your team so it actually runs.</p>
+        </div>
+        <div>
+          <p class="block-label">What You Walk Away With</p>
+          <p class="block-body outcome">The thing itself, working. Not a recommendation — a system your team is already using.</p>
+        </div>
+        <a href="contact.html?service=the-build" class="service-cta">Start a Conversation &rarr;</a>
+      </div>
     </article>
 
-    <article class="card">
-      <p class="num">04</p>
-      <p class="label">Operational Infrastructure</p>
-      <h2 class="title">Systems That Scale</h2>
-      <p>I build delivery systems, communication loops, and metrics that turn strategy into sustained execution.</p>
-      <ul class="bullets">
-        <li>Delivery system architecture</li>
-        <li>Operating rhythms and cadences</li>
-        <li>Performance metrics and visibility</li>
-      </ul>
-    </article>
-  </main>
+  </section>
+
+  <section class="closing-cta">
+    <h2>Not sure which one fits? <em>Let's figure that out together.</em></h2>
+    <p>The right starting point depends on where the gap actually is. A short conversation usually tells us — and that conversation is free.</p>
+    <a href="contact.html" class="btn">Let's Talk</a>
+  </section>
 
   <footer>
-    <p>© 2026 Viewpoint Advisory Group, LLC. All rights reserved.</p>
+    <p>&copy; 2026 Viewpoint Advisory Group, LLC. All rights reserved.</p>
   </footer>
 </body>
 </html>
