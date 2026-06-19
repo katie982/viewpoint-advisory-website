@@ -107,6 +107,24 @@
       margin-bottom: 0.6rem;
     }
     .stack-map p { color: var(--warm-grey); }
+    .stack-visual {
+      margin-top: 1rem;
+      border: 1px solid var(--stone);
+      background: var(--cream);
+      padding: 0.75rem;
+    }
+    .stack-visual img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .stack-visual figcaption {
+      margin-top: 0.6rem;
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--warm-grey);
+    }
     .stack-key {
       list-style: none;
       display: grid;
@@ -136,6 +154,21 @@
       gap: 1.2rem;
     }
     .card { border: 1px solid var(--stone); background: var(--warm-white); padding: 1.4rem; display: flex; flex-direction: column; gap: 0.8rem; }
+    .card-link {
+      text-decoration: none;
+      color: inherit;
+      transition: background-color 0.2s, border-color 0.2s, transform 0.2s;
+      cursor: pointer;
+    }
+    .card-link:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+    .card-link:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
     .meta { font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--warm-grey); font-weight: 400; }
     .focus-map {
       border: 1px solid var(--stone);
@@ -151,7 +184,6 @@
     .title { font-family: 'Cormorant Garamond', serif; font-size: 1.55rem; line-height: 1.2; font-weight: 300; }
     .desc { color: var(--warm-grey); }
     .link {
-      text-decoration: none;
       color: var(--accent);
       font-size: 0.74rem;
       letter-spacing: 0.12em;
@@ -159,7 +191,15 @@
       font-weight: 400;
       margin-top: auto;
     }
-    .link:hover { color: var(--charcoal); }
+    .card-link:hover .meta,
+    .card-link:hover .title,
+    .card-link:hover .desc,
+    .card-link:hover .link { color: var(--warm-white); }
+    .card-link:hover .focus-map {
+      border-color: rgba(248, 246, 240, 0.45);
+      background: rgba(248, 246, 240, 0.12);
+      color: var(--warm-white);
+    }
     .faq {
       max-width: 1300px;
       margin: 0 auto;
@@ -243,6 +283,10 @@
       <article>
         <h2>How these case studies map to the Viewpoint Stack</h2>
         <p>The Viewpoint Stack is the organizational product framework behind this work: Vision, Alignment, Organizational Clarity, and Operational Infrastructure. Each case study includes a Focus label that identifies the primary layer and sublayer where the intervention was concentrated.</p>
+        <figure class="stack-visual">
+          <img src="Viewpoint%20Stack.png" alt="The Viewpoint Stack framework: Vision, Alignment, Organizational Clarity, and Operational Infrastructure" />
+          <figcaption>The Viewpoint Stack organizational product framework</figcaption>
+        </figure>
       </article>
       <article>
         <ul class="stack-key">
@@ -255,28 +299,28 @@
   </section>
 
   <main class="grid">
-    <article class="card">
+    <a class="card card-link" href="case-studies/project-lift.html" aria-label="Read the Project Lift case study">
       <p class="meta">Healthcare SaaS · Series B</p>
       <p class="focus-map">Focus · Alignment → Leadership Operating Cadence</p>
       <h2 class="title">Project Lift</h2>
       <p class="desc">From PMF pressure to new revenue by building a repeatable delivery operating model in four months.</p>
-      <a class="link" href="case-studies/project-lift.html">Read Case Study</a>
-    </article>
+      <span class="link">Read Case Study</span>
+    </a>
 
-    <article class="card">
+    <a class="card card-link" href="case-studies/productoperations.html" aria-label="Read the AI-Ready Feature Catalog case study">
       <p class="meta">Healthtech · AI Enablement</p>
       <p class="focus-map">Focus · Operational Infrastructure → Delivery System Architecture</p>
       <h2 class="title">AI-Ready Feature Catalog</h2>
       <p class="desc">Transformed manual pricing and staffing decisions into a 1-hour self-service workflow grounded in product data.</p>
-      <a class="link" href="case-studies/productoperations.html">Read Case Study</a>
-    </article>
+      <span class="link">Read Case Study</span>
+    </a>
 
-    <article class="card">
+    <a class="card card-link" href="contact.html" aria-label="Contact Viewpoint Advisory Group about relevant case study work">
       <p class="meta">More examples</p>
       <h2 class="title">Additional case studies coming soon</h2>
       <p class="desc">New engagement writeups are in progress and will be published here as they are finalized.</p>
-      <a class="link" href="contact.html">Ask About Relevant Work</a>
-    </article>
+      <span class="link">Ask About Relevant Work</span>
+    </a>
   </main>
 
   <section class="faq">
