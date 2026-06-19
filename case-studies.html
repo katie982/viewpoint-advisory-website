@@ -48,43 +48,8 @@
       margin: 0 auto;
       padding: 2.5rem 4rem 0;
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-columns: 1fr;
       gap: 1.4rem;
-    }
-    .overview-card {
-      border: 1px solid var(--stone);
-      background: var(--warm-white);
-      padding: 1.4rem;
-    }
-    .overview-card h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.6rem;
-      line-height: 1.2;
-      font-weight: 300;
-      margin-bottom: 0.75rem;
-    }
-    .overview-card p { color: var(--warm-grey); margin-bottom: 0.75rem; }
-    .overview-card p:last-child { margin-bottom: 0; }
-    .overview-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.65rem;
-      color: var(--warm-grey);
-    }
-    .overview-list li {
-      display: flex;
-      gap: 0.6rem;
-      align-items: flex-start;
-    }
-    .overview-list li::before {
-      content: '';
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: var(--accent);
-      margin-top: 0.6em;
-      flex-shrink: 0;
     }
     .stack-map {
       max-width: 1300px;
@@ -229,6 +194,103 @@
     }
     .faq-item p { color: var(--warm-grey); }
     footer { border-top: 1px solid var(--stone); padding: 1.8rem 4rem; color: var(--warm-grey); font-size: 0.8rem; }
+    .stack-section {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 2.5rem 4rem 0;
+    }
+    .stack-container {
+      border: 1px solid var(--stone);
+      background: var(--warm-white);
+      padding: 1.4rem;
+    }
+    .stack-container > article {
+      margin-bottom: 1.5rem;
+    }
+    .stack-container h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.7rem;
+      line-height: 1.2;
+      font-weight: 300;
+      margin-bottom: 0.6rem;
+    }
+    .stack-container p {
+      color: var(--warm-grey);
+      margin-bottom: 0.75rem;
+    }
+    .stack-visual-large {
+      margin-bottom: 1.5rem;
+    }
+    .stack-image-wrapper {
+      position: relative;
+      margin-bottom: 1rem;
+      border: 1px solid var(--stone);
+      background: var(--cream);
+      padding: 0.75rem;
+    }
+    .stack-image-wrapper img {
+      width: 100%;
+      height: auto;
+      display: block;
+      max-height: 500px;
+      object-fit: contain;
+    }
+    .stack-overlay {
+      position: absolute;
+      top: 0.75rem;
+      left: 0.75rem;
+      width: calc(100% - 1.5rem);
+      height: calc(100% - 1.5rem);
+      cursor: pointer;
+    }
+    .stack-region {
+      fill: transparent;
+      stroke: none;
+      cursor: pointer;
+      transition: fill 0.2s;
+    }
+    .stack-region:hover {
+      fill: rgba(74, 104, 69, 0.15);
+    }
+    .stack-tooltip {
+      min-height: 1.5rem;
+      margin-bottom: 0.75rem;
+      font-size: 0.9rem;
+      color: var(--accent);
+      font-weight: 500;
+      line-height: 1.4;
+    }
+    .stack-visual-large figcaption {
+      margin-top: 0.6rem;
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--warm-grey);
+    }
+    .stack-container .stack-key {
+      list-style: none;
+      display: grid;
+      gap: 0.55rem;
+    }
+    .stack-container .stack-key li {
+      color: var(--warm-grey);
+      display: flex;
+      gap: 0.5rem;
+      align-items: flex-start;
+    }
+    .stack-container .stack-key li::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+      margin-top: 0.6em;
+      flex-shrink: 0;
+    }
+    .card.highlighted {
+      border-color: var(--accent);
+      background: rgba(74, 104, 69, 0.04);
+    }
     @media (max-width: 1050px) { .grid { grid-template-columns: repeat(2, minmax(240px, 1fr)); } }
     @media (max-width: 960px) {
       nav { padding: 1rem 1.25rem; }
@@ -261,47 +323,36 @@
     <p class="intro">These examples show how operating model design, leadership alignment, and AI-ready infrastructure translated into measurable business outcomes.</p>
   </header>
 
-  <section class="overview">
-    <article class="overview-card">
-      <h2>What you'll find in these case studies</h2>
-      <p>Each case study documents the before state, intervention design, and measurable outcomes. The goal is practical transparency: how strategic decisions were translated into execution systems teams could actually run.</p>
-      <p>Rather than describing generic frameworks, these examples show operating model decisions under real constraints: missed revenue targets, unclear ownership, cross-functional friction, and compressed timelines.</p>
-    </article>
-    <article class="overview-card">
-      <h2>Common patterns across engagements</h2>
-      <ul class="overview-list">
-        <li>Tight linkage between strategy, role design, and execution rhythms</li>
-        <li>Decision architecture that reduces bottlenecks across teams</li>
-        <li>Delivery playbooks that make outcomes repeatable and scalable</li>
-        <li>Metrics tied to commercial and operational impact, not activity</li>
-      </ul>
-    </article>
-  </section>
-
-  <section class="stack-map">
-    <div class="stack-map-wrap">
+  <section class="stack-section">
+    <div class="stack-container">
       <article>
         <h2>How these case studies map to the Viewpoint Stack</h2>
-        <p>The Viewpoint Stack is the organizational product framework behind this work: Vision, Alignment, Organizational Clarity, and Operational Infrastructure. Each case study includes a Focus label that identifies the primary layer and sublayer where the intervention was concentrated.</p>
-        <figure class="stack-visual">
-          <img src="Viewpoint%20Stack.png" alt="The Viewpoint Stack framework: Vision, Alignment, Organizational Clarity, and Operational Infrastructure" />
-          <figcaption>The Viewpoint Stack organizational product framework</figcaption>
-        </figure>
+        <p>The Viewpoint Stack is the organizational product framework behind this work: Vision, Alignment, Organizational Clarity, and Operational Infrastructure. Hover over a sublayer to see which case studies it relates to.</p>
       </article>
-      <article>
-        <ul class="stack-key">
-          <li><strong>Primary Layer:</strong> The highest-leverage part of the stack the engagement addressed first.</li>
-          <li><strong>Focus Sublayer:</strong> The specific operating mechanism that shifted outcomes, such as leadership cadence, decision rights, or delivery system architecture.</li>
-          <li><strong>Cross-Layer Effects:</strong> Most engagements touch multiple layers, but the Focus label marks the core intervention point.</li>
-        </ul>
-      </article>
+      <figure class="stack-visual-large">
+        <div class="stack-image-wrapper">
+          <img src="Viewpoint%20Stack.png" alt="The Viewpoint Stack framework: Vision, Alignment, Organizational Clarity, and Operational Infrastructure" id="stackImage" />
+          <svg class="stack-overlay" id="stackOverlay" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid meet">
+            <!-- Operational Infrastructure sublayers -->
+            <rect class="stack-region" data-focus="core-processes" x="50" y="420" width="300" height="120" />
+            <rect class="stack-region" data-focus="ai-enablement" x="400" y="420" width="300" height="120" />
+          </svg>
+        </div>
+        <div class="stack-tooltip" id="stackTooltip"></div>
+        <figcaption>Hover over a focus area to see related case studies</figcaption>
+      </figure>
+      <ul class="stack-key">
+        <li><strong>Primary Layer:</strong> The highest-leverage part of the stack the engagement addressed first.</li>
+        <li><strong>Focus Sublayer:</strong> The specific operating mechanism that shifted outcomes, such as leadership cadence, decision rights, or delivery system architecture.</li>
+        <li><strong>Cross-Layer Effects:</strong> Most engagements touch multiple layers, but the Focus label marks the core intervention point.</li>
+      </ul>
     </div>
   </section>
 
   <main class="grid">
     <a class="card card-link" href="case-studies/project-lift.html" aria-label="Read the Project Lift case study">
       <p class="meta">Healthcare SaaS · Series B</p>
-      <p class="focus-map">Focus · Alignment → Leadership Operating Cadence</p>
+      <p class="focus-map">Focus · Operational Infrastructure → Core Processes, Operating Systems</p>
       <h2 class="title">Project Lift</h2>
       <p class="desc">From PMF pressure to new revenue by building a repeatable delivery operating model in four months.</p>
       <span class="link">Read Case Study</span>
@@ -309,7 +360,7 @@
 
     <a class="card card-link" href="case-studies/productoperations.html" aria-label="Read the AI-Ready Feature Catalog case study">
       <p class="meta">Healthtech · AI Enablement</p>
-      <p class="focus-map">Focus · Operational Infrastructure → Delivery System Architecture</p>
+      <p class="focus-map">Focus · Operational Infrastructure → Core Processes + AI Enablement</p>
       <h2 class="title">AI-Ready Feature Catalog</h2>
       <p class="desc">Transformed manual pricing and staffing decisions into a 1-hour self-service workflow grounded in product data.</p>
       <span class="link">Read Case Study</span>
@@ -344,5 +395,72 @@
   <footer>
     <p>© 2026 Viewpoint Advisory Group, LLC. All rights reserved.</p>
   </footer>
+
+  <script>
+    const stackData = {
+      'core-processes': {
+        label: 'Core Processes, Operating Systems',
+        cases: ['project-lift', 'ai-feature-catalog']
+      },
+      'ai-enablement': {
+        label: 'Core Processes + AI Enablement',
+        cases: ['ai-feature-catalog']
+      }
+    };
+
+    const caseStudies = {
+      'project-lift': { title: 'Project Lift', element: null },
+      'ai-feature-catalog': { title: 'AI-Ready Feature Catalog', element: null }
+    };
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', function() {
+      // Find case study cards
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(card => {
+        const link = card.getAttribute('href');
+        if (link && link.includes('project-lift')) {
+          caseStudies['project-lift'].element = card;
+        } else if (link && link.includes('productoperations')) {
+          caseStudies['ai-feature-catalog'].element = card;
+        }
+      });
+
+      // Setup stack region interactions
+      const regions = document.querySelectorAll('.stack-region');
+      const tooltip = document.getElementById('stackTooltip');
+
+      regions.forEach(region => {
+        region.addEventListener('mouseenter', function() {
+          const focus = this.getAttribute('data-focus');
+          const data = stackData[focus];
+          
+          if (data) {
+            tooltip.innerHTML = `<strong>Focus:</strong> ${data.label}`;
+            
+            // Highlight related case studies
+            Object.keys(caseStudies).forEach(key => {
+              if (caseStudies[key].element) {
+                if (data.cases.includes(key)) {
+                  caseStudies[key].element.classList.add('highlighted');
+                } else {
+                  caseStudies[key].element.classList.remove('highlighted');
+                }
+              }
+            });
+          }
+        });
+
+        region.addEventListener('mouseleave', function() {
+          tooltip.innerHTML = '';
+          Object.keys(caseStudies).forEach(key => {
+            if (caseStudies[key].element) {
+              caseStudies[key].element.classList.remove('highlighted');
+            }
+          });
+        });
+      });
+    });
+  </script>
 </body>
 </html>
