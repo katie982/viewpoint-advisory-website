@@ -43,6 +43,49 @@
     h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4.8vw, 3.8rem); line-height: 1.15; font-weight: 300; }
     h1 em { color: var(--accent); font-style: italic; }
     .intro { margin-top: 1.25rem; max-width: 760px; color: var(--warm-grey); }
+    .overview {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 2.5rem 4rem 0;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 1.4rem;
+    }
+    .overview-card {
+      border: 1px solid var(--stone);
+      background: var(--warm-white);
+      padding: 1.4rem;
+    }
+    .overview-card h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      line-height: 1.2;
+      font-weight: 300;
+      margin-bottom: 0.75rem;
+    }
+    .overview-card p { color: var(--warm-grey); margin-bottom: 0.75rem; }
+    .overview-card p:last-child { margin-bottom: 0; }
+    .overview-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      color: var(--warm-grey);
+    }
+    .overview-list li {
+      display: flex;
+      gap: 0.6rem;
+      align-items: flex-start;
+    }
+    .overview-list li::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+      margin-top: 0.6em;
+      flex-shrink: 0;
+    }
     .grid {
       max-width: 1300px;
       margin: 0 auto;
@@ -65,13 +108,43 @@
       margin-top: auto;
     }
     .link:hover { color: var(--charcoal); }
+    .faq {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 4rem 4rem;
+    }
+    .faq-wrap {
+      border: 1px solid var(--stone);
+      background: var(--warm-white);
+      padding: 1.4rem;
+    }
+    .faq-wrap h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      line-height: 1.2;
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+    .faq-item { margin-bottom: 1rem; }
+    .faq-item:last-child { margin-bottom: 0; }
+    .faq-item h3 {
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 400;
+      color: var(--accent);
+      margin-bottom: 0.35rem;
+    }
+    .faq-item p { color: var(--warm-grey); }
     footer { border-top: 1px solid var(--stone); padding: 1.8rem 4rem; color: var(--warm-grey); font-size: 0.8rem; }
     @media (max-width: 1050px) { .grid { grid-template-columns: repeat(2, minmax(240px, 1fr)); } }
     @media (max-width: 960px) {
       nav { padding: 1rem 1.25rem; }
       .nav-links { gap: 0.8rem; flex-wrap: wrap; justify-content: flex-end; }
       header { padding: 4rem 1.25rem 2rem; }
+      .overview { grid-template-columns: 1fr; padding: 2rem 1.25rem 0; }
       .grid { grid-template-columns: 1fr; padding: 2rem 1.25rem; }
+      .faq { padding: 0 1.25rem 2.5rem; }
       footer { padding: 1.5rem 1.25rem; }
     }
   </style>
@@ -93,6 +166,23 @@
     <h1>Execution proof, not just <em>strategy claims</em>.</h1>
     <p class="intro">These examples show how operating model design, leadership alignment, and AI-ready infrastructure translated into measurable business outcomes.</p>
   </header>
+
+  <section class="overview">
+    <article class="overview-card">
+      <h2>What you'll find in these case studies</h2>
+      <p>Each case study documents the before state, intervention design, and measurable outcomes. The goal is practical transparency: how strategic decisions were translated into execution systems teams could actually run.</p>
+      <p>Rather than describing generic frameworks, these examples show operating model decisions under real constraints: missed revenue targets, unclear ownership, cross-functional friction, and compressed timelines.</p>
+    </article>
+    <article class="overview-card">
+      <h2>Common patterns across engagements</h2>
+      <ul class="overview-list">
+        <li>Tight linkage between strategy, role design, and execution rhythms</li>
+        <li>Decision architecture that reduces bottlenecks across teams</li>
+        <li>Delivery playbooks that make outcomes repeatable and scalable</li>
+        <li>Metrics tied to commercial and operational impact, not activity</li>
+      </ul>
+    </article>
+  </section>
 
   <main class="grid">
     <article class="card">
@@ -116,6 +206,24 @@
       <a class="link" href="contact.html">Ask About Relevant Work</a>
     </article>
   </main>
+
+  <section class="faq">
+    <div class="faq-wrap">
+      <h2>Case Study FAQ</h2>
+      <article class="faq-item">
+        <h3>How are outcomes measured?</h3>
+        <p>Outcomes are measured against business-critical baselines: revenue conversion, cycle-time reduction, delivery predictability, and operating capacity. Each engagement defines explicit before-and-after conditions so impact can be traced to intervention choices.</p>
+      </article>
+      <article class="faq-item">
+        <h3>Are these strategic or operational engagements?</h3>
+        <p>They are both. The work starts with strategic clarity and then moves into operating mechanics: role architecture, governance, process design, and team execution cadence. Strategy is treated as a system design problem, not a slide deck output.</p>
+      </article>
+      <article class="faq-item">
+        <h3>What kinds of teams are these examples most relevant to?</h3>
+        <p>Growth-stage organizations scaling quickly, cross-functional teams with high dependency risk, and leadership groups trying to convert product or AI potential into repeatable delivery outcomes.</p>
+      </article>
+    </div>
+  </section>
 
   <footer>
     <p>© 2026 Viewpoint Advisory Group, LLC. All rights reserved.</p>
