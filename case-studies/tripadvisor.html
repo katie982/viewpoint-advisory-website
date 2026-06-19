@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Case Study — Wanderly | Viewpoint Advisory Group</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Montserrat:wght@200;400&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:        #f8f6f0;
+      --warm-white:   #ffffff;
+      --stone:        #e4e0d4;
+      --taupe:        #c0b89e;
+      --charcoal:     #1e2820;
+      --warm-grey:    #5a6855;
+      --accent:       #4a6845;
+      --accent-light: #7a9875;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background-color: var(--cream);
+      color: var(--charcoal);
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    /* ── TOP BAR ── */
+    .topbar {
+      background: var(--charcoal);
+      padding: 1.25rem 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .topbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .topbar-logo {
+      height: 64px;
+      width: auto;
+      display: block;
+      opacity: 0.95;
+    }
+    .topbar-lockup {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.05rem;
+      line-height: 1;
+    }
+    .topbar-lockup-vp {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--cream);
+      line-height: 1.1;
+      text-align: center;
+      white-space: nowrap;
+    }
+    .topbar-lockup-ag {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.6rem;
+      font-weight: 200;
+      letter-spacing: 0.40em;
+      text-transform: uppercase;
+      color: var(--stone);
+      line-height: 1;
+      text-align: center;
+    }
+    .topbar-back {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: var(--taupe);
+      text-decoration: none;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .topbar-back:hover { color: var(--accent-light); }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--charcoal);
+      padding: 5rem 4rem 4rem;
+      border-bottom: 1px solid rgba(192,184,158,0.12);
+    }
+    .eyebrow {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 400;
+      color: var(--accent-light);
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    .hero-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+      font-weight: 300;
+      color: var(--cream);
+      line-height: 1.15;
+      max-width: 860px;
+      margin-bottom: 1.75rem;
+    }
+    .hero-headline em {
+      font-style: italic;
+      color: var(--accent-light);
+    }
+    .hero-meta {
+      display: flex;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+    .meta-label {
+      font-size: 0.68rem;
+      font-weight: 400;
+      color: var(--warm-grey);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+    .meta-value {
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: var(--taupe);
+    }
+
+    /* ── OUTCOME BAR ── */
+    .outcome-bar {
+      background: var(--accent);
+      padding: 2rem 4rem;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+    .outcome-bar-label {
+      font-size: 0.68rem;
+      font-weight: 400;
+      color: rgba(248,246,240,0.6);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .outcome-bar-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.1rem, 2vw, 1.45rem);
+      font-weight: 300;
+      color: var(--cream);
+      line-height: 1.4;
+      font-style: italic;
+    }
+
+    /* ── MAIN CONTENT ── */
+    .content {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 5rem 4rem;
+    }
+    .section-block { margin-bottom: 3.5rem; }
+
+    .section-label {
+      font-size: 0.68rem;
+      font-weight: 400;
+      color: var(--accent);
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin-bottom: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 1px;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .section-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 300;
+      color: var(--charcoal);
+      line-height: 1.25;
+      margin-bottom: 1.25rem;
+    }
+    .section-heading em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    p {
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--charcoal);
+      line-height: 1.75;
+      margin-bottom: 1rem;
+    }
+    p:last-child { margin-bottom: 0; }
+
+    /* ── ACTION LIST ── */
+    .action-list {
+      list-style: none;
+      margin-top: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+    .action-list li {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--charcoal);
+      line-height: 1.65;
+    }
+    .action-list li::before {
+      content: '';
+      display: block;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+      margin-top: 0.6em;
+      flex-shrink: 0;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--stone);
+      margin: 3.5rem 0;
+    }
+
+    /* ── METRIC CALLOUT ── */
+    .metric-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5px;
+      background: var(--stone);
+      border: 1.5px solid var(--stone);
+      margin: 2.5rem 0;
+    }
+    .metric-cell {
+      background: var(--cream);
+      padding: 1.75rem 1.5rem;
+    }
+    .metric-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.6rem;
+      font-weight: 300;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+    .metric-label {
+      font-size: 0.7rem;
+      font-weight: 400;
+      color: var(--warm-grey);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+    .metric-desc {
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: var(--warm-grey);
+      line-height: 1.6;
+    }
+
+    /* ── PULL QUOTE ── */
+    .pull-quote {
+      border-left: 3px solid var(--accent);
+      padding: 1.5rem 2rem;
+      margin: 2.5rem 0;
+      background: rgba(74,104,69,0.04);
+    }
+    .pull-quote p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.2rem, 2vw, 1.55rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--charcoal);
+      line-height: 1.5;
+      margin-bottom: 0.75rem;
+    }
+    .pull-quote cite {
+      font-size: 0.78rem;
+      font-weight: 400;
+      color: var(--warm-grey);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-style: normal;
+    }
+
+    /* ── CTA FOOTER ── */
+    .cta-footer {
+      background: var(--stone);
+      padding: 4rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1.5rem;
+    }
+    .cta-footer .eyebrow { color: var(--accent); margin-bottom: 0; }
+    .cta-footer h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 300;
+      color: var(--charcoal);
+      line-height: 1.25;
+    }
+    .cta-footer h3 em { font-style: italic; color: var(--accent); }
+    .cta-footer p { color: var(--warm-grey); max-width: 480px; font-size: 0.95rem; margin: 0; }
+    .cta-btn {
+      display: inline-block;
+      background: var(--charcoal);
+      color: var(--cream);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.85rem 2.25rem;
+      transition: background 0.2s;
+    }
+    .cta-btn:hover { background: var(--accent); }
+
+    /* ── SITE FOOTER ── */
+    .site-footer {
+      background: var(--charcoal);
+      border-top: 1px solid rgba(192,184,158,0.12);
+      padding: 2.5rem 4rem;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .site-footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+    .site-footer-lockup {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.02rem;
+      line-height: 1;
+    }
+    .site-footer-lockup-vp {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--cream);
+      line-height: 1.1;
+      text-align: center;
+      white-space: nowrap;
+    }
+    .site-footer-lockup-ag {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.36rem;
+      font-weight: 200;
+      letter-spacing: 0.40em;
+      text-transform: uppercase;
+      color: var(--stone);
+      line-height: 1;
+      text-align: center;
+    }
+    .site-footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      align-items: center;
+    }
+    .site-footer-links a {
+      font-size: 0.78rem;
+      font-weight: 300;
+      color: var(--taupe);
+      text-decoration: none;
+      letter-spacing: 0.06em;
+      transition: color 0.2s;
+    }
+    .site-footer-links a:hover { color: var(--accent-light); }
+    .site-footer-copy {
+      font-size: 0.72rem;
+      font-weight: 300;
+      color: var(--warm-grey);
+      letter-spacing: 0.06em;
+      text-align: right;
+    }
+
+    /* Stats row — forest green band to differentiate from dark hero */
+    .stats-row {
+      background: var(--accent);
+      padding: 3.5rem 4rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .stat-item {
+      padding: 1.5rem 0;
+      border-top: 1px solid rgba(192,184,158,0.22);
+    }
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      font-weight: 400;
+      color: var(--cream);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+    .stat-number .suffix {
+      font-size: 2rem;
+      color: var(--cream);
+      opacity: 0.7;
+    }
+    .stat-label {
+      font-size: 0.68rem;
+      font-weight: 400;
+      color: var(--cream);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+      opacity: 0.85;
+    }
+    .stat-desc {
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: var(--cream);
+      line-height: 1.7;
+      opacity: 0.78;
+    }
+
+    @media print {
+      .topbar-back, .cta-footer { display: none; }
+      .topbar { padding: 1rem 2rem; }
+      .hero, .content, .stats-row { padding-left: 2rem; padding-right: 2rem; }
+      .outcome-bar { padding: 1.25rem 2rem; }
+    }
+
+    @media (max-width: 700px) {
+      .topbar, .hero, .content, .outcome-bar, .stats-row, .cta-footer { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .hero { padding-top: 3rem; }
+      .stats-row { grid-template-columns: 1fr; }
+      .hero-meta { gap: 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <header class="topbar">
+    <div class="topbar-brand">
+      <span class="topbar-lockup"><span class="topbar-lockup-vp">VIEWPOINT</span><span class="topbar-lockup-ag">ADVISORY GROUP</span></span>
+    </div>
+    <a href="../case-studies.html" class="topbar-back">← All Case Studies</a>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <p class="eyebrow">Vision &nbsp;·&nbsp; Travel Tech &nbsp;·&nbsp; Organizational Strategy</p>
+    <h1 class="hero-headline">The problem wasn't strategy. <em>It was that nobody agreed what the strategy was.</em></h1>
+    <div class="hero-meta">
+      <div class="meta-item">
+        <span class="meta-label">Company Size</span>
+        <span class="meta-value">1000+ employees</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Stage</span>
+        <span class="meta-value">Public Company</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Industry</span>
+        <span class="meta-value">Travel Technology</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Focus</span>
+        <span class="meta-value">Strategic Planning</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS ROW -->
+  <div class="stats-row">
+    <div class="stat-item">
+      <div class="stat-number">100<span class="suffix">%</span></div>
+      <p class="stat-stat-label">Objectives Met</p>
+      <p class="stat-desc">100% of attendees agreed the off-site achieved its goals. The entire cross-functional leadership team left with a shared understanding.</p>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">1<span class="suffix">st</span></div>
+      <p class="stat-stat-label">Unified Strategy</p>
+      <p class="stat-desc">For the first time, the team had explicit clarity on customer priorities, value proposition, and investment decisions they'd made together.</p>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">83<span class="suffix">%</span></div>
+      <p class="stat-stat-label">Want to Repeat</p>
+      <p class="stat-desc">83% of attendees wanted to run facilitated strategy sessions at least every six months — making this approach a model for how they'd work forward.</p>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main class="content">
+
+    <!-- SITUATION -->
+    <div class="section-block">
+      <p class="section-label">The Situation</p>
+      <h2 class="section-heading">The vacation rentals business was losing ground — and the team didn't have a shared view of <em>why.</em></h2>
+      <p>Wanderly's Vacation Rentals business was under real pressure. Site traffic was down 13% year-over-year. Bookings had declined 33–37% YoY across every booking type. Only 18% of available listings had received a booking that year — despite nearly one million properties on platform. Competitors were pulling ahead.</p>
+      <p>The harder problem wasn't the numbers. It was that a newly restructured, cross-functional product team — spanning product management, engineering, design, analytics, SEO, supply, and customer success — had never had dedicated time to align on the business, the customer, or a shared direction for the year ahead. They were executing, but not toward a common vision.</p>
+      <p>There was no shortage of smart people with opinions about what to fix. What was missing was a structured process to get those opinions into the room, surface the real blockers, and turn a list of problems into a strategy the whole team could own.</p>
+    </div>
+
+    <!-- BEFORE STATE METRICS -->
+    <div class="metric-row">
+      <div class="metric-cell">
+        <div class="metric-number">-13<span class="suffix">%</span></div>
+        <div class="metric-label">Year-over-year</div>
+        <div class="metric-desc">Site traffic decline</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-number">-33<span class="suffix">%</span></div>
+        <div class="metric-label">Year-over-year</div>
+        <div class="metric-desc">Booking decline across all types</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-number">18<span class="suffix">%</span></div>
+        <div class="metric-label">Listings with bookings</div>
+        <div class="metric-desc">Of nearly 1M properties on platform</div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- INTERVENTION -->
+    <div class="section-block">
+      <p class="section-label">The Intervention</p>
+      <h2 class="section-heading">Three days in Oxford. One goal: leave with <em>a strategy the team actually built together.</em></h2>
+      <p>The off-site was designed and led as a structured facilitation — not a leadership presentation with Q&A, but a genuine working session in which the cross-functional team would diagnose the business, explore the opportunity space, and converge on priorities together. The design choices were deliberate:</p>
+      <ul class="action-list">
+        <li>Commissioned and compiled a comprehensive pre-read — a current state assessment covering KPIs, competitive landscape, customer research, and brand health — distributed in advance so the team arrived informed, not catching up</li>
+        <li>Built a 3-day agenda sequenced from current-state reflection → opportunity exploration → prioritization and ownership, so the team moved through divergence to convergence rather than generating ideas without resolution</li>
+        <li>Designed break-out sessions around specific customer and business questions — traffic acquisition, loyalty, supply utilization, platform ecosystem integration, data science — each grounded in a clear problem statement with a designated owner</li>
+        <li>Facilitated a brand exploration session to surface and challenge assumptions about the VR value proposition and whether the existing multi-brand architecture was serving or undermining the business</li>
+      </ul>
+    </div>
+
+    <hr class="divider">
+
+    <!-- OUTCOMES -->
+    <div class="section-block">
+      <p class="section-label">The Outcome</p>
+      <h2 class="section-heading">A team that arrived with questions left with <em>a shared strategy and the ownership to execute it.</em></h2>
+      <p>The post-event survey told a clear story: 100% of the 18 attendees agreed the off-site met its objectives. Not a single person was dissatisfied — with the structure, the session topics, the facilitation, or the event overall. 61% were "very satisfied" overall; 55% "strongly agreed" the event was well-structured.</p>
+      <p>More importantly, the team left with what they came for: a shared diagnosis of the business, a prioritized set of opportunity areas with clear owners, and the cross-functional relationships needed to execute faster. The open strategic questions — who is our customer, what is our value proposition, where should we invest — moved from unspoken assumptions to explicit choices the team had made together.</p>
+      <p>The format itself became a model. 83% of attendees said they wanted sessions like this at least every six months — and the structured approach to pre-reads, facilitated divergence, and ownership mapping carried forward into how the vacation rentals product team ran strategy work going forward.</p>
+    </div>
+
+    <!-- PULL QUOTES -->
+    <blockquote class="pull-quote">
+      <p>"I was impressed with the organization, thought and preparation put into the event — from the pre-read deck to the brainstorm sessions."</p>
+      <cite>Off-site Participant, VR Strategy Team</cite>
+    </blockquote>
+
+    <blockquote class="pull-quote">
+      <p>"The structure and agenda were perfect for the group size. The breadth of people and backgrounds was a strong contribution to making the presentations and discussions very valuable."</p>
+      <cite>Off-site Participant, VR Strategy Team</cite>
+    </blockquote>
+
+  </main>
+
+  <!-- CTA FOOTER -->
+  <section class="cta-footer">
+    <span class="eyebrow">Let's talk</span>
+    <h3>Your leadership team executing without a shared direction? <em>Let's change that.</em></h3>
+    <p>If your leadership team is executing without a shared direction, let's talk about what it would take to change that.</p>
+    <a href="mailto:katie@viewpointadvisorygroup.com" class="cta-btn">Start a Conversation</a>
+  </section>
+
+  <!-- SITE FOOTER -->
+  <footer class="site-footer">
+    <div class="site-footer-brand">
+      <div class="site-footer-lockup">
+        <span class="site-footer-lockup-vp">Viewpoint</span>
+        <span class="site-footer-lockup-ag">Advisory Group</span>
+      </div>
+    </div>
+    <nav class="site-footer-links">
+      <a href="../index.html">Home</a>
+      <a href="../case-studies.html">Case Studies</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+    <div class="site-footer-copy">&copy; 2024 Viewpoint Advisory Group</div>
+  </footer>
+
+</body>
+</html>
