@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Systems Diagnostic | Viewpoint Advisory Group</title>
+  <meta name="description" content="The Systems Diagnostic: a structured assessment across the Viewpoint Stack that tells you exactly where the system is breaking down — and what to fix first." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://viewpointadvisorygroup.com/services/systems-diagnostic.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="The Systems Diagnostic | Viewpoint Advisory Group" />
+  <meta property="og:description" content="A structured diagnostic across the Viewpoint Stack that pinpoints exactly where the system is breaking down — and what to fix first." />
+  <meta property="og:url" content="https://viewpointadvisorygroup.com/services/systems-diagnostic.html" />
+  <meta property="og:image" content="https://viewpointadvisorygroup.com/headshot.jpeg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Systems Diagnostic | Viewpoint Advisory Group" />
+  <meta name="twitter:description" content="A structured diagnostic across the Viewpoint Stack that pinpoints exactly where the system is breaking down — and what to fix first." />
+  <meta name="twitter:image" content="https://viewpointadvisorygroup.com/headshot.jpeg" />
+  <link rel="icon" type="image/png" href="../assets/favicon.png?v=5" />
+  <link rel="shortcut icon" href="../favicon.ico?v=5" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=DM+Sans:wght@300;400;500&family=Montserrat:wght@200;400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #f8f6f0; --warm-white: #ffffff; --stone: #e4e0d4; --taupe: #c0b89e;
+      --charcoal: #1e2820; --warm-grey: #5a6855; --accent: #4a6845; --accent-light: #7a9875;
+    }
+    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--charcoal); line-height: 1.7; font-weight: 300; }
+
+    nav {
+      position: sticky; top: 0; z-index: 10; display: flex; justify-content: space-between; align-items: center;
+      padding: 1.25rem 4rem; border-bottom: 1px solid var(--stone); background: rgba(248,246,240,0.94); backdrop-filter: blur(8px);
+    }
+    .brand { text-decoration: none; color: var(--charcoal); font-family: 'Montserrat', sans-serif; font-size: 1rem; letter-spacing: 0.14em; text-transform: uppercase; }
+    .nav-links { list-style: none; display: flex; gap: 1.6rem; }
+    .nav-links a { text-decoration: none; color: var(--warm-grey); font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 400; }
+    .nav-links a.active, .nav-links a:hover { color: var(--charcoal); }
+
+    .breadcrumb { max-width: 1300px; margin: 0 auto; padding: 1.25rem 4rem 0; font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--warm-grey); font-weight: 400; }
+    .breadcrumb a { color: var(--warm-grey); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.2s, border-bottom-color 0.2s; }
+    .breadcrumb a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+    .breadcrumb .sep { color: var(--taupe); margin: 0 0.5rem; }
+
+    header { padding: 4rem 4rem 4rem; background: var(--charcoal); border-bottom: 1px solid rgba(192,184,158,0.18); }
+    .hero-inner { max-width: 1300px; margin: 0 auto; padding: 0; }
+    .service-num-hero {
+      font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--accent-light); font-weight: 400; margin-bottom: 0.5rem; letter-spacing: 0.05em;
+    }
+    h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.6rem, 5.4vw, 4.2rem); line-height: 1.1; font-weight: 300; color: var(--cream); margin-bottom: 1rem; }
+    h1 em { color: var(--accent-light); font-style: italic; }
+    .hero-subtitle { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-style: italic; color: var(--cream); opacity: 0.8; margin-bottom: 1.5rem; }
+    .stack-badges { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .stack-badge {
+      font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--cream);
+      background: rgba(248,246,240,0.10); border: 1px solid rgba(248,246,240,0.30); padding: 0.4rem 0.7rem;
+      font-weight: 500; line-height: 1.2;
+    }
+
+    section.section { max-width: 1300px; margin: 0 auto; padding: 3.5rem 4rem; }
+    section.section:not(:last-child) { border-bottom: 1px solid var(--stone); }
+    .section-eyebrow { font-size: 0.7rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.8rem; font-weight: 400; }
+    .section-headline {
+      font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+      line-height: 1.2; font-weight: 300; color: var(--charcoal); max-width: 800px; margin-bottom: 1.25rem;
+    }
+    .section-headline em { color: var(--accent); font-style: italic; }
+    .section-body { color: var(--charcoal); max-width: 760px; font-size: 1.02rem; }
+    .section-body.muted { color: var(--warm-grey); }
+    .section-body em { color: var(--accent); font-style: italic; }
+    .fit-card a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(74,104,69,0.35); transition: border-bottom-color 0.2s; }
+    .fit-card a:hover { border-bottom-color: var(--accent); }
+
+    .three-blocks { display: grid; gap: 2.5rem; }
+    .block { display: grid; grid-template-columns: 220px 1fr; gap: 2.5rem; align-items: start; padding-top: 2rem; border-top: 1px solid var(--stone); }
+    .block:first-child { border-top: none; padding-top: 0; }
+    .block-label { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-style: italic; color: var(--accent); font-weight: 400; line-height: 1.3; }
+    .block-body { color: var(--charcoal); font-size: 1.02rem; line-height: 1.7; max-width: 760px; }
+    .block-body.outcome { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-style: italic; color: var(--accent); line-height: 1.4; font-weight: 400; }
+
+    .timeline { list-style: none; display: grid; gap: 0; counter-reset: phase; margin-top: 1.5rem; }
+    .timeline li { counter-increment: phase; display: grid; grid-template-columns: 4.5rem 220px 1fr; gap: 1.75rem; padding: 1.75rem 0; border-top: 1px solid var(--stone); align-items: start; }
+    .timeline li:first-child { border-top: none; padding-top: 1rem; }
+    .timeline li:last-child { padding-bottom: 0.5rem; }
+    .timeline li::before { content: counter(phase, decimal-leading-zero); font-family: 'Cormorant Garamond', serif; font-size: 2.6rem; line-height: 1; color: var(--accent); font-weight: 300; padding-top: 0.2rem; }
+    .timeline .phase-meta { font-size: 0.66rem; letter-spacing: 0.20em; text-transform: uppercase; color: var(--warm-grey); font-weight: 500; padding-top: 0.4rem; }
+    .timeline .phase-title { font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 1.05rem; color: var(--charcoal); margin-bottom: 0.5rem; line-height: 1.4; }
+    .timeline .phase-body { color: var(--warm-grey); font-size: 0.97rem; line-height: 1.7; }
+
+    .fit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1.5rem; }
+    .fit-card { border: 1px solid var(--stone); background: var(--warm-white); padding: 1.75rem; }
+    .fit-card.yes { border-left: 3px solid var(--accent); }
+    .fit-card.no  { border-left: 3px solid var(--taupe); }
+    .fit-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; font-weight: 400; color: var(--charcoal); margin-bottom: 1rem; line-height: 1.3; }
+    .fit-card ul { list-style: none; display: grid; gap: 0.55rem; }
+    .fit-card li { color: var(--warm-grey); padding-left: 1.5rem; position: relative; font-size: 0.95rem; line-height: 1.55; }
+    .fit-card.yes li::before { content: '✓'; position: absolute; left: 0; color: var(--accent); font-weight: 500; }
+    .fit-card.no li::before  { content: '—'; position: absolute; left: 0; color: var(--taupe); }
+
+    .faq-list { display: grid; gap: 1.25rem; margin-top: 1.5rem; }
+    .faq-item { border-top: 1px solid var(--stone); padding-top: 1.25rem; }
+    .faq-item:first-child { border-top: none; padding-top: 0; }
+    .faq-item h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 400; color: var(--charcoal); margin-bottom: 0.5rem; line-height: 1.3; }
+    .faq-item p { color: var(--warm-grey); font-size: 0.98rem; }
+
+    .closing-cta { max-width: 1300px; margin: 0 auto; padding: 4rem 4rem 5rem; text-align: center; }
+    .closing-cta h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3.2vw, 2.6rem); line-height: 1.2; font-weight: 300; color: var(--charcoal); margin-bottom: 1rem; max-width: 640px; margin-inline: auto; }
+    .closing-cta h2 em { color: var(--accent); font-style: italic; }
+    .closing-cta p { color: var(--warm-grey); max-width: 560px; margin: 0 auto 2rem; }
+    .closing-cta a.btn { display: inline-block; background: var(--charcoal); color: var(--cream); padding: 1rem 2.2rem; text-decoration: none; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 500; transition: background-color 0.2s; }
+    .closing-cta a.btn:hover { background: var(--accent); }
+
+    footer { border-top: 1px solid var(--stone); padding: 1.8rem 4rem; color: var(--warm-grey); font-size: 0.8rem; }
+
+    @media (max-width: 960px) {
+      nav { padding: 1rem 1.25rem; }
+      .nav-links { gap: 0.8rem; flex-wrap: wrap; justify-content: flex-end; }
+      .breadcrumb { padding: 1rem 1.25rem 0; }
+      header { padding: 3rem 1.25rem 3rem; }
+      section.section { padding: 2.5rem 1.25rem; }
+      .block { grid-template-columns: 1fr; gap: 0.75rem; padding-top: 1.5rem; }
+      .timeline li { grid-template-columns: 3rem 1fr; gap: 1rem; padding: 1.5rem 0; }
+      .timeline .phase-meta { display: none; }
+      .timeline li::before { font-size: 2rem; }
+      .fit-grid { grid-template-columns: 1fr; }
+      .closing-cta { padding: 3rem 1.25rem 3.5rem; }
+      footer { padding: 1.5rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="brand" href="../index.html">Viewpoint Advisory Group</a>
+    <ul class="nav-links">
+      <li><a href="../about.html">About Me</a></li>
+      <li><a class="active" href="../services.html">Services</a></li>
+      <li><a href="../framework.html">The Framework</a></li>
+      <li><a href="../case-studies.html">Case Studies</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <p class="breadcrumb">
+    <a href="../services.html">Services</a><span class="sep">&middot;</span><span>02 &mdash; The Systems Diagnostic</span>
+  </p>
+
+  <header>
+    <div class="hero-inner">
+      <p class="service-num-hero">02</p>
+      <h1>The Systems Diagnostic</h1>
+      <p class="hero-subtitle">Across the Viewpoint Stack&trade;</p>
+      <div class="stack-badges">
+        <span class="stack-badge">Vision</span>
+        <span class="stack-badge">Alignment</span>
+        <span class="stack-badge">Organizational Clarity</span>
+        <span class="stack-badge">Operational Infrastructure</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- WHAT THIS ENGAGEMENT IS -->
+  <section class="section">
+    <p class="section-eyebrow">The Engagement</p>
+    <h2 class="section-headline">A structured assessment that tells you <em>exactly where the system is breaking down</em> &mdash; and what to fix first.</h2>
+    <div class="three-blocks">
+      <div class="block">
+        <p class="block-label">The Problem I Solve</p>
+        <p class="block-body">Something feels broken &mdash; but you can't tell whether it's the strategy, the structure, the process, or the people. You're making changes that don't stick, debating root cause without getting anywhere, and watching the same friction surface in new clothes every quarter.</p>
+      </div>
+      <div class="block">
+        <p class="block-label">What I Do</p>
+        <p class="block-body">I run a structured diagnostic across your Vision, Alignment, Organizational Clarity, and Operational Infrastructure to identify exactly where the disconnects are &mdash; and recommend the highest-leverage interventions, ranked by impact and effort.</p>
+      </div>
+      <div class="block">
+        <p class="block-label">What You Walk Away With</p>
+        <p class="block-body outcome">A clear picture of what's actually broken, prioritized by impact &mdash; and a roadmap your team can act on.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="section">
+    <p class="section-eyebrow">How It Unfolds</p>
+    <h2 class="section-headline">An outside read on <em>how your system actually runs.</em></h2>
+    <p class="section-body muted">Every diagnostic is shaped to your context &mdash; which parts of the Stack to focus on, who to interview, how deep to go &mdash; so the timing and emphasis shift accordingly. What follows is what a <em>typical</em> Systems Diagnostic looks like, roughly 3&ndash;6 weeks, not a fixed plan you'd be locked into.</p>
+    <ol class="timeline">
+      <li>
+        <p class="phase-meta">Week 1</p>
+        <div>
+          <p class="phase-title">Scope + stakeholder map.</p>
+          <p class="phase-body">Calibrate which parts of the Stack to interrogate first based on your hypothesis of what's wrong &mdash; and map who needs to be interviewed (leadership, mid-level managers, sometimes ICs) to triangulate the answer.</p>
+        </div>
+      </li>
+      <li>
+        <p class="phase-meta">Weeks 1&ndash;2</p>
+        <div>
+          <p class="phase-title">Listen to leaders.</p>
+          <p class="phase-body">1:1 conversations (30&ndash;60 minutes each) with leadership team members to surface how each person experiences the system &mdash; what's working, what's not, where they think the breakdowns are &mdash; and where they disagree with each other.</p>
+        </div>
+      </li>
+      <li>
+        <p class="phase-meta">Weeks 2&ndash;4</p>
+        <div>
+          <p class="phase-title">Observe the system in motion.</p>
+          <p class="phase-body">Shadow existing operating moments (standups, planning meetings, decision moments) and review the artifacts that hold the system together &mdash; org chart, OKRs, dashboards, role descriptions, meeting cadences, decision frameworks. Looking for gaps, contradictions, and orphaned ownership.</p>
+        </div>
+      </li>
+      <li>
+        <p class="phase-meta">Weeks 3&ndash;5</p>
+        <div>
+          <p class="phase-title">Synthesize against the Stack.</p>
+          <p class="phase-body">Map findings to the four layers of the Viewpoint Stack: where each layer is strong, where it's load-bearing for something it can't support, and where the cracks are. Separates symptoms from root causes.</p>
+        </div>
+      </li>
+      <li>
+        <p class="phase-meta">Weeks 5&ndash;6</p>
+        <div>
+          <p class="phase-title">Readout + prioritized roadmap.</p>
+          <p class="phase-body">A working session with your leadership team to walk through the findings &mdash; plus a written roadmap of interventions ranked by impact and effort, with my recommendation on what to tackle first and what to leave alone.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- BEST FIT -->
+  <section class="section">
+    <p class="section-eyebrow">Is This a Fit?</p>
+    <h2 class="section-headline">This works best for leaders who <em>suspect something is wrong</em> &mdash; and want a clearer picture before they commit to a fix.</h2>
+    <div class="fit-grid">
+      <div class="fit-card yes">
+        <h3>Best fit for you if&hellip;</h3>
+        <ul>
+          <li>You're scaling and something stopped working &mdash; but it's not obvious what</li>
+          <li>You've made changes (reorgs, new processes, new tools) that didn't produce the change you expected</li>
+          <li>Your leadership team is debating root cause and getting nowhere</li>
+          <li>You're considering a major investment (hiring, restructuring, system replacement) and want a clearer picture before committing</li>
+          <li>You want an outside view from someone who isn't trying to sell you a particular solution</li>
+        </ul>
+      </div>
+      <div class="fit-card no">
+        <h3>Probably not for you if&hellip;</h3>
+        <ul>
+          <li>You already know what's broken and are ready to fix it &mdash; you might need <a href="the-build.html">The Build</a> instead</li>
+          <li>You're heading into strategic planning and need shared direction &mdash; <a href="strategic-reset.html">The Strategic Reset</a> is the better starting point</li>
+          <li>You want validation of an existing plan rather than a genuine outside read</li>
+          <li>You're not prepared to act on what the diagnostic surfaces &mdash; this isn't a desk drawer document</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <p class="section-eyebrow">Common Questions</p>
+    <h2 class="section-headline">What leaders usually want to know before they sign on.</h2>
+    <div class="faq-list">
+      <article class="faq-item">
+        <h3>What's the deliverable?</h3>
+        <p>A diagnostic readout session with your leadership team (typically 60&ndash;90 minutes) plus a written roadmap document. The roadmap covers what I observed, how it maps to the Viewpoint Stack, the prioritized list of interventions, and a clear recommendation on sequencing.</p>
+      </article>
+      <article class="faq-item">
+        <h3>How disruptive is this to my team?</h3>
+        <p>Light. The bulk of the work is 1:1 conversations (30&ndash;60 minutes each), some shadow time in your existing meetings (no extra meetings created), and document review I do on my own time. Most leaders describe it as "didn't really notice it was happening."</p>
+      </article>
+      <article class="faq-item">
+        <h3>Will this turn into a Build engagement?</h3>
+        <p>Sometimes. The diagnostic is designed to stand alone &mdash; the roadmap is yours to execute however you want. If the roadmap surfaces work I'm well-suited to lead, we can scope <a href="the-build.html">The Build</a> separately. But there's no obligation, and I'd rather be honest about whether someone else is a better fit than push for the next engagement.</p>
+      </article>
+      <article class="faq-item">
+        <h3>What if the issue isn't what I thought it was?</h3>
+        <p>That's actually the most common outcome. Most diagnostics surface a different root cause than the leader expected coming in &mdash; which is exactly why an outside read is useful. You'll end the engagement with a sharper diagnosis than the one you walked in with.</p>
+      </article>
+      <article class="faq-item">
+        <h3>Do you talk to people outside the leadership team?</h3>
+        <p>When useful, yes. I'll often interview a small sample of mid-level managers or individual contributors to triangulate what leadership tells me &mdash; but only with your buy-in and with clear framing of what's being asked and why. Confidentiality is the default; nothing is reported back attributable unless you and I agree it should be.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="closing-cta">
+    <h2>Suspect something's broken &mdash; but <em>can't pinpoint what?</em></h2>
+    <p>If you're making changes that don't stick or debating root cause without resolution, a structured diagnostic can give you a clearer picture before you commit to a fix.</p>
+    <a href="../contact.html?service=systems-diagnostic" class="btn">Let's Talk</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Viewpoint Advisory Group, LLC. All rights reserved.</p>
+  </footer>
+</body>
+</html>

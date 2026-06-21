@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Strategic Reset | Viewpoint Advisory Group</title>
+  <meta name="description" content="The Strategic Reset: a facilitated engagement that aligns your leadership team on a clear vision, measurable outcomes, and the operating cadence to keep the plan alive." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://viewpointadvisorygroup.com/services/strategic-reset.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="The Strategic Reset | Viewpoint Advisory Group" />
+  <meta property="og:description" content="A facilitated engagement that aligns your leadership team on a clear vision, measurable outcomes, and the operating cadence to keep the plan alive." />
+  <meta property="og:url" content="https://viewpointadvisorygroup.com/services/strategic-reset.html" />
+  <meta property="og:image" content="https://viewpointadvisorygroup.com/headshot.jpeg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Strategic Reset | Viewpoint Advisory Group" />
+  <meta name="twitter:description" content="A facilitated engagement that aligns your leadership team on a clear vision, measurable outcomes, and the operating cadence to keep the plan alive." />
+  <meta name="twitter:image" content="https://viewpointadvisorygroup.com/headshot.jpeg" />
+  <link rel="icon" type="image/png" href="../assets/favicon.png?v=5" />
+  <link rel="shortcut icon" href="../favicon.ico?v=5" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=DM+Sans:wght@300;400;500&family=Montserrat:wght@200;400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #f8f6f0; --warm-white: #ffffff; --stone: #e4e0d4; --taupe: #c0b89e;
+      --charcoal: #1e2820; --warm-grey: #5a6855; --accent: #4a6845; --accent-light: #7a9875;
+    }
+    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--charcoal); line-height: 1.7; font-weight: 300; }
+
+    /* Nav */
+    nav {
+      position: sticky; top: 0; z-index: 10; display: flex; justify-content: space-between; align-items: center;
+      padding: 1.25rem 4rem; border-bottom: 1px solid var(--stone); background: rgba(248,246,240,0.94); backdrop-filter: blur(8px);
+    }
+    .brand { text-decoration: none; color: var(--charcoal); font-family: 'Montserrat', sans-serif; font-size: 1rem; letter-spacing: 0.14em; text-transform: uppercase; }
+    .nav-links { list-style: none; display: flex; gap: 1.6rem; }
+    .nav-links a { text-decoration: none; color: var(--warm-grey); font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 400; }
+    .nav-links a.active, .nav-links a:hover { color: var(--charcoal); }
+
+    /* Breadcrumb */
+    .breadcrumb { max-width: 1300px; margin: 0 auto; padding: 1.25rem 4rem 0; font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--warm-grey); font-weight: 400; }
+    .breadcrumb a { color: var(--warm-grey); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.2s, border-bottom-color 0.2s; }
+    .breadcrumb a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+    .breadcrumb .sep { color: var(--taupe); margin: 0 0.5rem; }
+
+    /* Hero (dark) */
+    header { padding: 4rem 4rem 4rem; background: var(--charcoal); border-bottom: 1px solid rgba(192,184,158,0.18); }
+    .hero-inner { max-width: 1300px; margin: 0 auto; padding: 0; }
+    .service-num-hero {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      color: var(--accent-light);
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.05em;
+    }
+    h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.6rem, 5.4vw, 4.2rem); line-height: 1.1; font-weight: 300; color: var(--cream); margin-bottom: 1rem; }
+    h1 em { color: var(--accent-light); font-style: italic; }
+    .hero-subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-style: italic;
+      color: var(--cream);
+      opacity: 0.8;
+      margin-bottom: 1.5rem;
+    }
+    .stack-badges { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .stack-badge {
+      font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--cream);
+      background: rgba(248,246,240,0.10); border: 1px solid rgba(248,246,240,0.30); padding: 0.4rem 0.7rem;
+      font-weight: 500; line-height: 1.2;
+    }
+
+    /* Section wrappers */
+    section.section { max-width: 1300px; margin: 0 auto; padding: 3.5rem 4rem; }
+    section.section:not(:last-child) { border-bottom: 1px solid var(--stone); }
+    .section-eyebrow { font-size: 0.7rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.8rem; font-weight: 400; }
+    .section-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+      line-height: 1.2;
+      font-weight: 300;
+      color: var(--charcoal);
+      max-width: 800px;
+      margin-bottom: 1.25rem;
+    }
+    .section-headline em { color: var(--accent); font-style: italic; }
+    .section-body { color: var(--charcoal); max-width: 760px; font-size: 1.02rem; }
+    .section-body.muted { color: var(--warm-grey); }
+    .section-body em { color: var(--accent); font-style: italic; }
+    .fit-card a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(74,104,69,0.35); transition: border-bottom-color 0.2s; }
+    .fit-card a:hover { border-bottom-color: var(--accent); }
+
+    /* Two-column rows for Problem / What I Do / Walk Away */
+    .three-blocks { display: grid; gap: 2.5rem; }
+    .block {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 2.5rem;
+      align-items: start;
+      padding-top: 2rem;
+      border-top: 1px solid var(--stone);
+    }
+    .block:first-child { border-top: none; padding-top: 0; }
+    .block-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-style: italic;
+      color: var(--accent);
+      font-weight: 400;
+      line-height: 1.3;
+    }
+    .block-body { color: var(--charcoal); font-size: 1.02rem; line-height: 1.7; max-width: 760px; }
+    .block-body.outcome {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-style: italic;
+      color: var(--accent);
+      line-height: 1.4;
+      font-weight: 400;
+    }
+
+    /* Timeline section */
+    .timeline {
+      list-style: none;
+      display: grid;
+      gap: 0;
+      counter-reset: phase;
+      margin-top: 1.5rem;
+    }
+    .timeline li {
+      counter-increment: phase;
+      display: grid;
+      grid-template-columns: 4.5rem 220px 1fr;
+      gap: 1.75rem;
+      padding: 1.75rem 0;
+      border-top: 1px solid var(--stone);
+      align-items: start;
+    }
+    .timeline li:first-child { border-top: none; padding-top: 1rem; }
+    .timeline li:last-child { padding-bottom: 0.5rem; }
+    .timeline li::before {
+      content: counter(phase, decimal-leading-zero);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.6rem; line-height: 1; color: var(--accent); font-weight: 300; padding-top: 0.2rem;
+    }
+    .timeline .phase-meta {
+      font-size: 0.66rem; letter-spacing: 0.20em; text-transform: uppercase; color: var(--warm-grey); font-weight: 500; padding-top: 0.4rem;
+    }
+    .timeline .phase-title {
+      font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 1.05rem; color: var(--charcoal); margin-bottom: 0.5rem; line-height: 1.4;
+    }
+    .timeline .phase-body {
+      color: var(--warm-grey); font-size: 0.97rem; line-height: 1.7;
+    }
+
+    /* Best Fit two-column */
+    .fit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1.5rem; }
+    .fit-card {
+      border: 1px solid var(--stone); background: var(--warm-white);
+      padding: 1.75rem;
+    }
+    .fit-card.yes { border-left: 3px solid var(--accent); }
+    .fit-card.no  { border-left: 3px solid var(--taupe); }
+    .fit-card h3 {
+      font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; font-weight: 400; color: var(--charcoal); margin-bottom: 1rem; line-height: 1.3;
+    }
+    .fit-card ul { list-style: none; display: grid; gap: 0.55rem; }
+    .fit-card li { color: var(--warm-grey); padding-left: 1.5rem; position: relative; font-size: 0.95rem; line-height: 1.55; }
+    .fit-card.yes li::before { content: '✓'; position: absolute; left: 0; color: var(--accent); font-weight: 500; }
+    .fit-card.no li::before  { content: '—'; position: absolute; left: 0; color: var(--taupe); }
+
+    /* FAQ */
+    .faq-list { display: grid; gap: 1.25rem; margin-top: 1.5rem; }
+    .faq-item { border-top: 1px solid var(--stone); padding-top: 1.25rem; }
+    .faq-item:first-child { border-top: none; padding-top: 0; }
+    .faq-item h3 {
+      font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 400; color: var(--charcoal); margin-bottom: 0.5rem; line-height: 1.3;
+    }
+    .faq-item p { color: var(--warm-grey); font-size: 0.98rem; }
+
+    /* Related case studies */
+    .related-cases { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 1.5rem; }
+    .related-case {
+      border: 1px solid var(--stone); background: var(--warm-white); padding: 1.5rem;
+      text-decoration: none; color: inherit;
+      display: flex; flex-direction: column; gap: 0.75rem;
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    }
+    .related-case:hover { border-color: var(--accent); box-shadow: 0 12px 32px rgba(74,104,69,0.10); transform: translateY(-2px); }
+    .related-case-meta { font-size: 0.66rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--warm-grey); font-weight: 400; }
+    .related-case-title {
+      font-family: 'Cormorant Garamond', serif; font-size: 1.55rem; font-weight: 400; line-height: 1.2; color: var(--charcoal);
+    }
+    .related-case-metric {
+      font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-style: italic; color: var(--accent); line-height: 1.35;
+    }
+    .related-case-desc { color: var(--warm-grey); font-size: 0.92rem; line-height: 1.6; }
+    .related-case-cta {
+      color: var(--accent); font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 500;
+      margin-top: auto; padding-top: 0.4rem;
+    }
+
+    /* Closing CTA */
+    .closing-cta { max-width: 1300px; margin: 0 auto; padding: 4rem 4rem 5rem; text-align: center; }
+    .closing-cta h2 {
+      font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3.2vw, 2.6rem); line-height: 1.2; font-weight: 300; color: var(--charcoal);
+      margin-bottom: 1rem; max-width: 640px; margin-inline: auto;
+    }
+    .closing-cta h2 em { color: var(--accent); font-style: italic; }
+    .closing-cta p { color: var(--warm-grey); max-width: 560px; margin: 0 auto 2rem; }
+    .closing-cta a.btn {
+      display: inline-block; background: var(--charcoal); color: var(--cream);
+      padding: 1rem 2.2rem; text-decoration: none;
+      font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 500;
+      transition: background-color 0.2s;
+    }
+    .closing-cta a.btn:hover { background: var(--accent); }
+
+    footer { border-top: 1px solid var(--stone); padding: 1.8rem 4rem; color: var(--warm-grey); font-size: 0.8rem; }
+
+    /* Responsive */
+    @media (max-width: 960px) {
+      nav { padding: 1rem 1.25rem; }
+      .nav-links { gap: 0.8rem; flex-wrap: wrap; justify-content: flex-end; }
+      .breadcrumb { padding: 1rem 1.25rem 0; }
+      header { padding: 3rem 1.25rem 3rem; }
+      section.section { padding: 2.5rem 1.25rem; }
+      .block { grid-template-columns: 1fr; gap: 0.75rem; padding-top: 1.5rem; }
+      .timeline li { grid-template-columns: 3rem 1fr; gap: 1rem; padding: 1.5rem 0; }
+      .timeline .phase-meta { display: none; }
+      .timeline li::before { font-size: 2rem; }
+      .fit-grid { grid-template-columns: 1fr; }
+      .related-cases { grid-template-columns: 1fr; }
+      .closing-cta { padding: 3rem 1.25rem 3.5rem; }
+      footer { padding: 1.5rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="brand" href="../index.html">Viewpoint Advisory Group</a>
+    <ul class="nav-links">
+      <li><a href="../about.html">About Me</a></li>
+      <li><a class="active" href="../services.html">Services</a></li>
+      <li><a href="../framework.html">The Framework</a></li>
+      <li><a href="../case-studies.html">Case Studies</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <p class="breadcrumb">
+    <a href="../services.html">Services</a><span class="sep">&middot;</span><span>01 &mdash; The Strategic Reset</span>
+  </p>
+
+  <header>
+    <div class="hero-inner">
+      <p class="service-num-hero">01</p>
+      <h1>The Strategic Reset</h1>
+      <p class="hero-subtitle">Vision + Leadership Alignment</p>
+      <div class="stack-badges">
+        <span class="stack-badge">Vision</span>
+        <span class="stack-badge">Alignment</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- WHAT THIS ENGAGEMENT IS -->
+  <section class="section">
+    <p class="section-eyebrow">The Engagement</p>
+    <h2 class="section-headline">A facilitated reset for leadership teams that need to walk into a new year, new chapter, or new strategy <em>aligned, focused, and refocused on what matters.</em></h2>
+    <div class="three-blocks">
+      <div class="block">
+        <p class="block-label">The Problem I Solve</p>
+        <p class="block-body">Leadership knows where they want to go, but the strategy lives in someone's head &mdash; or a deck nobody opened twice. Goals shift quarter to quarter, and the leadership team isn't actually rowing in the same direction, even when they think they are.</p>
+      </div>
+      <div class="block">
+        <p class="block-label">What I Do</p>
+        <p class="block-body">I work directly with your leadership team to define measurable goals, translate ambition into a real strategic plan, and align the team around priorities, decision frameworks, and accountability.</p>
+      </div>
+      <div class="block">
+        <p class="block-label">What You Walk Away With</p>
+        <p class="block-body outcome">A strategic plan your leadership team actually agrees on &mdash; and the operating cadence to keep it alive past the offsite.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="section">
+    <p class="section-eyebrow">How It Unfolds</p>
+    <h2 class="section-headline">A structured arc from <em>raw inputs to a plan that holds.</em></h2>
+    <p class="section-body muted">Every engagement is shaped to your team's specific situation, so the timing, sequencing, and emphasis shift accordingly. What follows is what a <em>typical</em> Strategic Reset looks like &mdash; roughly 4&ndash;8 weeks &mdash; not a fixed plan you'd be locked into.</p>
+    <ol class="timeline">
+      <li>
+        <p class="phase-meta">Week 1</p>
+        <div>
+          <p class="phase-title">Listen + diagnose.</p>
+          <p class="phase-body">1:1 conversations with each leadership team member to surface where each person thinks the company is going, what's working, what's not, and where they're misaligned with each other (usually more than they realize).</p>
+        </div>
+      </li>
+      <li>
+        <p class="phase-meta">Weeks 2&ndash;3</p>
+        <div>
+          <p class="phase-title">Pre-work + framework.</p>
+          <p class="phase-body">Targeted pre-work that gets every leader's thinking on paper before the room comes together. I assemble it into a shared starting point so the working session begins with substance, not blank slides.</p>
+        </div>
+      </li>
+      <li>
+        <p class="phase-meta">Weeks 3&ndash;5</p>
+        <div>
+          <p class="phase-title">Working sessions.</p>
+          <p class="phase-body">Facilitated sessions (typically two, sometimes three) where we land the Mission, Vision, and 3&ndash;5 annual Outcomes &mdash; with the criteria that they're significant, concrete, action-oriented, and inspirational enough to organize the company around.</p>
+        </div>
+      </li>
+      <li>
+        <p class="phase-meta">Weeks 5&ndash;7</p>
+        <div>
+          <p class="phase-title">Operating model + cadence.</p>
+          <p class="phase-body">Design the accountability model (who owns each Outcome and how) and the operating rhythm (annual &rarr; quarterly &rarr; weekly) so the strategy has a heartbeat the moment it's published.</p>
+        </div>
+      </li>
+      <li>
+        <p class="phase-meta">Week 8</p>
+        <div>
+          <p class="phase-title">Comms + handoff.</p>
+          <p class="phase-body">Help the team prepare the rollout: a comms plan to the broader organization, the supporting artifacts, and a check-in cadence with me to keep the plan from drifting in its first 90 days.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- BEST FIT -->
+  <section class="section">
+    <p class="section-eyebrow">Is This a Fit?</p>
+    <h2 class="section-headline">This works best for leadership teams who <em>know they need to land somewhere together</em> &mdash; and want a process to get there.</h2>
+    <div class="fit-grid">
+      <div class="fit-card yes">
+        <h3>Best fit for you if&hellip;</h3>
+        <ul>
+          <li>You're heading into a new fiscal year, a new chapter (post-layoff, post-funding, post-pivot), or a new strategy and the team needs to land aligned</li>
+          <li>Your leadership team has the right people but lacks a shared definition of success</li>
+          <li>You've had offsites before and the plan didn't survive the return to the office</li>
+          <li>You want a facilitated process &mdash; not a consultant who hands you a deck</li>
+          <li>You're 30&ndash;500 people, growth-stage, with enough complexity to need structure but enough nimbleness to act on it</li>
+        </ul>
+      </div>
+      <div class="fit-card no">
+        <h3>Probably not for you if&hellip;</h3>
+        <ul>
+          <li>You already have leadership alignment and a working operating cadence &mdash; you might need <a href="the-build.html">The Build</a> instead</li>
+          <li>You're looking for someone to write the strategy for you, rather than facilitate your team building it together</li>
+          <li>The real issue is execution, not direction &mdash; in which case a <a href="systems-diagnostic.html">Systems Diagnostic</a> or <a href="the-build.html">The Build</a> will get you further</li>
+          <li>Your leadership team isn't ready to commit to two facilitated sessions and meaningful pre-work</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <p class="section-eyebrow">Common Questions</p>
+    <h2 class="section-headline">What leaders usually want to know before they sign on.</h2>
+    <div class="faq-list">
+      <article class="faq-item">
+        <h3>How is this different from a typical offsite?</h3>
+        <p>An offsite is an event. This is an arc &mdash; with pre-work, multiple sessions, and an operating cadence designed to keep the strategy alive after the meeting ends. Offsites generate energy; this generates a plan the team owns.</p>
+      </article>
+      <article class="faq-item">
+        <h3>Who needs to be in the room?</h3>
+        <p>Your senior leadership team &mdash; typically 5&ndash;10 people who own outcomes at the company level. Sometimes we extend to the broader extended leadership team for one of the sessions. We'll scope this together based on how decisions actually get made in your organization.</p>
+      </article>
+      <article class="faq-item">
+        <h3>What deliverables do we leave with?</h3>
+        <p>A finalized Mission, 5-year Vision, 3&ndash;5 annual Outcomes with measurable success criteria, an accountability model (one named owner per Outcome plus dedicated cross-functional team), an operating cadence (annual / quarterly / weekly rhythm), and a rollout plan to communicate to the rest of the organization.</p>
+      </article>
+      <article class="faq-item">
+        <h3>How embedded are you during the engagement?</h3>
+        <p>Embedded enough to facilitate effectively, not embedded enough to become a crutch. I work in your tools (Slack, your meeting platform, your shared docs) during the active weeks and design every artifact to be one your team can own going forward. The goal is your team running the cadence themselves by week 8.</p>
+      </article>
+      <article class="faq-item">
+        <h3>What happens after the engagement ends?</h3>
+        <p>I'm available for a lightweight check-in cadence through the first 90 days &mdash; usually a monthly hour to keep the plan from drifting as the organization moves into execution. Beyond that, if the work surfaces a build-out need, we can scope The Build separately.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- RELATED CASE STUDIES -->
+  <section class="section">
+    <p class="section-eyebrow">Engagements In This Shape</p>
+    <h2 class="section-headline">Recent Strategic Resets &mdash; <em>what happened, what changed.</em></h2>
+    <div class="related-cases">
+      <a class="related-case" href="../case-studies/the-annual-reset.html">
+        <p class="related-case-meta">Healthtech · Series B</p>
+        <h3 class="related-case-title">The Annual Reset</h3>
+        <p class="related-case-metric">Three 2026 Outcomes. One shared direction.</p>
+        <p class="related-case-desc">Facilitated a post-layoff leadership team through 2026 strategic planning — from refined Mission and 5-year Vision down to a clear accountability model.</p>
+        <span class="related-case-cta">Read Case Study &rarr;</span>
+      </a>
+      <a class="related-case" href="../case-studies/wanderly.html">
+        <p class="related-case-meta">Travel Tech · 1000+ employees</p>
+        <h3 class="related-case-title">Wanderly: Strategic Alignment Off-site</h3>
+        <p class="related-case-metric">100% alignment on strategy for the first time.</p>
+        <p class="related-case-desc">A 3-day facilitated off-site that moved a fractured cross-functional team from competing priorities to a shared diagnosis, prioritized opportunities, and clear ownership.</p>
+        <span class="related-case-cta">Read Case Study &rarr;</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="closing-cta">
+    <h2>Heading into a moment that needs <em>shared direction?</em></h2>
+    <p>If your leadership team is walking into a new chapter and you want a process that ends with one plan &mdash; not five competing priorities &mdash; let's talk.</p>
+    <a href="../contact.html?service=strategic-reset" class="btn">Let's Talk</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Viewpoint Advisory Group, LLC. All rights reserved.</p>
+  </footer>
+</body>
+</html>

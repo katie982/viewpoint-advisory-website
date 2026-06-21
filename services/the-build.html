@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Build | Viewpoint Advisory Group</title>
+  <meta name="description" content="The Build: a fractional partnership that designs and rolls out the operating infrastructure — functions, roles, decision rights, processes, rhythms, KPIs — that turns strategy into how the company actually runs." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://viewpointadvisorygroup.com/services/the-build.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="The Build | Viewpoint Advisory Group" />
+  <meta property="og:description" content="A fractional partnership that designs and rolls out the operating infrastructure your business actually needs." />
+  <meta property="og:url" content="https://viewpointadvisorygroup.com/services/the-build.html" />
+  <meta property="og:image" content="https://viewpointadvisorygroup.com/headshot.jpeg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Build | Viewpoint Advisory Group" />
+  <meta name="twitter:description" content="A fractional partnership that designs and rolls out the operating infrastructure your business actually needs." />
+  <meta name="twitter:image" content="https://viewpointadvisorygroup.com/headshot.jpeg" />
+  <link rel="icon" type="image/png" href="../assets/favicon.png?v=5" />
+  <link rel="shortcut icon" href="../favicon.ico?v=5" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=DM+Sans:wght@300;400;500&family=Montserrat:wght@200;400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #f8f6f0; --warm-white: #ffffff; --stone: #e4e0d4; --taupe: #c0b89e;
+      --charcoal: #1e2820; --warm-grey: #5a6855; --accent: #4a6845; --accent-light: #7a9875;
+    }
+    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--charcoal); line-height: 1.7; font-weight: 300; }
+
+    nav {
+      position: sticky; top: 0; z-index: 10; display: flex; justify-content: space-between; align-items: center;
+      padding: 1.25rem 4rem; border-bottom: 1px solid var(--stone); background: rgba(248,246,240,0.94); backdrop-filter: blur(8px);
+    }
+    .brand { text-decoration: none; color: var(--charcoal); font-family: 'Montserrat', sans-serif; font-size: 1rem; letter-spacing: 0.14em; text-transform: uppercase; }
+    .nav-links { list-style: none; display: flex; gap: 1.6rem; }
+    .nav-links a { text-decoration: none; color: var(--warm-grey); font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 400; }
+    .nav-links a.active, .nav-links a:hover { color: var(--charcoal); }
+
+    .breadcrumb { max-width: 1300px; margin: 0 auto; padding: 1.25rem 4rem 0; font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--warm-grey); font-weight: 400; }
+    .breadcrumb a { color: var(--warm-grey); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.2s, border-bottom-color 0.2s; }
+    .breadcrumb a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+    .breadcrumb .sep { color: var(--taupe); margin: 0 0.5rem; }
+
+    header { padding: 4rem 4rem 4rem; background: var(--charcoal); border-bottom: 1px solid rgba(192,184,158,0.18); }
+    .hero-inner { max-width: 1300px; margin: 0 auto; padding: 0; }
+    .service-num-hero { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--accent-light); font-weight: 400; margin-bottom: 0.5rem; letter-spacing: 0.05em; }
+    h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.6rem, 5.4vw, 4.2rem); line-height: 1.1; font-weight: 300; color: var(--cream); margin-bottom: 1rem; }
+    h1 em { color: var(--accent-light); font-style: italic; }
+    .hero-subtitle { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-style: italic; color: var(--cream); opacity: 0.8; margin-bottom: 1.5rem; }
+    .stack-badges { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .stack-badge {
+      font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--cream);
+      background: rgba(248,246,240,0.10); border: 1px solid rgba(248,246,240,0.30); padding: 0.4rem 0.7rem;
+      font-weight: 500; line-height: 1.2;
+    }
+
+    section.section { max-width: 1300px; margin: 0 auto; padding: 3.5rem 4rem; }
+    section.section:not(:last-child) { border-bottom: 1px solid var(--stone); }
+    .section-eyebrow { font-size: 0.7rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.8rem; font-weight: 400; }
+    .section-headline {
+      font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+      line-height: 1.2; font-weight: 300; color: var(--charcoal); max-width: 800px; margin-bottom: 1.25rem;
+    }
+    .section-headline em { color: var(--accent); font-style: italic; }
+    .section-body { color: var(--charcoal); max-width: 760px; font-size: 1.02rem; }
+    .section-body.muted { color: var(--warm-grey); }
+    .section-body em { color: var(--accent); font-style: italic; }
+    .fit-card a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(74,104,69,0.35); transition: border-bottom-color 0.2s; }
+    .fit-card a:hover { border-bottom-color: var(--accent); }
+
+    .three-blocks { display: grid; gap: 2.5rem; }
+    .block { display: grid; grid-template-columns: 220px 1fr; gap: 2.5rem; align-items: start; padding-top: 2rem; border-top: 1px solid var(--stone); }
+    .block:first-child { border-top: none; padding-top: 0; }
+    .block-label { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-style: italic; color: var(--accent); font-weight: 400; line-height: 1.3; }
+    .block-body { color: var(--charcoal); font-size: 1.02rem; line-height: 1.7; max-width: 760px; }
+    .block-body.outcome { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-style: italic; color: var(--accent); line-height: 1.4; font-weight: 400; }
+
+    .timeline { list-style: none; display: grid; gap: 0; counter-reset: phase; margin-top: 1.5rem; }
+    .timeline li { counter-increment: phase; display: grid; grid-template-columns: 4.5rem 220px 1fr; gap: 1.75rem; padding: 1.75rem 0; border-top: 1px solid var(--stone); align-items: start; }
+    .timeline li:first-child { border-top: none; padding-top: 1rem; }
+    .timeline li:last-child { padding-bottom: 0.5rem; }
+    .timeline li::before { content: counter(phase, decimal-leading-zero); font-family: 'Cormorant Garamond', serif; font-size: 2.6rem; line-height: 1; color: var(--accent); font-weight: 300; padding-top: 0.2rem; }
+    .timeline .phase-meta { font-size: 0.66rem; letter-spacing: 0.20em; text-transform: uppercase; color: var(--warm-grey); font-weight: 500; padding-top: 0.4rem; }
+    .timeline .phase-title { font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 1.05rem; color: var(--charcoal); margin-bottom: 0.5rem; line-height: 1.4; }
+    .timeline .phase-body { color: var(--warm-grey); font-size: 0.97rem; line-height: 1.7; }
+
+    .fit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1.5rem; }
+    .fit-card { border: 1px solid var(--stone); background: var(--warm-white); padding: 1.75rem; }
+    .fit-card.yes { border-left: 3px solid var(--accent); }
+    .fit-card.no  { border-left: 3px solid var(--taupe); }
+    .fit-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; font-weight: 400; color: var(--charcoal); margin-bottom: 1rem; line-height: 1.3; }
+    .fit-card ul { list-style: none; display: grid; gap: 0.55rem; }
+    .fit-card li { color: var(--warm-grey); padding-left: 1.5rem; position: relative; font-size: 0.95rem; line-height: 1.55; }
+    .fit-card.yes li::before { content: '✓'; position: absolute; left: 0; color: var(--accent); font-weight: 500; }
+    .fit-card.no li::before  { content: '—'; position: absolute; left: 0; color: var(--taupe); }
+
+    .faq-list { display: grid; gap: 1.25rem; margin-top: 1.5rem; }
+    .faq-item { border-top: 1px solid var(--stone); padding-top: 1.25rem; }
+    .faq-item:first-child { border-top: none; padding-top: 0; }
+    .faq-item h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 400; color: var(--charcoal); margin-bottom: 0.5rem; line-height: 1.3; }
+    .faq-item p { color: var(--warm-grey); font-size: 0.98rem; }
+    .faq-item a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(74,104,69,0.35); }
+    .faq-item a:hover { border-bottom-color: var(--accent); }
+
+    .related-cases { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.25rem; margin-top: 1.5rem; }
+    .related-case {
+      border: 1px solid var(--stone); background: var(--warm-white); padding: 1.5rem;
+      text-decoration: none; color: inherit;
+      display: flex; flex-direction: column; gap: 0.75rem;
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    }
+    .related-case:hover { border-color: var(--accent); box-shadow: 0 12px 32px rgba(74,104,69,0.10); transform: translateY(-2px); }
+    .related-case-meta { font-size: 0.66rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--warm-grey); font-weight: 400; }
+    .related-case-title { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 400; line-height: 1.2; color: var(--charcoal); }
+    .related-case-metric { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-style: italic; color: var(--accent); line-height: 1.35; }
+    .related-case-desc { color: var(--warm-grey); font-size: 0.9rem; line-height: 1.6; }
+    .related-case-cta { color: var(--accent); font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 500; margin-top: auto; padding-top: 0.4rem; }
+
+    .closing-cta { max-width: 1300px; margin: 0 auto; padding: 4rem 4rem 5rem; text-align: center; }
+    .closing-cta h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3.2vw, 2.6rem); line-height: 1.2; font-weight: 300; color: var(--charcoal); margin-bottom: 1rem; max-width: 640px; margin-inline: auto; }
+    .closing-cta h2 em { color: var(--accent); font-style: italic; }
+    .closing-cta p { color: var(--warm-grey); max-width: 560px; margin: 0 auto 2rem; }
+    .closing-cta a.btn { display: inline-block; background: var(--charcoal); color: var(--cream); padding: 1rem 2.2rem; text-decoration: none; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 500; transition: background-color 0.2s; }
+    .closing-cta a.btn:hover { background: var(--accent); }
+
+    footer { border-top: 1px solid var(--stone); padding: 1.8rem 4rem; color: var(--warm-grey); font-size: 0.8rem; }
+
+    @media (max-width: 960px) {
+      nav { padding: 1rem 1.25rem; }
+      .nav-links { gap: 0.8rem; flex-wrap: wrap; justify-content: flex-end; }
+      .breadcrumb { padding: 1rem 1.25rem 0; }
+      header { padding: 3rem 1.25rem 3rem; }
+      section.section { padding: 2.5rem 1.25rem; }
+      .block { grid-template-columns: 1fr; gap: 0.75rem; padding-top: 1.5rem; }
+      .timeline li { grid-template-columns: 3rem 1fr; gap: 1rem; padding: 1.5rem 0; }
+      .timeline .phase-meta { display: none; }
+      .timeline li::before { font-size: 2rem; }
+      .fit-grid { grid-template-columns: 1fr; }
+      .related-cases { grid-template-columns: 1fr; }
+      .closing-cta { padding: 3rem 1.25rem 3.5rem; }
+      footer { padding: 1.5rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="brand" href="../index.html">Viewpoint Advisory Group</a>
+    <ul class="nav-links">
+      <li><a href="../about.html">About Me</a></li>
+      <li><a class="active" href="../services.html">Services</a></li>
+      <li><a href="../framework.html">The Framework</a></li>
+      <li><a href="../case-studies.html">Case Studies</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <p class="breadcrumb">
+    <a href="../services.html">Services</a><span class="sep">&middot;</span><span>03 &mdash; The Build</span>
+  </p>
+
+  <header>
+    <div class="hero-inner">
+      <p class="service-num-hero">03</p>
+      <h1>The Build</h1>
+      <p class="hero-subtitle">Organizational Clarity + Operational Infrastructure</p>
+      <div class="stack-badges">
+        <span class="stack-badge">Organizational Clarity</span>
+        <span class="stack-badge">Operational Infrastructure</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- WHAT THIS ENGAGEMENT IS -->
+  <section class="section">
+    <p class="section-eyebrow">The Engagement</p>
+    <h2 class="section-headline">Hands-on build work that turns strategy into <em>how the company actually operates.</em></h2>
+    <div class="three-blocks">
+      <div class="block">
+        <p class="block-label">The Problem I Solve</p>
+        <p class="block-body">You know what's broken &mdash; disorganized teams, unclear roles, fragmented operations &mdash; but it would take six months and a hire to fix it internally. Meanwhile, the cracks keep widening and the cost of doing nothing keeps climbing.</p>
+      </div>
+      <div class="block">
+        <p class="block-label">What I Do</p>
+        <p class="block-body">I work as a fractional partner to design and roll out the structures your business actually needs &mdash; function definitions, role clarity, decision rights, core processes, operating rhythms, KPI systems &mdash; embedded enough to make real progress, not embedded enough to become a crutch.</p>
+      </div>
+      <div class="block">
+        <p class="block-label">What You Walk Away With</p>
+        <p class="block-body outcome">A team that knows what they own, how decisions get made, and how to measure success &mdash; and the infrastructure that holds it all together.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="section">
+    <p class="section-eyebrow">How It Unfolds</p>
+    <h2 class="section-headline">A phased build &mdash; <em>measured before scaled, owned before handed off.</em></h2>
+    <p class="section-body muted">Builds vary widely in scope &mdash; from standing up a single function to redesigning an entire operating model &mdash; so length and phasing shift accordingly. What follows is what a <em>typical</em> Build looks like, roughly 3&ndash;6 months scoped to the engagement, not a fixed plan you'd be locked into.</p>
+    <ol class="timeline">
+      <li>
+        <p class="phase-meta">Weeks 1&ndash;2</p>
+        <div>
+          <p class="phase-title">Scope alignment.</p>
+          <p class="phase-body">We start with a focused scope-setting phase: what we're building, what we're explicitly not, who the named owner is on your side, and how we'll know it worked. The output is a written scope both sides sign off on &mdash; so design starts from shared ground, not assumptions.</p>
+        </div>
+      </li>
+      <li>
+        <p class="phase-meta">Weeks 2&ndash;6</p>
+        <div>
+          <p class="phase-title">Design.</p>
+          <p class="phase-body">Detailed design of the new functions, roles, decision frameworks, processes, and operating rhythms. Working sessions with the leaders who will own each piece &mdash; so they shape it instead of inheriting it.</p>
+        </div>
+      </li>
+      <li>
+        <p class="phase-meta">Weeks 4&ndash;10</p>
+        <div>
+          <p class="phase-title">Pilot.</p>
+          <p class="phase-body">Whenever possible, we test the design on a small piece of the org or a single customer pipeline before scaling. Gains earned through evidence, not decreed from a deck.</p>
+        </div>
+      </li>
+      <li>
+        <p class="phase-meta">Weeks 8&ndash;16</p>
+        <div>
+          <p class="phase-title">Rollout + change management.</p>
+          <p class="phase-body">Train the team, prepare comms, run the first cycles of the new operating rhythm with me embedded enough to course-correct in real time. The goal is the system working in the wild, not the system existing on paper.</p>
+        </div>
+      </li>
+      <li>
+        <p class="phase-meta">Final weeks</p>
+        <div>
+          <p class="phase-title">Handoff + measurement.</p>
+          <p class="phase-body">Define what "success" looks like in measurable terms (cycle time, decision throughput, role-clarity scores, KPI hit rate &mdash; whatever fits) and hand off the operating system to your team to own ongoing.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- BEST FIT -->
+  <section class="section">
+    <p class="section-eyebrow">Is This a Fit?</p>
+    <h2 class="section-headline">This works best for leaders who know <em>where the problem is and what's likely causing it</em> &mdash; and want a partner to design the fix and roll it out alongside them.</h2>
+    <div class="fit-grid">
+      <div class="fit-card yes">
+        <h3>Best fit for you if&hellip;</h3>
+        <ul>
+          <li>You know what's broken and are ready to invest in fixing it</li>
+          <li>You have leadership alignment on what success looks like</li>
+          <li>You want a partner who builds with your team &mdash; not a consultant who hands you a deck</li>
+          <li>The build will touch real things: org structure, role definitions, decision rights, core processes, operating cadences, KPI systems</li>
+          <li>You'd hire for this internally if you had 6+ months &mdash; but you don't</li>
+        </ul>
+      </div>
+      <div class="fit-card no">
+        <h3>Probably not for you if&hellip;</h3>
+        <ul>
+          <li>You don't have alignment on what success looks like for the company at the end of the year &mdash; without that, you don't know where to fix, what to fix, or whether it's big enough to matter. Start with <a href="strategic-reset.html">The Strategic Reset</a></li>
+          <li>You're not sure what's actually broken &mdash; a <a href="systems-diagnostic.html">Systems Diagnostic</a> will get you there first</li>
+          <li>You want execution help on tactical projects unrelated to operating model (campaign rollouts, product launches, etc.) &mdash; I'm not the right fit</li>
+          <li>You expect a fully-finished deliverable handed over with no internal effort required &mdash; embedded design needs your team in the room</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <p class="section-eyebrow">Common Questions</p>
+    <h2 class="section-headline">What leaders usually want to know before they sign on.</h2>
+    <div class="faq-list">
+      <article class="faq-item">
+        <h3>How embedded are you?</h3>
+        <p>Embedded enough to make real progress, not embedded enough to become a crutch. I work in your tools (Slack, your docs, your meeting rhythm), join key working sessions, and design everything to be owned by your team going forward. Typical commitment is the equivalent of 1&ndash;3 days a week, scoped to engagement.</p>
+      </article>
+      <article class="faq-item">
+        <h3>What if we discover the scope is wrong mid-engagement?</h3>
+        <p>We re-scope. Scope alignment in the first phase usually catches this, but if something material surfaces later &mdash; new information, leadership change, business shift &mdash; we have an honest conversation about whether to adjust scope, pause, or finish what's in flight. I'd rather change course than ship something that doesn't fit.</p>
+      </article>
+      <article class="faq-item">
+        <h3>Do you train our team or do it for us?</h3>
+        <p>Both. The design work I lead. The day-to-day operating work, your team learns to own through the pilot and rollout phases. By the time I leave, the operating cadence is something your team runs &mdash; not something that breaks when I'm gone.</p>
+      </article>
+      <article class="faq-item">
+        <h3>What if there's no obvious "build" leader on my team to inherit it?</h3>
+        <p>That happens. We'll either define the role (and you hire for it), find an internal person who can grow into it, or scope a longer handoff. What we don't do is install a system with no clear internal owner &mdash; that's how operating models quietly decay.</p>
+      </article>
+      <article class="faq-item">
+        <h3>How is this different from hiring a Chief of Staff or Ops Lead?</h3>
+        <p>A Chief of Staff or Ops Lead is a permanent hire with a broad mandate. The Build is a fixed-scope engagement focused on standing up specific infrastructure &mdash; and often the output IS the spec for the role you eventually hire. Many of my clients use The Build to scope what they need before they hire.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- RELATED CASE STUDIES -->
+  <section class="section">
+    <p class="section-eyebrow">Engagements In This Shape</p>
+    <h2 class="section-headline">Recent Builds &mdash; <em>what got built, what changed.</em></h2>
+    <div class="related-cases">
+      <a class="related-case" href="../case-studies/the-value-stream-reset.html">
+        <p class="related-case-meta">E-Commerce · Public</p>
+        <h3 class="related-case-title">The Value Stream Reset</h3>
+        <p class="related-case-metric">Cycle time cut from 14 days to 6.</p>
+        <p class="related-case-desc">Diagnosed the real cycle-time friction with team brainstorms and a Value Stream Map, piloted a "pull" system on the biggest waste source first, then scaled VFQ + cross-functional squads across Product Design.</p>
+        <span class="related-case-cta">Read Case Study &rarr;</span>
+      </a>
+      <a class="related-case" href="../case-studies/d2o.html">
+        <p class="related-case-meta">Healthtech · Series B</p>
+        <h3 class="related-case-title">Project Lift</h3>
+        <p class="related-case-metric">$27M ACV at risk &rarr; cross-functional ops in 4 months.</p>
+        <p class="related-case-desc">Designed and stood up a Direct-to-Operations function from scratch &mdash; functions, roles, decision rights, operating rhythm &mdash; turning a fractured account model into a coordinated delivery system.</p>
+        <span class="related-case-cta">Read Case Study &rarr;</span>
+      </a>
+      <a class="related-case" href="../case-studies/hummingbird.html">
+        <p class="related-case-meta">Healthtech · Series B</p>
+        <h3 class="related-case-title">AI-Ready Product Feature Catalog</h3>
+        <p class="related-case-metric">From 10 hours to 1 per feature decision.</p>
+        <p class="related-case-desc">Built a single source of truth for product features across patient journey stages &mdash; replacing scattered tribal knowledge with a structured catalog Sales and Service Delivery actually use.</p>
+        <span class="related-case-cta">Read Case Study &rarr;</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="closing-cta">
+    <h2>Know what's broken? <em>Ready to build the fix.</em></h2>
+    <p>If you have the alignment and the will, but you need a partner to design and roll out the operating infrastructure &mdash; let's talk.</p>
+    <a href="../contact.html?service=the-build" class="btn">Let's Talk</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Viewpoint Advisory Group, LLC. All rights reserved.</p>
+  </footer>
+</body>
+</html>
