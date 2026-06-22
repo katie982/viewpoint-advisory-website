@@ -3,7 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Case Study — Wanderly | Viewpoint Advisory Group</title>
+  <title>Case Study — Wanderly (TripAdvisor) | Viewpoint Advisory Group</title>
+  <meta name="description" content="Wanderly at TripAdvisor case study: facilitated a leadership team through resetting shared strategic direction for a struggling Vacation Rentals business — moving from misaligned interpretations of strategy to one clear, agreed picture of priorities and ownership." />
+  <link rel="canonical" href="https://viewpointadvisorygroup.com/case-studies/wanderly.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Case Study — Wanderly (TripAdvisor) | Viewpoint Advisory Group" />
+  <meta property="og:description" content="Reset shared strategic direction inside a struggling Vacation Rentals business — turning misaligned interpretations of strategy into one clear, agreed picture of priorities." />
+  <meta property="og:url" content="https://viewpointadvisorygroup.com/case-studies/wanderly.html" />
+  <meta property="og:image" content="https://viewpointadvisorygroup.com/headshot.jpeg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Case Study — Wanderly (TripAdvisor) | Viewpoint Advisory Group" />
+  <meta name="twitter:description" content="Reset shared strategic direction inside a struggling Vacation Rentals business — turning misaligned interpretations of strategy into one clear, agreed picture of priorities." />
+  <meta name="twitter:image" content="https://viewpointadvisorygroup.com/headshot.jpeg" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Montserrat:wght@200;400&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -466,6 +477,25 @@
       .hero-meta { gap: 1.25rem; }
     }
   </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S25NRXRXCF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-S25NRXRXCF');
+
+    // Track Calendly intro-call clicks as a conversion event
+    document.addEventListener('click', function(e) {
+      var link = e.target && e.target.closest && e.target.closest('a[href*="calendly.com"]');
+      if (link) {
+        gtag('event', 'book_intro_call', {
+          'event_category': 'engagement',
+          'event_label': link.href
+        });
+      }
+    });
+  </script>
 </head>
 <body>
 
@@ -595,7 +625,7 @@
     <span class="eyebrow">Let's talk</span>
     <h3>Your leadership team executing without a shared direction? <em>Let's change that.</em></h3>
     <p>If your leadership team is executing without a shared direction, let's talk about what it would take to change that.</p>
-    <a href="mailto:katie@viewpointadvisorygroup.com" class="cta-btn">Start a Conversation</a>
+    <a href="https://calendly.com/katie-viewpointadvisorygroup/30min" target="_blank" rel="noopener noreferrer" class="cta-btn">Book Intro Call</a>
   </section>
 
   <!-- SITE FOOTER -->

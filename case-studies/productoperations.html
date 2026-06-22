@@ -622,6 +622,25 @@
       opacity: 0.7;
     }
   </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S25NRXRXCF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-S25NRXRXCF');
+
+    // Track Calendly intro-call clicks as a conversion event
+    document.addEventListener('click', function(e) {
+      var link = e.target && e.target.closest && e.target.closest('a[href*="calendly.com"]');
+      if (link) {
+        gtag('event', 'book_intro_call', {
+          'event_category': 'engagement',
+          'event_label': link.href
+        });
+      }
+    });
+  </script>
 </head>
 <body>
 
@@ -753,7 +772,7 @@
     <p class="eyebrow">Work With Viewpoint</p>
     <h3>Your AI strategy is only as strong as <em>the ground it stands on.</em></h3>
     <p>If your team is trying to layer AI onto processes that aren't ready for it, let's talk about building infrastructure that can actually hold it.</p>
-    <a href="mailto:katie@viewpointadvisorygroup.com" class="cta-btn">Let's Talk</a>
+    <a href="https://calendly.com/katie-viewpointadvisorygroup/30min" target="_blank" rel="noopener noreferrer" class="cta-btn">Book Intro Call</a>
   </footer>
 
 

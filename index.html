@@ -16,6 +16,38 @@
   <meta name="twitter:title" content="Viewpoint Advisory Group | Fractional Strategy & Operating Systems Consulting" />
   <meta name="twitter:description" content="Viewpoint Advisory Group helps scaling teams turn strategy into execution by rebuilding core operating systems and AI-ready processes." />
   <meta name="twitter:image" content="https://viewpointadvisorygroup.com/headshot.jpeg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://viewpointadvisorygroup.com/#organization",
+        "name": "Viewpoint Advisory Group",
+        "url": "https://viewpointadvisorygroup.com/",
+        "logo": "https://viewpointadvisorygroup.com/logo_transparent.png",
+        "image": "https://viewpointadvisorygroup.com/headshot.jpeg",
+        "description": "Fractional strategic operator helping growth-stage companies turn strategy into execution by rebuilding core operating systems — from leadership alignment to AI-ready processes.",
+        "founder": { "@id": "https://viewpointadvisorygroup.com/#katie" },
+        "areaServed": "United States",
+        "serviceType": ["Strategic Planning Facilitation", "Operating Model Design", "Organizational Design", "Fractional Strategic Operations"],
+        "knowsAbout": ["Operating Model Design", "Strategic Planning", "Organizational Design", "AI-Ready Processes", "Fractional COO", "Series B Operations"],
+        "sameAs": ["https://www.linkedin.com/in/katie-dasso/"]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://viewpointadvisorygroup.com/#katie",
+        "name": "Katie Dasso",
+        "jobTitle": "Founder & Fractional Strategic Operator",
+        "url": "https://viewpointadvisorygroup.com/about.html",
+        "image": "https://viewpointadvisorygroup.com/headshot.jpeg",
+        "worksFor": { "@id": "https://viewpointadvisorygroup.com/#organization" },
+        "knowsAbout": ["Operating Model Design", "Strategic Planning", "Organizational Design", "Fractional Leadership"],
+        "sameAs": ["https://www.linkedin.com/in/katie-dasso/"]
+      }
+    ]
+  }
+  </script>
   <link rel="icon" type="image/png" href="/assets/favicon.png?v=5" />
   <link rel="shortcut icon" href="/favicon.ico?v=5" />
   <link rel="apple-touch-icon" href="/assets/favicon.png?v=5" />
@@ -1251,6 +1283,25 @@
       footer p { font-size: 0.7rem; }
     }
   </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S25NRXRXCF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-S25NRXRXCF');
+
+    // Track Calendly intro-call clicks as a conversion event
+    document.addEventListener('click', function(e) {
+      var link = e.target && e.target.closest && e.target.closest('a[href*="calendly.com"]');
+      if (link) {
+        gtag('event', 'book_intro_call', {
+          'event_category': 'engagement',
+          'event_label': link.href
+        });
+      }
+    });
+  </script>
 </head>
 <body>
 

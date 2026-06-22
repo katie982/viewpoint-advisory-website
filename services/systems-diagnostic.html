@@ -16,6 +16,26 @@
   <meta name="twitter:title" content="The Systems Diagnostic | Viewpoint Advisory Group" />
   <meta name="twitter:description" content="A structured diagnostic across the Viewpoint Stack that pinpoints exactly where the system is breaking down — and what to fix first." />
   <meta name="twitter:image" content="https://viewpointadvisorygroup.com/headshot.jpeg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "The Systems Diagnostic",
+    "url": "https://viewpointadvisorygroup.com/services/systems-diagnostic.html",
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": "Viewpoint Advisory Group",
+      "url": "https://viewpointadvisorygroup.com/"
+    },
+    "serviceType": "Operating Systems Assessment",
+    "areaServed": "United States",
+    "description": "A structured assessment across the Viewpoint Stack — Vision, Alignment, Organizational Clarity, Operational Infrastructure — that pinpoints where the operating system is breaking down and recommends prioritized, high-leverage interventions. Typical duration: 3–6 weeks.",
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Executive leadership teams at growth-stage companies experiencing scaling friction"
+    }
+  }
+  </script>
   <link rel="icon" type="image/png" href="../assets/favicon.png?v=5" />
   <link rel="shortcut icon" href="../favicon.ico?v=5" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=DM+Sans:wght@300;400;500&family=Montserrat:wght@200;400&display=swap" rel="stylesheet" />
@@ -126,6 +146,25 @@
       footer { padding: 1.5rem 1.25rem; }
     }
   </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S25NRXRXCF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-S25NRXRXCF');
+
+    // Track Calendly intro-call clicks as a conversion event
+    document.addEventListener('click', function(e) {
+      var link = e.target && e.target.closest && e.target.closest('a[href*="calendly.com"]');
+      if (link) {
+        gtag('event', 'book_intro_call', {
+          'event_category': 'engagement',
+          'event_label': link.href
+        });
+      }
+    });
+  </script>
 </head>
 <body>
   <nav>

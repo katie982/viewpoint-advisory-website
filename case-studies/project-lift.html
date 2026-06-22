@@ -612,6 +612,25 @@
       .hero-meta { gap: 1.25rem; }
     }
   </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S25NRXRXCF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-S25NRXRXCF');
+
+    // Track Calendly intro-call clicks as a conversion event
+    document.addEventListener('click', function(e) {
+      var link = e.target && e.target.closest && e.target.closest('a[href*="calendly.com"]');
+      if (link) {
+        gtag('event', 'book_intro_call', {
+          'event_category': 'engagement',
+          'event_label': link.href
+        });
+      }
+    });
+  </script>
 </head>
 <body>
 
@@ -766,7 +785,7 @@
     <p class="eyebrow">Work With Viewpoint</p>
     <h3>From mandate to delivery in <em>four months.</em></h3>
     <p>If your team is standing up a new service offering, scaling delivery across multiple clients, or building the operating model that makes execution possible — let's talk about what that looks like.</p>
-    <a href="mailto:katie@viewpointadvisorygroup.com" class="cta-btn">Let's Talk</a>
+    <a href="https://calendly.com/katie-viewpointadvisorygroup/30min" target="_blank" rel="noopener noreferrer" class="cta-btn">Book Intro Call</a>
   </footer>
 
 

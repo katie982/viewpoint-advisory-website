@@ -459,6 +459,25 @@
       footer { padding: 1.5rem 1.25rem; }
     }
   </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S25NRXRXCF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-S25NRXRXCF');
+
+    // Track Calendly intro-call clicks as a conversion event
+    document.addEventListener('click', function(e) {
+      var link = e.target && e.target.closest && e.target.closest('a[href*="calendly.com"]');
+      if (link) {
+        gtag('event', 'book_intro_call', {
+          'event_category': 'engagement',
+          'event_label': link.href
+        });
+      }
+    });
+  </script>
 </head>
 <body>
     <nav>
@@ -610,7 +629,7 @@
       </a>
 
       <a class="card" href="case-studies/the-value-stream-reset.html" data-primary="organizational-clarity" data-cross="operational-infrastructure" aria-label="Read The Value Stream Reset case study">
-        <p class="card-meta">E-Commerce · Public</p>
+        <p class="card-meta">Vistaprint · Public</p>
         <div class="layer-block">
           <div class="layer-row">
             <span class="layer-label">Primary Layer</span>

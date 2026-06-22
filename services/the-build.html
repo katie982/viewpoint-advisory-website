@@ -16,6 +16,26 @@
   <meta name="twitter:title" content="The Build | Viewpoint Advisory Group" />
   <meta name="twitter:description" content="A fractional partnership that designs and rolls out the operating infrastructure your business actually needs." />
   <meta name="twitter:image" content="https://viewpointadvisorygroup.com/headshot.jpeg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "The Build",
+    "url": "https://viewpointadvisorygroup.com/services/the-build.html",
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": "Viewpoint Advisory Group",
+      "url": "https://viewpointadvisorygroup.com/"
+    },
+    "serviceType": "Operating Model Design and Implementation",
+    "areaServed": "United States",
+    "description": "A fractional engagement designing and rolling out the operating infrastructure — function definitions, role clarity, decision rights, core processes, operating rhythms, KPI systems — that turns strategy into how the company actually runs. Typical duration: 3–6 months, scoped to engagement.",
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "CEOs and COOs at Series B+ growth-stage companies"
+    }
+  }
+  </script>
   <link rel="icon" type="image/png" href="../assets/favicon.png?v=5" />
   <link rel="shortcut icon" href="../favicon.ico?v=5" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=DM+Sans:wght@300;400;500&family=Montserrat:wght@200;400&display=swap" rel="stylesheet" />
@@ -141,6 +161,25 @@
       footer { padding: 1.5rem 1.25rem; }
     }
   </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S25NRXRXCF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-S25NRXRXCF');
+
+    // Track Calendly intro-call clicks as a conversion event
+    document.addEventListener('click', function(e) {
+      var link = e.target && e.target.closest && e.target.closest('a[href*="calendly.com"]');
+      if (link) {
+        gtag('event', 'book_intro_call', {
+          'event_category': 'engagement',
+          'event_label': link.href
+        });
+      }
+    });
+  </script>
 </head>
 <body>
   <nav>
@@ -295,20 +334,20 @@
     <h2 class="section-headline">Recent Builds &mdash; <em>what got built, what changed.</em></h2>
     <div class="related-cases">
       <a class="related-case" href="../case-studies/the-value-stream-reset.html">
-        <p class="related-case-meta">E-Commerce · Public</p>
+        <p class="related-case-meta">Vistaprint · Public · E-Commerce</p>
         <h3 class="related-case-title">The Value Stream Reset</h3>
         <p class="related-case-metric">Cycle time cut from 14 days to 6.</p>
         <p class="related-case-desc">Diagnosed the real cycle-time friction with team brainstorms and a Value Stream Map, piloted a "pull" system on the biggest waste source first, then scaled VFQ + cross-functional squads across Product Design.</p>
         <span class="related-case-cta">Read Case Study &rarr;</span>
       </a>
-      <a class="related-case" href="../case-studies/d2o.html">
+      <a class="related-case" href="../case-studies/project-lift.html">
         <p class="related-case-meta">Healthtech · Series B</p>
         <h3 class="related-case-title">Project Lift</h3>
         <p class="related-case-metric">$27M ACV at risk &rarr; cross-functional ops in 4 months.</p>
         <p class="related-case-desc">Designed and stood up a Direct-to-Operations function from scratch &mdash; functions, roles, decision rights, operating rhythm &mdash; turning a fractured account model into a coordinated delivery system.</p>
         <span class="related-case-cta">Read Case Study &rarr;</span>
       </a>
-      <a class="related-case" href="../case-studies/hummingbird.html">
+      <a class="related-case" href="../case-studies/productoperations.html">
         <p class="related-case-meta">Healthtech · Series B</p>
         <h3 class="related-case-title">AI-Ready Product Feature Catalog</h3>
         <p class="related-case-metric">From 10 hours to 1 per feature decision.</p>
