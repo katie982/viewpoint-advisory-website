@@ -136,6 +136,13 @@
     .related-case-desc { color: var(--warm-grey); font-size: 0.9rem; line-height: 1.6; }
     .related-case-cta { color: var(--accent); font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 500; margin-top: auto; padding-top: 0.4rem; }
 
+    .feel-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1.5rem; }
+    .feel-card { background: var(--warm-white); border: 1px solid var(--stone); border-top: 3px solid var(--accent); padding: 2rem 1.75rem; }
+    .feel-when { font-size: 0.66rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--warm-grey); font-weight: 500; margin-bottom: 0.9rem; }
+    .feel-anchor { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-style: italic; color: var(--accent); font-weight: 400; line-height: 1; margin-bottom: 0.85rem; }
+    .feel-body { color: var(--warm-grey); font-size: 1rem; line-height: 1.65; }
+    @media (max-width: 960px) { .feel-grid { grid-template-columns: 1fr; } }
+
     .closing-cta { max-width: 1300px; margin: 0 auto; padding: 4rem 4rem 5rem; text-align: center; }
     .closing-cta h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3.2vw, 2.6rem); line-height: 1.2; font-weight: 300; color: var(--charcoal); margin-bottom: 1rem; max-width: 640px; margin-inline: auto; }
     .closing-cta h2 em { color: var(--accent); font-style: italic; }
@@ -277,6 +284,7 @@
   <section class="section">
     <p class="section-eyebrow">Is This a Fit?</p>
     <h2 class="section-headline">This works best for leaders who know <em>where the problem is and what's likely causing it</em> &mdash; and want a partner to design the fix and roll it out alongside them.</h2>
+    <p class="section-body muted">Works the same whether you're building infrastructure for the whole company or for a single function &mdash; Product, Operations, Customer Success, PMO, Revenue Ops &mdash; under enough lift to deserve its own focused build.</p>
     <div class="fit-grid">
       <div class="fit-card yes">
         <h3>Best fit for you if&hellip;</h3>
@@ -354,6 +362,24 @@
         <p class="related-case-desc">Built a single source of truth for product features across patient journey stages &mdash; replacing scattered tribal knowledge with a structured catalog Sales and Service Delivery actually use.</p>
         <span class="related-case-cta">Read Case Study &rarr;</span>
       </a>
+    </div>
+  </section>
+
+  <!-- HOW YOU'LL FEEL -->
+  <section class="section">
+    <p class="section-eyebrow">How You'll Feel</p>
+    <h2 class="section-headline">The shift &mdash; <em>during, and after.</em></h2>
+    <div class="feel-grid">
+      <div class="feel-card">
+        <p class="feel-when">After we start</p>
+        <p class="feel-anchor">Relieved.</p>
+        <p class="feel-body">You can stop carrying the design work in your head &mdash; someone's actually going to build the thing.</p>
+      </div>
+      <div class="feel-card">
+        <p class="feel-when">After I leave</p>
+        <p class="feel-anchor">It's yours.</p>
+        <p class="feel-body">The system runs because your team built it &mdash; not because I left a binder behind.</p>
+      </div>
     </div>
   </section>
 

@@ -222,6 +222,13 @@
     }
 
     /* Closing CTA */
+    .feel-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1.5rem; }
+    .feel-card { background: var(--warm-white); border: 1px solid var(--stone); border-top: 3px solid var(--accent); padding: 2rem 1.75rem; }
+    .feel-when { font-size: 0.66rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--warm-grey); font-weight: 500; margin-bottom: 0.9rem; }
+    .feel-anchor { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-style: italic; color: var(--accent); font-weight: 400; line-height: 1; margin-bottom: 0.85rem; }
+    .feel-body { color: var(--warm-grey); font-size: 1rem; line-height: 1.65; }
+    @media (max-width: 960px) { .feel-grid { grid-template-columns: 1fr; } }
+
     .closing-cta { max-width: 1300px; margin: 0 auto; padding: 4rem 4rem 5rem; text-align: center; }
     .closing-cta h2 {
       font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3.2vw, 2.6rem); line-height: 1.2; font-weight: 300; color: var(--charcoal);
@@ -372,6 +379,7 @@
   <section class="section">
     <p class="section-eyebrow">Is This a Fit?</p>
     <h2 class="section-headline">This works best for leadership teams who <em>know they need to land somewhere together</em> &mdash; and want a process to get there.</h2>
+    <p class="section-body muted">Works the same whether you're a CEO resetting strategy for the whole company or a functional leader &mdash; Head of Product, VP of Operations, Head of Strategy &mdash; resetting it for your own organization.</p>
     <div class="fit-grid">
       <div class="fit-card yes">
         <h3>Best fit for you if&hellip;</h3>
@@ -442,6 +450,24 @@
         <p class="related-case-desc">A 3-day facilitated off-site that moved a fractured cross-functional team from competing priorities to a shared diagnosis, prioritized opportunities, and clear ownership.</p>
         <span class="related-case-cta">Read Case Study &rarr;</span>
       </a>
+    </div>
+  </section>
+
+  <!-- HOW YOU'LL FEEL -->
+  <section class="section">
+    <p class="section-eyebrow">How You'll Feel</p>
+    <h2 class="section-headline">The shift &mdash; <em>during, and after.</em></h2>
+    <div class="feel-grid">
+      <div class="feel-card">
+        <p class="feel-when">After we start</p>
+        <p class="feel-anchor">Heard.</p>
+        <p class="feel-body">The leadership team is finally saying the quiet parts out loud &mdash; and someone's listening for the patterns.</p>
+      </div>
+      <div class="feel-card">
+        <p class="feel-when">After I leave</p>
+        <p class="feel-anchor">Aligned.</p>
+        <p class="feel-body">Rowing in the same direction for the first time, with a cadence that keeps the plan alive past the offsite high.</p>
+      </div>
     </div>
   </section>
 

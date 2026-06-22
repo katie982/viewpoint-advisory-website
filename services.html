@@ -55,6 +55,16 @@
             "url": "https://viewpointadvisorygroup.com/services/the-build.html",
             "description": "A fractional engagement designing and rolling out the operating infrastructure — functions, roles, decision rights, processes, rhythms, KPIs — that turns strategy into how the company actually runs. Typical duration: 3–6 months, scoped to engagement."
           }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "The Stand-In",
+            "url": "https://viewpointadvisorygroup.com/services/the-stand-in.html",
+            "description": "A six-month embedded fractional engagement spanning all four layers of the Viewpoint Stack. Uses Reset, Diagnostic, and Build as tools rather than committing to one upfront, with a built-in taper and a fixed exit date. Fixed fee: $85K–$130K, anchored against the total cost of a Chief of Staff hire."
+          },
+          "priceRange": "$85,000–$130,000"
         }
       ]
     }
@@ -518,6 +528,55 @@
 
     footer { border-top: 1px solid var(--stone); padding: 1.8rem 4rem; color: var(--warm-grey); font-size: 0.8rem; }
 
+    /* Embedded engagement divider + card */
+    .embedded-divider {
+      max-width: 1300px;
+      margin: 1.5rem auto 0;
+      padding: 2.5rem 4rem 0.5rem;
+      text-align: center;
+    }
+    .embedded-eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.85rem;
+      font-weight: 500;
+    }
+    .embedded-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.6rem, 2.6vw, 2rem);
+      line-height: 1.25;
+      font-weight: 300;
+      color: var(--charcoal);
+      max-width: 720px;
+      margin: 0 auto 0.9rem;
+    }
+    .embedded-headline em { color: var(--accent); font-style: italic; }
+    .embedded-intro {
+      color: var(--warm-grey);
+      font-size: 1rem;
+      max-width: 680px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+    .service.embedded {
+      border-left: 3px solid var(--accent);
+      background: linear-gradient(180deg, var(--warm-white) 0%, rgba(74, 104, 69, 0.03) 100%);
+    }
+    .service-tag {
+      display: inline-block;
+      font-size: 0.62rem;
+      letter-spacing: 0.20em;
+      text-transform: uppercase;
+      color: var(--cream);
+      background: var(--accent);
+      padding: 0.4rem 0.65rem;
+      font-weight: 500;
+      align-self: flex-start;
+      line-height: 1;
+    }
+
     /* Responsive */
     @media (max-width: 960px) {
       header { padding: 4rem 1.25rem 2.5rem; }
@@ -670,6 +729,50 @@
         <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
           <a href="services/the-build.html" class="service-cta">Learn More &rarr;</a>
           <a href="contact.html?service=the-build" class="service-cta">Start a Conversation &rarr;</a>
+        </div>
+      </div>
+    </article>
+
+  </section>
+
+  <!-- Embedded engagement divider -->
+  <div class="embedded-divider">
+    <p class="embedded-eyebrow">When you need more than a project</p>
+    <h2 class="embedded-headline">Embedded leadership for a <em>fixed term.</em></h2>
+    <p class="embedded-intro">A six-month embedded engagement for when no single scoped project covers what you need &mdash; and you're not ready to hire (or wait six months to recruit) a full-time Chief of Staff. Self-eliminating by design.</p>
+  </div>
+
+  <section class="services">
+
+    <!-- The Stand-In — embedded engagement -->
+    <article class="service embedded" id="the-stand-in">
+      <div class="service-header">
+        <span class="service-tag">6-Month Retainer</span>
+        <h2 class="service-title">The Stand-In</h2>
+        <p class="service-subtitle">Embedded across the Viewpoint Stack&trade;</p>
+        <div class="stack-badges">
+          <span class="stack-badge">Vision</span>
+          <span class="stack-badge">Alignment</span>
+          <span class="stack-badge">Org Clarity</span>
+          <span class="stack-badge">Operational Infrastructure</span>
+        </div>
+      </div>
+      <div class="service-body">
+        <div>
+          <p class="block-label">The Problem I Solve</p>
+          <p class="block-body">You have a real leadership gap and more than one problem at once &mdash; but no single scoped project covers it. You're not ready to hire (or wait six months to recruit) the senior operating leader you actually need &mdash; Chief of Staff, COO, Head of PMO, Head of Product Operations, Head of Strategy, or VP of Business Operations. At a growth-stage company that might be the whole operating system; at a bigger company it might be one functional seat gone unowned too long.</p>
+        </div>
+        <div>
+          <p class="block-label">What I Do</p>
+          <p class="block-body">I embed across all four Stack layers for a fixed six-month term, using The Reset, Diagnostic, and Build as tools rather than committing to one fixed deliverable upfront. Time spent shrinks month over month by design &mdash; building AI-native systems at the Org Clarity and Op Infrastructure layers as I go.</p>
+        </div>
+        <div>
+          <p class="block-label">What You Walk Away With</p>
+          <p class="block-body outcome">A functioning, AI-native operating system across whichever layers needed it &mdash; owned by your team, with a clear exit date set the day we start.</p>
+        </div>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+          <a href="services/the-stand-in.html" class="service-cta">Learn More &rarr;</a>
+          <a href="contact.html?service=the-stand-in" class="service-cta">Start a Conversation &rarr;</a>
         </div>
       </div>
     </article>

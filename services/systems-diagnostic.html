@@ -122,6 +122,13 @@
     .faq-item h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 400; color: var(--charcoal); margin-bottom: 0.5rem; line-height: 1.3; }
     .faq-item p { color: var(--warm-grey); font-size: 0.98rem; }
 
+    .feel-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1.5rem; }
+    .feel-card { background: var(--warm-white); border: 1px solid var(--stone); border-top: 3px solid var(--accent); padding: 2rem 1.75rem; }
+    .feel-when { font-size: 0.66rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--warm-grey); font-weight: 500; margin-bottom: 0.9rem; }
+    .feel-anchor { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-style: italic; color: var(--accent); font-weight: 400; line-height: 1; margin-bottom: 0.85rem; }
+    .feel-body { color: var(--warm-grey); font-size: 1rem; line-height: 1.65; }
+    @media (max-width: 960px) { .feel-grid { grid-template-columns: 1fr; } }
+
     .closing-cta { max-width: 1300px; margin: 0 auto; padding: 4rem 4rem 5rem; text-align: center; }
     .closing-cta h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3.2vw, 2.6rem); line-height: 1.2; font-weight: 300; color: var(--charcoal); margin-bottom: 1rem; max-width: 640px; margin-inline: auto; }
     .closing-cta h2 em { color: var(--accent); font-style: italic; }
@@ -264,6 +271,7 @@
   <section class="section">
     <p class="section-eyebrow">Is This a Fit?</p>
     <h2 class="section-headline">This works best for leaders who <em>suspect something is wrong</em> &mdash; and want a clearer picture before they commit to a fix.</h2>
+    <p class="section-body muted">Works the same whether the scope is the whole company or a single function &mdash; Product, Operations, Customer Success, PMO, Revenue Ops &mdash; that needs its own clear-eyed read.</p>
     <div class="fit-grid">
       <div class="fit-card yes">
         <h3>Best fit for you if&hellip;</h3>
@@ -312,6 +320,24 @@
         <h3>Do you talk to people outside the leadership team?</h3>
         <p>When useful, yes. I'll often interview a small sample of mid-level managers or individual contributors to triangulate what leadership tells me &mdash; but only with your buy-in and with clear framing of what's being asked and why. Confidentiality is the default; nothing is reported back attributable unless you and I agree it should be.</p>
       </article>
+    </div>
+  </section>
+
+  <!-- HOW YOU'LL FEEL -->
+  <section class="section">
+    <p class="section-eyebrow">How You'll Feel</p>
+    <h2 class="section-headline">The shift &mdash; <em>during, and after.</em></h2>
+    <div class="feel-grid">
+      <div class="feel-card">
+        <p class="feel-when">After we start</p>
+        <p class="feel-anchor">Seen.</p>
+        <p class="feel-body">Someone outside the noise is taking the system seriously &mdash; not just chasing the loudest complaint.</p>
+      </div>
+      <div class="feel-card">
+        <p class="feel-when">After I leave</p>
+        <p class="feel-anchor">Clear-eyed.</p>
+        <p class="feel-body">You know what's actually broken, why, and what to fix first. The fog lifted.</p>
+      </div>
     </div>
   </section>
 
