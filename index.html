@@ -1282,6 +1282,99 @@
       footer { padding: 1.8rem 1.1rem; }
       footer p { font-size: 0.7rem; }
     }
+  
+    /* === REDESIGNED HOMEPAGE SECTIONS === */
+    .social-proof-bar { background: var(--cream); border-top: 1px solid var(--stone); border-bottom: 1px solid var(--stone); padding: 2rem 4rem; text-align: center; }
+    .sp-label { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--warm-grey); margin-bottom: 1.25rem; font-weight: 400; }
+    .sp-logos { display: flex; justify-content: center; align-items: center; gap: 3rem; flex-wrap: wrap; }
+    .sp-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-style: italic; color: var(--charcoal); font-weight: 400; letter-spacing: 0.02em; }
+
+    .problem-section { background: var(--warm-white); padding: 6rem 4rem; }
+    .problem-inner { max-width: 880px; margin: 0 auto; }
+    .problem-body { font-size: 1.15rem; color: var(--charcoal); line-height: 1.7; margin-top: 1.25rem; }
+
+    .home-services-section { max-width: 1300px; margin: 0 auto; padding: 6rem 4rem; }
+    .home-services-header { max-width: 700px; margin-bottom: 3rem; }
+    .home-services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .home-service-card { background: var(--warm-white); border: 1px solid var(--stone); padding: 2rem; text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 0.65rem; transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s; }
+    .home-service-card:hover { border-color: var(--accent); box-shadow: 0 18px 44px rgba(74,104,69,0.10); transform: translateY(-2px); }
+    .hsc-num { font-family: 'Cormorant Garamond', serif; font-size: 2.6rem; line-height: 1; color: var(--accent); font-weight: 300; margin-bottom: 0.5rem; }
+    .hsc-tag { display: inline-block; font-size: 0.6rem; letter-spacing: 0.20em; text-transform: uppercase; color: var(--cream); background: var(--accent); padding: 0.4rem 0.65rem; font-weight: 500; align-self: flex-start; line-height: 1; margin-bottom: 0.7rem; }
+    .hsc-title { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 400; color: var(--charcoal); line-height: 1.2; }
+    .hsc-subtitle { font-family: 'Cormorant Garamond', serif; font-size: 0.95rem; font-style: italic; color: var(--accent); font-weight: 300; margin-top: 0.2rem; }
+    .hsc-desc { font-size: 0.95rem; color: var(--warm-grey); line-height: 1.65; margin-top: 0.4rem; }
+    .hsc-cta { margin-top: auto; padding-top: 0.8rem; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); font-weight: 500; }
+    .home-services-divider { max-width: 880px; margin: 3.5rem auto 1.5rem; text-align: center; }
+    .hsd-eyebrow { font-size: 0.7rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--accent); font-weight: 500; }
+    .home-service-card.embedded { display: grid; grid-template-columns: 1fr 1.4fr; gap: 2.5rem; align-items: start; border-left: 3px solid var(--accent); background: linear-gradient(180deg, var(--warm-white) 0%, rgba(74,104,69,0.03) 100%); padding: 2.5rem; }
+    .home-service-card.embedded .hsc-embed-left { display: flex; flex-direction: column; }
+    .home-service-card.embedded .hsc-embed-right { display: flex; flex-direction: column; gap: 1.5rem; }
+    .home-service-card.embedded .hsc-cta { margin-top: 0; padding-top: 0; }
+
+    .stack-preview-section { background: var(--cream); padding: 6rem 4rem; border-top: 1px solid var(--stone); border-bottom: 1px solid var(--stone); }
+    .stack-preview-inner { max-width: 1300px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: center; }
+    .stack-preview-body { font-size: 1.05rem; color: var(--charcoal); line-height: 1.75; margin-top: 1.25rem; margin-bottom: 1.75rem; max-width: 600px; }
+    .stack-preview-body strong { color: var(--accent); font-weight: 500; }
+    .stack-preview-cta { display: inline-flex; align-items: center; gap: 0.4rem; text-decoration: none; color: var(--accent); font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 500; border-bottom: 1px solid transparent; padding-bottom: 0.15rem; transition: border-color 0.2s; }
+    .stack-preview-cta:hover { border-bottom-color: var(--accent); }
+    .stack-preview-image { display: flex; justify-content: center; }
+    .stack-preview-image img { max-width: 100%; height: auto; }
+
+    a.stat-card { text-decoration: none; color: inherit; transition: transform 0.2s, box-shadow 0.2s; }
+    a.stat-card:hover { transform: translateY(-3px); box-shadow: 0 18px 44px rgba(0,0,0,0.20); }
+    .stat-link { display: inline-block; margin-top: 1rem; font-size: 0.6rem; letter-spacing: 0.20em; text-transform: uppercase; color: var(--accent-light); font-weight: 500; }
+
+    .featured-cases-section { background: var(--warm-white); padding: 6rem 4rem; }
+    .featured-cases-inner { max-width: 1300px; margin: 0 auto; }
+    .featured-cases-header { max-width: 700px; margin-bottom: 3rem; }
+    .featured-cases-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .featured-case-card { background: var(--cream); border: 1px solid var(--stone); padding: 2rem; text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 0.65rem; transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s; }
+    .featured-case-card:hover { border-color: var(--accent); box-shadow: 0 18px 44px rgba(74,104,69,0.10); transform: translateY(-2px); }
+    .fcc-meta { font-size: 0.66rem; letter-spacing: 0.20em; text-transform: uppercase; color: var(--warm-grey); font-weight: 500; }
+    .fcc-title { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 400; color: var(--charcoal); line-height: 1.2; margin-top: 0.2rem; }
+    .fcc-metric { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-style: italic; color: var(--accent); line-height: 1.35; }
+    .fcc-desc { font-size: 0.92rem; color: var(--warm-grey); line-height: 1.65; }
+    .fcc-cta { margin-top: auto; padding-top: 0.6rem; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); font-weight: 500; }
+    .featured-cases-all { text-align: center; margin-top: 2.5rem; }
+    .featured-cases-all a { text-decoration: none; color: var(--accent); font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 500; border-bottom: 1px solid transparent; padding-bottom: 0.15rem; transition: border-color 0.2s; }
+    .featured-cases-all a:hover { border-bottom-color: var(--accent); }
+
+    .testimonials-cluster { background: var(--charcoal); padding: 6rem 4rem; }
+    .tc-header { max-width: 700px; margin: 0 auto 3rem; text-align: center; }
+    .tc-header .section-eyebrow { color: var(--taupe); }
+    .tc-header .section-headline { color: var(--cream); }
+    .tc-header .section-headline em { color: var(--accent-light); font-style: italic; }
+    .tc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 1300px; margin: 0 auto; }
+    .tc-card { background: transparent; border-top: 1px solid rgba(248,246,240,0.18); padding-top: 1.5rem; }
+    .tc-quote { font-family: 'Cormorant Garamond', serif; font-size: 1.08rem; line-height: 1.55; color: var(--cream); font-style: italic; margin-bottom: 1.25rem; font-weight: 300; }
+    .tc-cite { font-style: normal; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--taupe); font-weight: 500; }
+
+    .about-teaser-section { background: var(--cream); padding: 6rem 4rem; }
+    .about-teaser-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 320px 1fr; gap: 4rem; align-items: center; }
+    .about-teaser-image img { width: 100%; height: auto; border-radius: 4px; }
+    .about-teaser-body { font-size: 1.05rem; color: var(--charcoal); line-height: 1.7; margin-top: 1.25rem; margin-bottom: 1.5rem; }
+    .about-teaser-cta { display: inline-flex; align-items: center; gap: 0.4rem; text-decoration: none; color: var(--accent); font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 500; border-bottom: 1px solid transparent; padding-bottom: 0.15rem; transition: border-color 0.2s; }
+    .about-teaser-cta:hover { border-bottom-color: var(--accent); }
+
+    @media (max-width: 960px) {
+      .social-proof-bar { padding: 1.5rem 1.25rem; }
+      .sp-logos { gap: 1.5rem; }
+      .sp-logo { font-size: 1.2rem; }
+      .problem-section { padding: 4rem 1.25rem; }
+      .home-services-section { padding: 4rem 1.25rem; }
+      .home-services-grid { grid-template-columns: 1fr; }
+      .home-service-card.embedded { grid-template-columns: 1fr; gap: 1.5rem; padding: 1.75rem; }
+      .stack-preview-section { padding: 4rem 1.25rem; }
+      .stack-preview-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .featured-cases-section { padding: 4rem 1.25rem; }
+      .featured-cases-grid { grid-template-columns: 1fr; }
+      .testimonials-cluster { padding: 4rem 1.25rem; }
+      .tc-grid { grid-template-columns: 1fr; }
+      .about-teaser-section { padding: 4rem 1.25rem; }
+      .about-teaser-inner { grid-template-columns: 1fr; gap: 2rem; justify-items: start; }
+      .about-teaser-image img { max-width: 240px; }
+    }
+
   </style>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-S25NRXRXCF"></script>
@@ -1342,15 +1435,82 @@
     </div>
   </section>
 
-  <!-- TESTIMONIAL -->
-  <section class="testimonial-section">
-    <div class="testimonial-inner fade-in">
-      <div class="testimonial-rule"></div>
-      <div class="testimonial-content">
-        <blockquote class="testimonial-quote">
-          Katie built an amazing AI application to help us complete a structured and detailed analysis of potential automation efficiencies in preparation for a RFP submission for one of our healthcare clients. The level of detail she created enabled me and the operations team to set clear and timebound operating goals and guide our tech strategy for delivering on our goals.
-        </blockquote>
-        <cite class="testimonial-cite">VP, Service Delivery &mdash; Series B Healthcare Tech Startup</cite>
+  <!-- SOCIAL PROOF BAR -->
+  <section class="social-proof-bar">
+    <p class="sp-label">Built her operating playbook at</p>
+    <div class="sp-logos">
+      <span class="sp-logo">Vistaprint</span>
+      <span class="sp-logo">TripAdvisor</span>
+      <span class="sp-logo">Chegg</span>
+      <span class="sp-logo">Hummingbird Healthcare</span>
+    </div>
+  </section>
+
+  <!-- THE PROBLEM I SOLVE -->
+  <section class="problem-section">
+    <div class="problem-inner">
+      <p class="section-eyebrow">What I Do</p>
+      <h2 class="section-headline">Strategy is only as good as <em>the operating system behind it.</em></h2>
+      <p class="problem-body">Most growth-stage companies bolt new tools (AI included) onto broken processes and call it transformation. I rebuild the foundation first &mdash; the structure underneath that turns offsite intentions into how the business actually runs day to day. Across vision, alignment, organizational clarity, and operational infrastructure.</p>
+    </div>
+  </section>
+
+  <!-- THE SERVICES -->
+  <section class="home-services-section">
+    <div class="home-services-header">
+      <p class="section-eyebrow">Engagements</p>
+      <h2 class="section-headline">Four ways to <em>work together.</em></h2>
+    </div>
+    <div class="home-services-grid">
+      <a class="home-service-card" href="services/strategic-reset.html">
+        <p class="hsc-num">01</p>
+        <h3 class="hsc-title">The Strategic Reset</h3>
+        <p class="hsc-subtitle">Vision + Leadership Alignment</p>
+        <p class="hsc-desc">A facilitated planning engagement that takes leadership teams from misaligned interpretations of direction to one shared, accountable plan.</p>
+        <span class="hsc-cta">Learn More &rarr;</span>
+      </a>
+      <a class="home-service-card" href="services/systems-diagnostic.html">
+        <p class="hsc-num">02</p>
+        <h3 class="hsc-title">The Systems Diagnostic</h3>
+        <p class="hsc-subtitle">Across the Viewpoint Stack&trade;</p>
+        <p class="hsc-desc">A structured assessment that pinpoints exactly where the operating system is breaking down &mdash; and what to fix first.</p>
+        <span class="hsc-cta">Learn More &rarr;</span>
+      </a>
+      <a class="home-service-card" href="services/the-build.html">
+        <p class="hsc-num">03</p>
+        <h3 class="hsc-title">The Build</h3>
+        <p class="hsc-subtitle">Org Clarity + Op Infrastructure</p>
+        <p class="hsc-desc">Hands-on design and rollout of the operating infrastructure that turns strategy into how the company actually runs.</p>
+        <span class="hsc-cta">Learn More &rarr;</span>
+      </a>
+    </div>
+    <div class="home-services-divider">
+      <p class="hsd-eyebrow">When you need more than a project</p>
+    </div>
+    <a class="home-service-card embedded" href="services/the-stand-in.html">
+      <div class="hsc-embed-left">
+        <span class="hsc-tag">6-Month Retainer</span>
+        <h3 class="hsc-title">The Stand-In</h3>
+        <p class="hsc-subtitle">Embedded across the Viewpoint Stack&trade;</p>
+      </div>
+      <div class="hsc-embed-right">
+        <p class="hsc-desc">A six-month embedded fractional engagement for when no single scoped project covers what you need &mdash; and you're not ready to hire (or wait six months to recruit) a Chief of Staff, COO, Head of PMO, or other senior operating leader. Self-eliminating by design.</p>
+        <span class="hsc-cta">Learn More &rarr;</span>
+      </div>
+    </a>
+  </section>
+
+  <!-- VIEWPOINT STACK PREVIEW -->
+  <section class="stack-preview-section">
+    <div class="stack-preview-inner">
+      <div class="stack-preview-text">
+        <p class="section-eyebrow">The Framework</p>
+        <h2 class="section-headline">Every engagement runs through <em>the Viewpoint Stack.</em></h2>
+        <p class="stack-preview-body">Four layers, each load-bearing for the next. <strong>Vision</strong> sets direction. <strong>Alignment</strong> turns it into shared agreement. <strong>Organizational Clarity</strong> translates that into how teams operate. <strong>Operational Infrastructure</strong> makes it the day-to-day system. When something's broken, the Stack tells you which layer needs the work &mdash; not just which symptom is loudest.</p>
+        <a class="stack-preview-cta" href="framework.html">See the full breakdown &rarr;</a>
+      </div>
+      <div class="stack-preview-image">
+        <img src="./Viewpoint%20Stack.png" alt="The Viewpoint Stack framework" />
       </div>
     </div>
   </section>
@@ -1366,98 +1526,124 @@
       </div>
       <div class="stats-grid fade-in">
 
-        <!-- 27% -->
-        <div class="stat-card">
+        <a class="stat-card" href="case-studies/the-value-stream-reset.html">
           <div class="stat-accent-line"></div>
           <div class="stat-number">
             <span class="stat-value">27</span><span class="stat-suffix">%</span>
           </div>
           <p class="stat-label">COST<br>REDUCTION</p>
           <p class="stat-description">Achieved through Six Sigma Value Stream Mapping and lean operating implementation.</p>
-        </div>
+          <span class="stat-link">See case study &rarr;</span>
+        </a>
 
-        <!-- 10h → 1h -->
-        <div class="stat-card" style="position: relative;">
+        <a class="stat-card" href="case-studies/productoperations.html" style="position: relative;">
           <div class="stat-accent-line"></div>
           <div class="stat-number" style="display: flex; align-items: center; gap: 0.25rem;">
-            <span class="stat-value">10</span><span class="stat-suffix">H</span><span style="font-size: 1.2rem; color: var(--warm-grey);">→</span><span class="stat-value">1</span><span class="stat-suffix">H</span>
+            <span class="stat-value">10</span><span class="stat-suffix">H</span><span style="font-size: 1.2rem; color: var(--warm-grey);">&rarr;</span><span class="stat-value">1</span><span class="stat-suffix">H</span>
           </div>
           <p class="stat-label">FEATURE<br>DECISION<br>VELOCITY</p>
           <p class="stat-description">From 10-hour cycle to 1-hour self-service workflow for pricing, staffing, and solution decisions.</p>
-        </div>
+          <span class="stat-link">See case study &rarr;</span>
+        </a>
 
-        <!-- $30M -->
-        <div class="stat-card">
+        <a class="stat-card" href="case-studies/the-annual-reset.html">
           <div class="stat-accent-line"></div>
           <div class="stat-number">
             <span class="stat-value">$30</span><span class="stat-suffix">M</span>
           </div>
           <p class="stat-label">REVENUE GAP<br>CLOSED</p>
           <p class="stat-description">Deployed to establish a new business development process heading into 2026.</p>
-        </div>
+          <span class="stat-link">See case study &rarr;</span>
+        </a>
 
-        <!-- 4× -->
-        <div class="stat-card">
+        <a class="stat-card" href="case-studies/project-lift.html">
           <div class="stat-accent-line"></div>
           <div class="stat-number">
-            <span class="stat-value">4</span><span class="stat-suffix">×</span>
+            <span class="stat-value">4</span><span class="stat-suffix">&times;</span>
           </div>
           <p class="stat-label">FUNCTIONS<br>BUILT FROM<br>SCRATCH</p>
-          <p class="stat-description">PMOs, product orgs, and portfolio functions — built right the first time.</p>
-        </div>
+          <p class="stat-description">PMOs, product orgs, and portfolio functions &mdash; built right the first time.</p>
+          <span class="stat-link">See case study &rarr;</span>
+        </a>
 
       </div>
     </div>
   </section>
 
-  <div class="divider"></div>
-
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="about fade-in">
-      <div class="about-left">
-        <p class="section-eyebrow">About</p>
-        <h2 class="section-headline">Hi, I'm <em>Katie Dasso</em></h2>
-
-        <div class="about-image">
-          <img src="/headshot.jpeg" alt="Katie Dasso" style="width: 400px; height: auto;">
-        </div>
+  <!-- CASE STUDIES FEATURED -->
+  <section class="featured-cases-section">
+    <div class="featured-cases-inner">
+      <div class="featured-cases-header">
+        <p class="section-eyebrow">Selected Engagements</p>
+        <h2 class="section-headline">What it's looked like <em>in practice.</em></h2>
       </div>
-      <div class="about-right">
-        <div class="about-text">
-          <p>I've lived the chaos of a business scaling from 50 to 150+ people, when the systems that used to work suddenly don't. That's exactly what I help with — rebuilding what's underneath so the goals you set at your offsite actually turn into what happens day to day. Most of my clients know they're wearing pants a wee size too small, but they don't have time to go shopping — let alone figure out the latest trends (read: AI) and how to tailor them to their org. My belief: you can't sew AI onto a broken process and expect anything but broken AI, so I build the foundation first.</p>
-
-          <p>With 15+ years as a strategic operator at high-growth companies like Vistaprint, TripAdvisor, Chegg, and Hummingbird Healthcare, I've learned that a strategy is only as good as the operating system behind it. That experience across e-commerce, travel, edtech, and healthcare has shown me that execution problems look remarkably similar regardless of industry — and so do the structural solutions.</p>
-
-          <ul style="list-style: none; margin: 1.75rem 0; color: var(--warm-grey);">
-            <li style="margin-bottom: 1rem;"><strong style="color: var(--charcoal);">Deep Systems Thinking:</strong> I don't patch the thing that broke. I figure out why it keeps breaking.</li>
-            <li style="margin-bottom: 1rem;"><strong style="color: var(--charcoal);">Outcome-Obsessed:</strong> I'm not here to hand you a slide deck. I'm here to build something your team actually uses.</li>
-            <li style="margin-bottom: 1rem;"><strong style="color: var(--charcoal);">Iterative Execution:</strong> I treat your org like a product — shipping changes, watching what breaks, and rebuilding instead of waiting for a perfect plan.</li>
-            <li style="margin-bottom: 0;"><strong style="color: var(--charcoal);">AI as Architecture, Not Add-On:</strong> Most companies add an AI tool and call it done. I build AI into how the work actually happens — so it's still paying off a year from now.</li>
-          </ul>
-
-          <p style="margin-top: 1.75rem; padding-top: 1.75rem; border-top: 1px solid var(--stone);">Based in the Boston area, I work with a limited client roster to ensure every engagement gets my full focus as a fractional strategic operator. I embed directly within your leadership team—in your Slack, your meetings, and your reality—to connect the dots and move the business forward.</p>
-        </div>
+      <div class="featured-cases-grid">
+        <a class="featured-case-card" href="case-studies/wanderly.html">
+          <p class="fcc-meta">TripAdvisor &middot; Travel</p>
+          <h3 class="fcc-title">Strategic Reset</h3>
+          <p class="fcc-metric">From misaligned strategy to one agreed picture of priorities.</p>
+          <p class="fcc-desc">Facilitated a leadership team through resetting shared strategic direction for a struggling Vacation Rentals business &mdash; turning misaligned interpretations of strategy into one clear, agreed plan.</p>
+          <span class="fcc-cta">Read Case Study &rarr;</span>
+        </a>
+        <a class="featured-case-card" href="case-studies/the-value-stream-reset.html">
+          <p class="fcc-meta">Vistaprint &middot; E-Commerce</p>
+          <h3 class="fcc-title">The Value Stream Reset</h3>
+          <p class="fcc-metric">Cycle time cut from 14 days to 6.</p>
+          <p class="fcc-desc">An agile rollout inside Product Design &mdash; earned through Value Stream Mapping, a pilot on the biggest waste source, and five cross-functional squads built on the VFQ framework.</p>
+          <span class="fcc-cta">Read Case Study &rarr;</span>
+        </a>
+        <a class="featured-case-card" href="case-studies/project-lift.html">
+          <p class="fcc-meta">Healthtech &middot; Series B</p>
+          <h3 class="fcc-title">Project Lift</h3>
+          <p class="fcc-metric">$27M ACV at risk &rarr; cross-functional ops in 4 months.</p>
+          <p class="fcc-desc">Designed and stood up a Direct-to-Operations function from scratch &mdash; functions, roles, decision rights, operating rhythm &mdash; turning a fractured account model into a coordinated delivery system.</p>
+          <span class="fcc-cta">Read Case Study &rarr;</span>
+        </a>
       </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- TESTIMONIAL 2 — VP Strategy -->
-  <section class="testimonial-section">
-    <div class="testimonial-inner fade-in">
-      <div class="testimonial-rule"></div>
-      <div class="testimonial-content">
-        <blockquote class="testimonial-quote">
-          Katie's support, structure, and vision was invaluable to us being able to launch our new process on time. The overall process is complex and involves many cross-functional teams. Katie expertly navigated all of those dynamics. When we realized we couldn't get it all done, Katie helped create a successful plan forward that allowed us to break the work into increments. I'm so thankful for Katie's partnership and support.
-        </blockquote>
-        <cite class="testimonial-cite">VP, Strategy &mdash; Series B Startup</cite>
+      <div class="featured-cases-all">
+        <a href="case-studies.html">See all case studies &rarr;</a>
       </div>
     </div>
   </section>
 
-  <!-- HOW I WORK -->
+  <!-- TESTIMONIALS CLUSTERED -->
+  <section class="testimonials-cluster">
+    <div class="tc-header">
+      <p class="section-eyebrow">What clients say</p>
+      <h2 class="section-headline">From the leaders <em>I've worked alongside.</em></h2>
+    </div>
+    <div class="tc-grid">
+      <blockquote class="tc-card">
+        <p class="tc-quote">Katie built an amazing AI application to help us complete a structured and detailed analysis of potential automation efficiencies in preparation for a RFP submission for one of our healthcare clients. The level of detail she created enabled me and the operations team to set clear and timebound operating goals and guide our tech strategy for delivering on our goals.</p>
+        <cite class="tc-cite">VP, Service Delivery &mdash; Series B Healthcare Tech</cite>
+      </blockquote>
+      <blockquote class="tc-card">
+        <p class="tc-quote">Katie's support, structure, and vision was invaluable to us being able to launch our new process on time. The overall process is complex and involves many cross-functional teams. Katie expertly navigated all of those dynamics. When we realized we couldn't get it all done, Katie helped create a successful plan forward that allowed us to break the work into increments.</p>
+        <cite class="tc-cite">VP, Strategy &mdash; Series B Startup</cite>
+      </blockquote>
+      <blockquote class="tc-card">
+        <p class="tc-quote">We had taken various swings at documenting our client lifecycle in the past year but Katie's involvement brought a level of clarity and structure to something that is so impactful across the company. Her ability to take complex ideas and translate them into easy-to-understand graphics and summaries allows us to focus on key questions and decisions while not getting bogged down in the complications.</p>
+        <cite class="tc-cite">Growth Operations Leader &mdash; Series B Startup</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ABOUT TEASER -->
+  <section id="about" class="about-teaser-section">
+    <div class="about-teaser-inner">
+      <div class="about-teaser-image">
+        <img src="/headshot.jpeg" alt="Katie Dasso">
+      </div>
+      <div class="about-teaser-text">
+        <p class="section-eyebrow">Meet Katie</p>
+        <h2 class="section-headline">Hi, I'm <em>Katie Dasso.</em></h2>
+        <p class="about-teaser-body">Fractional strategic operator with 15+ years building operating systems at high-growth companies &mdash; Vistaprint, TripAdvisor, Chegg, Hummingbird Healthcare. Based in Boston, I take on a limited client roster so every engagement gets full focus.</p>
+        <a class="about-teaser-cta" href="about.html">Read the longer story &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+<!-- HOW I WORK -->
   <section id="how" style="background: var(--cream); padding: 7rem 4rem;">
     <div style="max-width: 1400px; margin: 0 auto;">
       <div style="max-width: 560px; margin-bottom: 5rem;">
@@ -1529,26 +1715,11 @@
     </div>
   </section>
 
-    <!-- TESTIMONIAL 3 — Growth Operations Leader -->
-  <section class="testimonial-section">
-    <div class="testimonial-inner fade-in">
-      <div class="testimonial-rule"></div>
-      <div class="testimonial-content">
-        <blockquote class="testimonial-quote">
-          We had taken various swings at documenting our client lifecycle in the past year but your involvement has brought a level of clarity and structure to something that is so impactful across the company. Your ability to take complex ideas and translate them into easy-to-understand graphics and summaries allows us to focus on key questions and decisions while not getting bogged down in the complications.
-        </blockquote>
-        <cite class="testimonial-cite">Growth Operations Leader &mdash; Series B Startup</cite>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
   <!-- CONTACT -->
   <section id="contact" class="contact-section">
     <p class="section-eyebrow">Contact</p>
-    <h2 class="section-headline fade-in">Ready to get building?</h2>
-    <p class="contact-sub">I'm currently accepting a limited number of new clients. Let's find out if we're a good fit.</p>
+    <h2 class="section-headline fade-in">Ready to <em>get building?</em></h2>
+    <p class="contact-sub">Currently accepting a limited number of new clients in 2026 &mdash; let's see if we're a fit.</p>
     <a href="https://calendly.com/katie-viewpointadvisorygroup/30min" class="hero-cta" target="_blank" rel="noopener noreferrer">Let's Talk</a>
     <a href="mailto:katie@viewpointadvisorygroup.com" class="contact-email">katie@viewpointadvisorygroup.com</a>
     <div class="contact-links">
