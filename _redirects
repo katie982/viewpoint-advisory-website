@@ -1,7 +1,6 @@
 # Permanent redirects for deleted duplicate case study URLs.
 # Preserves any inbound links / SEO equity by sending traffic to the canonical version.
 /case-studies/d2o.html              /case-studies/project-lift.html       301
-/case-studies/hummingbird.html      /case-studies/productoperations.html  301
 /case-studies/tripadvisor.html      /case-studies/wanderly.html           301
 
 # Legacy how-i-work URL — content lives at services.html#how-i-work now.
