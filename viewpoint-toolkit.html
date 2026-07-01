@@ -478,6 +478,10 @@
       background: var(--accent);
       color: var(--cream);
     }
+    .tag.filter-match {
+      background: var(--accent);
+      color: var(--cream);
+    }
     .entry-link {
       font-size: 0.75rem;
       font-weight: 400;
@@ -1482,6 +1486,35 @@
 
     const layers = ['vision','alignment','org-clarity','op-infrastructure'];
 
+    // Maps filter slugs to the exact display text used on .tag spans, so the
+    // matching tag on each visible entry can be highlighted when a filter is active.
+    const tagLabels = {
+      'vision': 'Vision',
+      'alignment': 'Alignment',
+      'org-clarity': 'Org Clarity',
+      'op-infrastructure': 'Op Infrastructure',
+      'strategic-goal-setting': 'Strategic goal setting',
+      'leadership-accountability': 'Leadership accountability',
+      'performance-management': 'Performance management',
+      'role-clarity': 'Role clarity',
+      'decision-rights': 'Decision rights',
+      'org-design': 'Org design',
+      'standardized-execution': 'Standardized execution',
+      'operating-rhythms': 'Operating rhythms',
+      'scoreboard-visibility': 'Scoreboard visibility',
+      'ai-enablement': 'AI enablement',
+      'communication-systems': 'Communication systems',
+      'product-operations': 'Product operations'
+    };
+
+    function updateTagHighlights(filter) {
+      const targetLabel = (tagLabels[filter] || '').toLowerCase();
+      document.querySelectorAll('.entry-tags .tag').forEach(tagEl => {
+        const isMatch = targetLabel !== '' && tagEl.textContent.trim().toLowerCase() === targetLabel;
+        tagEl.classList.toggle('filter-match', isMatch);
+      });
+    }
+
 
 
     function toggleExpand(btn) {
@@ -1545,6 +1578,7 @@
       activeFilter = filter;
       document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
+      updateTagHighlights(filter);
 
       const isLayer = layers.includes(filter);
       const banner = document.getElementById('sublayer-banner');
