@@ -745,6 +745,7 @@
     <button class="filter-btn sublayer" onclick="filterEntries('performance-management', this)">Performance management</button>
     <button class="filter-btn sublayer" onclick="filterEntries('role-clarity', this)">Role clarity</button>
     <button class="filter-btn sublayer" onclick="filterEntries('decision-rights', this)">Decision rights</button>
+    <button class="filter-btn sublayer" onclick="filterEntries('org-design', this)">Org design</button>
 
     <span class="filter-divider"></span>
     <span class="filter-label">Op Infrastructure</span>
@@ -753,6 +754,8 @@
     <button class="filter-btn sublayer" onclick="filterEntries('operating-rhythms', this)">Operating rhythms</button>
     <button class="filter-btn sublayer" onclick="filterEntries('scoreboard-visibility', this)">Scoreboard visibility</button>
     <button class="filter-btn sublayer" onclick="filterEntries('ai-enablement', this)">AI enablement</button>
+    <button class="filter-btn sublayer" onclick="filterEntries('communication-systems', this)">Communication systems</button>
+    <button class="filter-btn sublayer" onclick="filterEntries('product-operations', this)">Product operations</button>
   </div>
 
   <!-- SUBLAYER DESCRIPTION BANNER -->
@@ -1467,6 +1470,18 @@
       'ai-enablement': {
         label: 'Operational Infrastructure → AI Enablement',
         text: 'Designing operational infrastructure that is built to work with AI over time — maintainable, extensible, and semantically rigorous. Not AI doing the heavy lifting, but the right foundation so AI compounds value naturally.'
+      },
+      'communication-systems': {
+        label: 'Operational Infrastructure → Communication Systems',
+        text: 'How information actually moves through the organization — the channels, tools, and norms that determine whether the right people get the right context at the right time, independent of formal meeting cadences.'
+      },
+      'org-design': {
+        label: 'Organizational Clarity → Org Design',
+        text: 'The shape of the organization itself — how teams, functions, and reporting lines are structured to match the strategy, rather than the strategy bending around whatever structure already exists.'
+      },
+      'product-operations': {
+        label: 'Operational Infrastructure → Product Operations',
+        text: 'The operating layer behind how product gets built and shipped — process, tooling, and cross-functional coordination between product, engineering, and go-to-market, independent of any one team\'s internal workflow.'
       }
     };
 
