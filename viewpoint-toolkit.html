@@ -773,6 +773,156 @@
   <section class="topic-section" id="ai-enablement-section">
     <div class="entries">
 
+      <!-- Entry 19 -->
+      <div class="entry" data-layers="op-infrastructure org-clarity" data-sublayers="ai-enablement standardized-execution decision-rights">
+        <div>
+          <p class="entry-meta">AvePoint · Timothy Boettcher &amp; Clara Hinchcliffe · Nov 2025 <span class="read-time">· 8 min read</span></p>
+          <p class="entry-title">The Definitive Guide to Agentic AI Governance and Security<span class="new-tag" id="new-entry-19">New</span></p>
+          <p class="entry-summary">AvePoint's field guide argues that governing agentic AI means governing an entire ecosystem, not a single model — treating every agent as a non-human identity, tracking the data it touches, and covering its full lifecycle from sandbox to shutdown. It pairs the framework with a concrete five-step plan for standing up governance from scratch.</p>
+
+          <button class="expand-toggle" onclick="toggleExpand(this)">
+            <span>Details</span><span class="toggle-arrow">▼</span>
+          </button>
+
+          <div class="entry-expandable">
+            <div class="entry-detail">
+              <div class="detail-block">
+                <p class="detail-label">Key Insights</p>
+                <div class="detail-text"><ul>
+                  <li>The Three Pillars: Identity-First Mandate (unique credentials, zero trust, least privilege, and lifecycle decommissioning for every agent, treated as a "non-human identity"), Data-Centric Foundation (automated data discovery, dynamic policy enforcement, minimization, and metadata-driven audit trails), and End-to-End Lifecycle View (sandbox testing before launch, continuous audit trails, and a "big red button" kill switch)</li>
+                  <li>New attack surface specific to agents: prompt injection and jailbreaking, adversarial data poisoning, "agent-to-agent collusion" where multiple autonomous agents interact in unforeseen ways, and vulnerabilities introduced by third-party APIs and tool connectors</li>
+                  <li>Agent-specific privacy risks: agents can infer private details (health conditions, financial distress) by correlating non-sensitive data points, they create untracked duplicate copies of data as they move and transform it, and "right to be forgotten" requests get far harder once an agent has already learned from the data</li>
+                  <li>The five-step rollout plan: form a cross-functional governance committee (IT, security, data, legal, business — the seed of an "AI Center of Excellence"); map every agent's owner, purpose, and data access before governing anything; pilot in a sandbox and stress-test controls; codify written "rules of engagement" (ethical boundaries, intervention protocols, audit requirements, kill-switch procedures); then monitor, audit, and iterate continuously</li>
+                  <li>Regulatory grounding: flags the EU AI Act, NIST's "Govern, Map, Measure, Manage" framework, HIPAA, and GDPR/CCPA as the compliance regimes agentic governance needs to map to, plus sector-specific overlays for finance, healthcare, and education</li>
+                </ul></div>
+              </div>
+              <div class="detail-block">
+                <p class="detail-label">Author</p>
+                <div class="detail-text">
+                  <p class="author-name">Timothy Boettcher &amp; Clara Hinchcliffe</p>
+                  <p>Boettcher is a senior go-to-market and product marketing leader and Microsoft MVP for M365 Copilot, specializing in enterprise AI, data governance, and adoption strategy across global markets. Hinchcliffe is a Product Marketing Manager at AvePoint working on go-to-market strategy for the company's data security and information lifecycle solutions.</p>
+                  <p class="author-links"><a href="https://timothyb.com.au" target="_blank">Boettcher · Site</a></p>
+                </div>
+              </div>
+              <div class="detail-block viewpoint">
+                <p class="detail-label">Most Leverageable for Viewpoint</p>
+                <div class="detail-text"><ul>
+                  <li>The "model-centric to ecosystem-centric" framing is strong positioning language for Op Infrastructure / AI enablement conversations: clients often govern the AI tool itself but not the workflow, data, and identity ecosystem around it — a gap Viewpoint can name directly</li>
+                  <li>The Identity-First pillar reframes "who owns this agent" as a Decision Rights question, not just an IT question — a useful discovery prompt: "if this agent's access needs to be revoked tomorrow, who owns that call, and how long would it take?"</li>
+                  <li>The five-step rollout plan (especially Step 1's cross-functional governance committee) is a ready-made scoping structure for an AI-enablement engagement — it's essentially an operating-rhythm and decision-rights exercise dressed up as a security guide</li>
+                  <li>"Written rules of engagement" (ethical boundaries, intervention protocols, audit cadence, kill-switch procedure) is close to Viewpoint's standardized-execution language — a candidate deliverable template: a one-page "agent rules of engagement" doc per client AI deployment</li>
+                </ul></div>
+              </div>
+            </div>
+
+            <!-- FRAMEWORK -->
+            <div class="framework-block">
+              <p class="framework-label">Framework — The Three Pillars of Agentic AI Governance</p>
+              <div class="framework-diagram">
+                <svg viewBox="0 0 580 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:580px;font-family:'DM Sans',sans-serif;">
+                  <rect x="10" y="20" width="170" height="180" rx="2" fill="#7a9875"/>
+                  <text x="95" y="45" text-anchor="middle" font-size="8" fill="#1e2820" letter-spacing="1.2" font-weight="500">IDENTITY</text>
+                  <text x="95" y="80" text-anchor="middle" font-size="9" fill="#1e2820" font-weight="300">Unique agent</text>
+                  <text x="95" y="94" text-anchor="middle" font-size="9" fill="#1e2820" font-weight="300">credentials, zero</text>
+                  <text x="95" y="108" text-anchor="middle" font-size="9" fill="#1e2820" font-weight="300">trust, least</text>
+                  <text x="95" y="122" text-anchor="middle" font-size="9" fill="#1e2820" font-weight="300">privilege, lifecycle</text>
+                  <text x="95" y="136" text-anchor="middle" font-size="9" fill="#1e2820" font-weight="300">decommissioning</text>
+
+                  <rect x="205" y="20" width="170" height="180" rx="2" fill="#4a6845"/>
+                  <text x="290" y="45" text-anchor="middle" font-size="8" fill="#e4e0d4" letter-spacing="1.2" font-weight="500">DATA</text>
+                  <text x="290" y="80" text-anchor="middle" font-size="9" fill="#f8f6f0" font-weight="300">Automated</text>
+                  <text x="290" y="94" text-anchor="middle" font-size="9" fill="#f8f6f0" font-weight="300">discovery, dynamic</text>
+                  <text x="290" y="108" text-anchor="middle" font-size="9" fill="#f8f6f0" font-weight="300">policy enforcement,</text>
+                  <text x="290" y="122" text-anchor="middle" font-size="9" fill="#f8f6f0" font-weight="300">minimization,</text>
+                  <text x="290" y="136" text-anchor="middle" font-size="9" fill="#f8f6f0" font-weight="300">audit-ready metadata</text>
+
+                  <rect x="400" y="20" width="170" height="180" rx="2" fill="#1e2820"/>
+                  <text x="485" y="45" text-anchor="middle" font-size="8" fill="#7a9875" letter-spacing="1.2" font-weight="500">LIFECYCLE</text>
+                  <text x="485" y="80" text-anchor="middle" font-size="9" fill="#f8f6f0" font-weight="300">Sandbox testing,</text>
+                  <text x="485" y="94" text-anchor="middle" font-size="9" fill="#f8f6f0" font-weight="300">continuous audit</text>
+                  <text x="485" y="108" text-anchor="middle" font-size="9" fill="#f8f6f0" font-weight="300">trails, and a kill</text>
+                  <text x="485" y="122" text-anchor="middle" font-size="9" fill="#f8f6f0" font-weight="300">switch for runaway</text>
+                  <text x="485" y="136" text-anchor="middle" font-size="9" fill="#f8f6f0" font-weight="300">behavior</text>
+
+                  <text x="290" y="235" text-anchor="middle" font-size="9" fill="#5a6855" font-weight="300">Governance moves from model-centric to ecosystem-centric.</text>
+                </svg>
+              </div>
+              <a class="framework-link" href="https://www.avepoint.com/blog/strategy-blog/definitive-guide-agentic-ai-governance-security-autonomous-systems" target="_blank">View in article ↗</a>
+            </div>
+          </div>
+
+          <div class="entry-tags">
+            <span class="tag layer">Op Infrastructure</span>
+            <span class="tag">AI enablement</span>
+            <span class="tag">Standardized execution</span>
+            <span class="tag layer">Org Clarity</span>
+            <span class="tag">Decision rights</span>
+          </div>
+        </div>
+        <div class="entry-link-group">
+          <a class="entry-link" href="https://www.avepoint.com/blog/strategy-blog/definitive-guide-agentic-ai-governance-security-autonomous-systems" target="_blank" onclick="markRead('entry-19')">Read</a>
+          <span class="read-time-aside">8 min</span>
+        </div>
+      </div>
+
+      <!-- Entry 18 -->
+      <div class="entry" data-layers="op-infrastructure alignment org-clarity" data-sublayers="ai-enablement leadership-accountability decision-rights">
+        <div>
+          <p class="entry-meta">MIT Sloan Management Review · Elizabeth M. Renieris, David Kiron, Steven Mills &amp; Anne Kleppe · Sep 2025 <span class="read-time">· 10 min read</span></p>
+          <p class="entry-title">Agentic AI at Scale: Redefining Management for a Superhuman Workforce<span class="new-tag" id="new-entry-18">New</span></p>
+          <p class="entry-summary">MIT Sloan Management Review and BCG's 36-person responsible-AI expert panel splits on whether agentic AI demands genuinely new management models: 69% say yes, citing autonomy and opacity; a 25% minority calls that "AI exceptionalism" that lets people off the hook. The authors land on five concrete recommendations for building accountability into how organizations manage agentic systems.</p>
+
+          <button class="expand-toggle" onclick="toggleExpand(this)">
+            <span>Details</span><span class="toggle-arrow">▼</span>
+          </button>
+
+          <div class="entry-expandable">
+            <div class="entry-detail">
+              <div class="detail-block">
+                <p class="detail-label">Key Insights</p>
+                <div class="detail-text"><ul>
+                  <li>Panel vote breakdown: 33.3% strongly agree plus 36.1% agree (69% total) that agentic AI requires new management approaches; 16.7% disagree plus 8.3% strongly disagree (25% total) that it does, with 5.6% neutral</li>
+                  <li>Harman International chief product officer Jai Ganesh: "traditional management systems are designed for deterministic systems," while agentic ones "operate independently, are goal-oriented, and have memory and reasoning capabilities" — this "necessitates the definition of agent roles, including permissible decisions, data usage guardrails, ethical boundaries, and escalation of confidence thresholds" that are left implicit with human employees</li>
+                  <li>Counter-argument from IAG chief AI scientist Ben Dias: managers already delegate to people whose decision-making they can't fully predict or control, and maintain accountability "through clear boundaries, outcome-focused oversight, and appropriate monitoring" — agentic AI is "simply a new type of team member within this established framework"</li>
+                  <li>Sharpest dissent, from Instalily.ai's Amit Shah: "Calling for new oversight models is often a deflection — a way to avoid naming a single accountable human ... True governance starts with a name, not a framework"</li>
+                  <li>The authors' five recommendations: manage agentic AI on a continuous life-cycle basis instead of one-time reviews; explicitly assign human roles and responsibilities inside governance structures; deliberately define where AI decisions should prevail rather than defaulting to blanket human review; plan for agents that create other agents (a visibility-gap risk); and make agent rules and thresholds explicit since agentic systems don't get the informal judgment calls human workers do</li>
+                </ul></div>
+              </div>
+              <div class="detail-block">
+                <p class="detail-label">Author</p>
+                <div class="detail-text">
+                  <p class="author-name">Elizabeth M. Renieris, David Kiron, Steven Mills &amp; Anne Kleppe</p>
+                  <p>Renieris is a senior research associate at Oxford's Institute for Ethics in AI, a senior fellow at the Centre for International Governance Innovation, and author of "Beyond Data" (MIT Press, 2023); she is contributing editor for MIT SMR's Responsible AI program. Kiron is editorial director at MIT Sloan Management Review and coauthor of "Workforce Ecosystems" (MIT Press, 2023). Mills is a managing director and partner at BCG, where he serves as chief AI ethics officer. Kleppe is a managing director and partner at BCG, where she leads the firm's global responsible AI practice.</p>
+                  <p class="author-links"><a href="https://sloanreview.mit.edu/elizabeth-renieris/" target="_blank">Renieris · MIT SMR</a> · <a href="https://www.linkedin.com/in/david-kiron" target="_blank">Kiron · LinkedIn</a></p>
+                </div>
+              </div>
+              <div class="detail-block viewpoint">
+                <p class="detail-label">Most Leverageable for Viewpoint</p>
+                <div class="detail-text"><ul>
+                  <li>The 69/25 split is useful framing for opening an Alignment-layer conversation: most clients' instinct is "AI needs a whole new management playbook," but the sharper minority view — that this is really an accountability problem in familiar clothing — is worth surfacing directly in discovery</li>
+                  <li>Ganesh's point that human-worker guardrails are implicit while agent guardrails must be explicit is a clean diagnostic for the Decision Rights sub-layer: ask a client to write down the permission thresholds and escalation rules they've been informally trusting a manager to enforce, then check whether those same rules exist anywhere for their AI agents</li>
+                  <li>Amit Shah's "who's the accountable human" framing is directly reusable in client conversations for Leadership Accountability — "if this agent's output is wrong, whose name is on it?" is a sharp gut-check question</li>
+                  <li>The five recommendations (especially "integrate human accountability into governance structures" and "make the implicit explicit") map cleanly onto an Op Infrastructure / AI enablement engagement — a ready checklist for defining agent roles, escalation paths, and review cadence before a client scales agent use</li>
+                </ul></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="entry-tags">
+            <span class="tag layer">Op Infrastructure</span>
+            <span class="tag">AI enablement</span>
+            <span class="tag layer">Alignment</span>
+            <span class="tag">Leadership accountability</span>
+            <span class="tag layer">Org Clarity</span>
+            <span class="tag">Decision rights</span>
+          </div>
+        </div>
+        <div class="entry-link-group">
+          <a class="entry-link" href="https://sloanreview.mit.edu/article/agentic-ai-at-scale-redefining-management-for-a-superhuman-workforce/" target="_blank" onclick="markRead('entry-18')">Read</a>
+          <span class="read-time-aside">10 min</span>
+        </div>
+      </div>
+
       <!-- Entry 17 -->
       <div class="entry" data-layers="op-infrastructure" data-sublayers="ai-enablement">
         <div>
@@ -2046,6 +2196,29 @@
         </tr>
       </thead>
       <tbody>
+        <tr>
+          <td><a href="https://www.avepoint.com/blog/strategy-blog/definitive-guide-agentic-ai-governance-security-autonomous-systems" target="_blank">The Definitive Guide to Agentic AI Governance and Security</a></td>
+          <td>AvePoint · Boettcher &amp; Hinchcliffe</td>
+          <td>Jul 9, 2026</td>
+          <td>11:21 AM EDT</td>
+          <td>
+            <div class="log-tag-group"><span class="log-tag layer">Op Infrastructure</span><span class="log-tag-separator">›</span><span class="log-tag">AI enablement</span><span class="log-tag">Standardized execution</span></div>
+            <div class="log-tag-group"><span class="log-tag layer">Org Clarity</span><span class="log-tag-separator">›</span><span class="log-tag">Decision rights</span></div>
+          </td>
+          <td><span class="log-status unread" id="log-status-entry-19">Unread</span></td>
+        </tr>
+        <tr>
+          <td><a href="https://sloanreview.mit.edu/article/agentic-ai-at-scale-redefining-management-for-a-superhuman-workforce/" target="_blank">Agentic AI at Scale: Redefining Management for a Superhuman Workforce</a></td>
+          <td>MIT Sloan Management Review · Renieris, Kiron, Mills &amp; Kleppe</td>
+          <td>Jul 9, 2026</td>
+          <td>11:19 AM EDT</td>
+          <td>
+            <div class="log-tag-group"><span class="log-tag layer">Op Infrastructure</span><span class="log-tag-separator">›</span><span class="log-tag">AI enablement</span></div>
+            <div class="log-tag-group"><span class="log-tag layer">Alignment</span><span class="log-tag-separator">›</span><span class="log-tag">Leadership accountability</span></div>
+            <div class="log-tag-group"><span class="log-tag layer">Org Clarity</span><span class="log-tag-separator">›</span><span class="log-tag">Decision rights</span></div>
+          </td>
+          <td><span class="log-status unread" id="log-status-entry-18">Unread</span></td>
+        </tr>
         <tr>
           <td><a href="https://suzannahhicks.substack.com/p/building-agentic-systems-not-just" target="_blank">Building Agentic Systems, Not Just Agents</a></td>
           <td>Data is Everything and Everything is Data · Suzannah Hicks</td>
