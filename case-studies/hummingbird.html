@@ -739,5 +739,23 @@
     <span class="site-footer-copy">© 2026 Viewpoint Advisory Group, LLC</span>
   </footer>
 
+  <script>
+    // Scale VIEWPOINT to match Advisory Group width
+    function matchViewpointWidth() {
+      const viewpoint = document.querySelector('.topbar-lockup-vp');
+      const advisory = document.querySelector('.topbar-lockup-ag');
+      if (!viewpoint || !advisory) return;
+      viewpoint.style.fontSize = '';
+      viewpoint.style.letterSpacing = '';
+      const targetWidth = advisory.offsetWidth;
+      const baseWidth = viewpoint.offsetWidth;
+      if (!baseWidth) return;
+      const currentSize = parseFloat(getComputedStyle(viewpoint).fontSize);
+      const newSize = currentSize * (targetWidth / baseWidth);
+      viewpoint.style.fontSize = newSize + 'px';
+    }
+    window.addEventListener('load', matchViewpointWidth);
+    window.addEventListener('resize', matchViewpointWidth);
+  </script>
 </body>
 </html>

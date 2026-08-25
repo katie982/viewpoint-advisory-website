@@ -495,5 +495,23 @@
       });
     });
   </script>
+  <script>
+    // Scale VIEWPOINT to match Advisory Group width
+    function matchViewpointWidth() {
+      const viewpoint = document.querySelector('.nav-logo-viewpoint');
+      const advisory = document.querySelector('.nav-logo-advisory');
+      if (!viewpoint || !advisory) return;
+      viewpoint.style.fontSize = '';
+      viewpoint.style.letterSpacing = '';
+      const targetWidth = advisory.offsetWidth;
+      const baseWidth = viewpoint.offsetWidth;
+      if (!baseWidth) return;
+      const currentSize = parseFloat(getComputedStyle(viewpoint).fontSize);
+      const newSize = currentSize * (targetWidth / baseWidth);
+      viewpoint.style.fontSize = newSize + 'px';
+    }
+    window.addEventListener('load', matchViewpointWidth);
+    window.addEventListener('resize', matchViewpointWidth);
+  </script>
 </body>
 </html>
