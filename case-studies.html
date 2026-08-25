@@ -521,7 +521,7 @@
 
     <!-- RIGHT: Case study cards -->
     <div class="cards">
-      <a class="card" href="case-studies/project-lift.html" data-primary="operational-infrastructure" aria-label="Read the Project Lift case study">
+      <a class="card" href="case-studies/project-lift.html" data-primary="operational-infrastructure" data-cross="organizational-clarity" aria-label="Read the Project Lift case study">
         <p class="card-meta">Healthcare SaaS · Series B</p>
         <div class="layer-block">
           <div class="layer-row">
@@ -532,6 +532,14 @@
             <span class="layer-label">Focus Sublayers</span>
             <span class="sublayer-value">Operating Rhythms · Information Flow</span>
           </div>
+          <div class="layer-row">
+            <span class="layer-label">Secondary Layer</span>
+            <span class="layer-value">Clarity</span>
+          </div>
+          <div class="layer-row">
+            <span class="layer-label">Focus Sublayers</span>
+            <span class="sublayer-value">Functional Scope · Decision Rights · Role Clarity</span>
+          </div>
         </div>
         <h3 class="card-title">Project Lift</h3>
         <p class="card-metric">$27M contracted in four months.</p>
@@ -539,16 +547,24 @@
         <span class="card-link">Read Case Study →</span>
       </a>
 
-      <a class="card" href="case-studies/productoperations.html" data-primary="organizational-clarity" data-cross="operational-infrastructure" aria-label="Read the AI-Ready Feature Catalog case study">
+      <a class="card" href="case-studies/productoperations.html" data-primary="operational-infrastructure" data-cross="organizational-clarity" aria-label="Read the AI-Ready Feature Catalog case study">
         <p class="card-meta">Healthtech · AI Enablement</p>
         <div class="layer-block">
           <div class="layer-row">
             <span class="layer-label">Primary Layer</span>
-            <span class="layer-value">Clarity</span>
+            <span class="layer-value">Infrastructure</span>
           </div>
           <div class="layer-row">
             <span class="layer-label">Focus Sublayers</span>
-            <span class="sublayer-value">Role Clarity · Decision Rights</span>
+            <span class="sublayer-value">Work Visualization · Information Flow</span>
+          </div>
+          <div class="layer-row">
+            <span class="layer-label">Secondary Layer</span>
+            <span class="layer-value">Clarity</span>
+          </div>
+          <div class="layer-row">
+            <span class="layer-label">Focus Sublayer</span>
+            <span class="sublayer-value">Decision Rights</span>
           </div>
         </div>
         <h3 class="card-title">AI-Ready Feature Catalog</h3>
@@ -583,7 +599,7 @@
         <span class="card-link">Read Case Study →</span>
       </a>
 
-      <a class="card" href="case-studies/the-annual-reset.html" data-primary="vision" data-cross="alignment" aria-label="Read The Annual Reset case study">
+      <a class="card" href="case-studies/the-annual-reset.html" data-primary="vision" data-cross="alignment operational-infrastructure" aria-label="Read The Annual Reset case study">
         <p class="card-meta">Healthtech · Series B</p>
         <div class="layer-block">
           <div class="layer-row">
@@ -601,6 +617,14 @@
           <div class="layer-row">
             <span class="layer-label">Focus Sublayer</span>
             <span class="sublayer-value">Leadership Accountability</span>
+          </div>
+          <div class="layer-row">
+            <span class="layer-label">Tertiary Layer</span>
+            <span class="layer-value">Infrastructure</span>
+          </div>
+          <div class="layer-row">
+            <span class="layer-label">Focus Sublayer</span>
+            <span class="sublayer-value">Operating Rhythms</span>
           </div>
         </div>
         <h3 class="card-title">The Annual Reset</h3>
@@ -676,8 +700,8 @@
         // Highlight matching cards only — no dimming of others (parity with card-hover behavior)
         cards.forEach(card => {
           const primary = card.dataset.primary;
-          const cross = card.dataset.cross || '';
-          if (primary === layer || cross === layer) {
+          const cross = (card.dataset.cross || '').split(' ').filter(Boolean);
+          if (primary === layer || cross.includes(layer)) {
             card.classList.add('highlighted');
           } else {
             card.classList.remove('highlighted');
