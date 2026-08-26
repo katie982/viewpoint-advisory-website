@@ -6,12 +6,16 @@
   <title>The Plan Isn't the Problem. The Route Is. | Viewpoint Advisory Group</title>
   <meta name="description" content="Most strategic planning stops at the destination. The teams that actually execute built the route underneath it — Alignment, Clarity, and Infrastructure — on purpose." />
   <meta name="robots" content="index, follow" />
+  <meta name="author" content="Katie Dasso" />
   <link rel="canonical" href="https://viewpointadvisorygroup.com/blog/the-plan-the-route.html" />
   <meta property="og:type" content="article" />
   <meta property="og:title" content="The Plan Isn't the Problem. The Route Is. | Viewpoint Advisory Group" />
   <meta property="og:description" content="Most strategic planning stops at the destination. The teams that actually execute built the route underneath it — Alignment, Clarity, and Infrastructure — on purpose." />
   <meta property="og:url" content="https://viewpointadvisorygroup.com/blog/the-plan-the-route.html" />
   <meta property="og:image" content="https://viewpointadvisorygroup.com/headshot.jpeg" />
+  <meta property="article:published_time" content="2026-08-26" />
+  <meta property="article:author" content="Katie Dasso" />
+  <meta property="article:section" content="Strategy & Execution" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="The Plan Isn't the Problem. The Route Is. | Viewpoint Advisory Group" />
   <meta name="twitter:description" content="Most strategic planning stops at the destination. The teams that actually execute built the route underneath it — Alignment, Clarity, and Infrastructure — on purpose." />
@@ -19,6 +23,45 @@
   <link rel="icon" type="image/png" href="../assets/favicon.png?v=5" />
   <link rel="shortcut icon" href="../favicon.ico?v=5" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Montserrat:wght@200;400&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "The Plan Isn't the Problem. The Route Is.",
+    "description": "Most strategic planning stops at the destination. The teams that actually execute built the route underneath it — Alignment, Clarity, and Infrastructure — on purpose.",
+    "image": "https://viewpointadvisorygroup.com/Viewpoint%20Stack.png",
+    "datePublished": "2026-08-26",
+    "dateModified": "2026-08-26",
+    "author": {
+      "@type": "Person",
+      "name": "Katie Dasso",
+      "url": "https://viewpointadvisorygroup.com/about.html"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Viewpoint Advisory Group",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://viewpointadvisorygroup.com/logo_transparent.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://viewpointadvisorygroup.com/blog/the-plan-the-route.html"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://viewpointadvisorygroup.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://viewpointadvisorygroup.com/blog.html" },
+      { "@type": "ListItem", "position": 3, "name": "The Plan Isn't the Problem. The Route Is.", "item": "https://viewpointadvisorygroup.com/blog/the-plan-the-route.html" }
+    ]
+  }
+  </script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -166,6 +209,52 @@
       width: 8rem;
     }
 
+    .content a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-decoration-color: rgba(74,104,69,0.35);
+      text-underline-offset: 2px;
+      transition: color 0.2s;
+    }
+    .content a:hover { color: var(--accent-light); }
+
+    /* PULL QUOTE — callout for the article's central point */
+    .pull-quote {
+      border-left: 3px solid var(--accent);
+      padding: 1.5rem 2rem;
+      margin: 2.5rem 0;
+      background: rgba(74,104,69,0.05);
+    }
+    .pull-quote p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.25rem, 2.2vw, 1.6rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--charcoal);
+      line-height: 1.5;
+      margin-bottom: 0;
+    }
+
+    /* STACK GRAPHIC — floats beside body copy where the Stack is introduced */
+    .stack-float {
+      float: right;
+      width: 300px;
+      max-width: 42%;
+      margin: 0.25rem 0 1.5rem 2.5rem;
+      border: 1px solid var(--stone);
+      background: var(--warm-white);
+      padding: 1rem;
+    }
+    .stack-float img { width: 100%; height: auto; display: block; }
+    .stack-float figcaption {
+      font-size: 0.75rem;
+      color: var(--warm-grey);
+      margin-top: 0.75rem;
+      font-style: italic;
+      text-align: center;
+    }
+    .clear-float { clear: both; }
+
     /* WAITLIST FORM (reusable component — see comment in markup) */
     .waitlist-section {
       max-width: 860px;
@@ -249,26 +338,6 @@
     .waitlist-card.is-submitted .waitlist-form,
     .waitlist-card.is-submitted .waitlist-note { display: none; }
     .waitlist-card.is-submitted .waitlist-success { display: block; }
-
-    /* STACK GRAPHIC */
-    .stack-graphic-section {
-      max-width: 860px;
-      margin: 3.5rem auto 0;
-      padding: 0 4rem;
-    }
-    .stack-graphic-figure {
-      border: 1px solid var(--stone);
-      background: var(--warm-white);
-      padding: 1.5rem;
-      text-align: center;
-    }
-    .stack-graphic-figure img { max-width: 100%; height: auto; display: block; margin: 0 auto; }
-    .stack-graphic-caption {
-      font-size: 0.78rem;
-      color: var(--warm-grey);
-      margin-top: 1rem;
-      font-style: italic;
-    }
 
     /* CTA FOOTER */
     .cta-footer {
@@ -360,11 +429,12 @@
 
     @media (max-width: 700px) {
       .topbar, .hero, .content { padding-left: 1.5rem; padding-right: 1.5rem; }
-      .waitlist-section, .stack-graphic-section { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .waitlist-section { padding-left: 1.5rem; padding-right: 1.5rem; }
       .cta-footer, .site-footer { padding-left: 1.5rem; padding-right: 1.5rem; }
       .hero { padding-top: 3rem; }
       .stack-list li { flex-direction: column; gap: 0.3rem; }
       .stack-list .layer-name { width: auto; }
+      .stack-float { float: none; width: 100%; max-width: 100%; margin: 0 0 2rem; }
 
       .topbar { padding-top: 1rem; padding-bottom: 1rem; gap: 0.75rem; }
       .topbar-brand { gap: 0.6rem; }
@@ -430,7 +500,7 @@
 
     <p>What almost none of them have is the route &mdash; the system underneath the plan: who decides, who's on the hook, and what keeps the plan from dying the moment everyone leaves the room.</p>
 
-    <p>I wrote about this a few weeks ago, and it struck a nerve. I worked with an executive team that had real strategic clarity &mdash; everyone agreed on where they were headed. What they didn't have was the connective tissue: the cross-functional processes, the decision rights, the cadence of accountability that turns "we agree on the destination" into "we're actually moving towards it." Once we built that layer &mdash; a redesigned business development process, cross-functional rhythms and role clarity &mdash; they closed a $30M revenue gap heading into the year.</p>
+    <p>I wrote about this a few weeks ago, and it struck a nerve. I worked with an executive team that had real strategic clarity &mdash; everyone agreed on where they were headed. What they didn't have was the connective tissue: the cross-functional processes, the decision rights, the cadence of accountability that turns "we agree on the destination" into "we're actually moving towards it." Once we built that layer &mdash; a redesigned business development process, cross-functional rhythms and role clarity &mdash; <a href="../case-studies/project-lift.html">they closed a $30M revenue gap heading into the year</a>.</p>
 
     <p>The plan didn't change. The route did.</p>
 
@@ -445,14 +515,24 @@
 
     <p><strong>Infrastructure</strong> is the layer closest to daily work &mdash; performance scorecards, operating rhythms, work visualization, and information flow. A recurring cadence to check whether the plan is actually happening, not just whether it was agreed to, is what catches drift before a quarter is already lost. And decisions made in a leadership meeting still have to make it back to the people who need to act on them &mdash; this is where the signal most often gets lost, not because anyone's hiding anything, but because nothing's carrying it downstream on purpose.</p>
 
-    <p>Individually, none of these sound dramatic. Together, they're the difference between a plan that survives contact with a real quarter and one that quietly falls apart the first time something doesn't go according to script.</p>
+    <blockquote class="pull-quote">
+      <p>Individually, none of these sound dramatic. Together, they're the difference between a plan that survives contact with a real quarter and one that quietly falls apart the first time something doesn't go according to script.</p>
+    </blockquote>
 
     <h2>Naming the whole system</h2>
+
+    <figure class="stack-float">
+      <img src="../Viewpoint%20Stack.png" alt="The Viewpoint Stack: Vision (Strategic Plan), Alignment (Leadership Accountability), Clarity (Functional Scope, Decision Rights, Role Clarity), Infrastructure (Performance Scorecard, Operating Rhythms, Work Visualization, Information Flow)" width="1200" height="1200" loading="lazy" />
+      <figcaption>The Viewpoint Stack&trade; &mdash; the route underneath the plan.</figcaption>
+    </figure>
+
     <p>After years in product management, I can't help but approach this work from a product mindset. I've come to believe organizations should be built the way good products are &mdash; with intention, iteration, and a view of the whole system, not by accident. Nobody assembles a product by bolting on whatever feature seems most urgent that week and hoping it all holds together later. And yet that's exactly how a lot of organizations get built: a role added here, a process added there, each one solving the most immediate problem, with no one stepping back to check whether the whole system still works.</p>
 
     <p>It's also where the name comes from. Everyone wants the view from the summit. But you don't get there by wanting it &mdash; you get there with solid ground underfoot and a route mapped before you climb. The view is the destination. The ground and the route are what actually get you there.</p>
 
-    <p>I call the whole system, top to bottom, the <em>Viewpoint Stack&trade;</em>:</p>
+    <p>I call the whole system, top to bottom, the <a href="../framework.html"><em>Viewpoint Stack&trade;</em></a>:</p>
+
+    <div class="clear-float"></div>
 
     <ul class="stack-list">
       <li><span class="layer-name">Vision</span><span>Strategic Plan</span></li>
@@ -518,14 +598,6 @@
       <p class="waitlist-error" id="waitlistError">Something went wrong submitting the form. Please try again, or email hello directly.</p>
       <p class="waitlist-success" id="waitlistSuccess">Thanks &mdash; I'll be in touch when it's ready.</p>
     </div>
-  </section>
-
-  <!-- STACK GRAPHIC -->
-  <section class="stack-graphic-section">
-    <figure class="stack-graphic-figure">
-      <img src="../Viewpoint%20Stack.png" alt="The Viewpoint Stack: Vision (Strategic Plan), Alignment (Leadership Accountability), Clarity (Functional Scope, Decision Rights, Role Clarity), Infrastructure (Performance Scorecard, Operating Rhythms, Work Visualization, Information Flow)" />
-      <figcaption class="stack-graphic-caption">The Viewpoint Stack&trade; &mdash; the route underneath the plan.</figcaption>
-    </figure>
   </section>
 
   <!-- CTA FOOTER -->
