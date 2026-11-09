@@ -1449,6 +1449,20 @@
 .jv-r b{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:1.25rem}.jv-r small{display:block;font-size:.66rem;letter-spacing:.12em;color:var(--warm-grey);margin-bottom:.5rem}
 .jv-chip{display:inline-block;font-size:.72rem;padding:.35rem .65rem;color:#fff;margin:.15rem 0}
 .jv-ar{color:var(--taupe);margin:0 .3rem}
+.jv-top{display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.jv-toggle{display:flex;gap:.35rem}
+.jv-toggle .bd-seg{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;padding:.45rem 1rem}
+.dm-legend{display:flex;flex-wrap:wrap;gap:.6rem 1.6rem;margin-top:.9rem;font-size:.74rem;color:var(--warm-grey)}
+.dm-legend span{display:inline-flex;align-items:center;gap:.45rem}
+.dm-legend i{display:inline-block;width:12px;height:12px;border:1px solid var(--stone)}
+.dm-legend b{font-weight:500;color:var(--charcoal)}
+.dp-r{padding:.9rem 0;border-top:1px solid var(--stone)}
+.dp-r b{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:1.25rem}.dp-r small{display:block;font-size:.66rem;letter-spacing:.12em;color:var(--warm-grey);margin-bottom:.5rem}
+.dp-gs{display:flex;gap:1rem;flex-wrap:wrap}
+.dp-g{display:flex;gap:3px}
+.dp-g i{display:block;width:18px;height:18px;border:1px solid var(--stone)}
+.dp-key{display:flex;gap:1rem;flex-wrap:wrap;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;margin:.2rem 0 .6rem}
+@media (max-width:700px){.dm-legend{flex-direction:column;gap:.4rem}.dm-legend .dl-def{display:none}}
 @media (max-width:700px){.jv-sec{padding:1rem 1rem 3rem}.jv-card{padding:1.4rem 1rem}.jv-desk{display:none}.jv-mob{display:block}.jv-hero{padding:9rem 1.2rem 2.5rem !important}}
 </style></head>
 <body>
@@ -1496,11 +1510,27 @@
   </section>
 <!-- ROLE JOURNEY -->
   <section class="jv-sec" id="range"><div class="jv-card">
-    <p class="jv-eyebrow">Range</p>
-    <h2 class="jv-h2">Whatever the business needed next. <em>I shifted with it.</em></h2>
-    <p class="jv-sub">Product leader, chief of staff, program manager, head of PMO, across e-commerce, travel, edtech, and healthcare. I've launched the functions, not just filled the seats.</p>
-    <div id="jvChart" class="jv-desk"></div>
-    <div id="jvRows" class="jv-mob"></div>
+    <div class="jv-top">
+      <p class="jv-eyebrow" id="jvEyebrow">Range</p>
+      <div class="jv-toggle" role="group" aria-label="Choose a view">
+        <button type="button" class="bd-seg" data-view="range" aria-pressed="true">Range</button>
+        <button type="button" class="bd-seg" data-view="depth" aria-pressed="false">Depth</button>
+      </div>
+    </div>
+    <div id="jvRangeView">
+      <h2 class="jv-h2">Whatever the business needed next. <em>I shifted with it.</em></h2>
+      <p class="jv-sub">Product leader, chief of staff, program manager, head of PMO, across e-commerce, travel, edtech, and healthcare. I've launched the functions, not just filled the seats.</p>
+      <div id="jvChart" class="jv-desk"></div>
+      <div id="jvRows" class="jv-mob"></div>
+    </div>
+    <div id="jvDepthView" hidden>
+      <h2 class="jv-h2">Ten disciplines, five companies. <em>Real depth.</em></h2>
+      <p class="jv-sub">Where I've led product, programs, and operations, from enterprise scale to seed-stage startups.</p>
+      <div id="dpChart" class="jv-desk"></div>
+      <div id="dpRows" class="jv-mob"></div>
+      <div class="dm-legend" id="dpLegend"></div>
+    </div>
+    <div class="bd-tip" id="dpTip" role="tooltip"></div>
   </div></section>
 <!-- BY THE NUMBERS -->
   <section id="stats" class="stats-section">
@@ -1846,67 +1876,107 @@
 
   <script>
   (function () {
-    var cols = [["Product","Product"],["Program","Program & PMO"],["Ops","Operations"],["Strategy","Strategy"],["GTM","Go-to-market"],["Sales","Sales"],["Change","Change management"],["AI","AI enablement"]];
-    // depth per discipline: 0 none, 1 familiar, 2 experienced, 3 deep. st = startup/growth-stage, en = enterprise
-    var rows = [
-      {n:"E-commerce", c:"Vistaprint", st:[0,0,0,0,0,0,0,0], en:[3,2,3,1,1,0,3,0]},
-      {n:"Travel", c:"TripAdvisor", st:[0,0,0,0,0,0,0,0], en:[2,2,1,3,1,0,2,0]},
-      {n:"EdTech", c:"Chegg", st:[0,0,0,0,0,0,0,0], en:[3,1,1,1,1,0,1,0]},
-      {n:"HealthTech", c:"Hummingbird Healthcare, Attuned Intelligence", st:[3,3,3,2,3,3,2,3], en:[0,0,0,0,0,0,0,0]},
-      {n:"Public benefits", c:"Attuned Intelligence", st:[2,3,2,1,1,0,2,1], en:[0,0,0,0,0,0,0,0]}
-    ];
-    var R = [0,7,15,25], names = ["","Familiar","Experienced","Deep"], stage = "all";
-    var X0 = 150, DX = 50, Y0 = 104, DY = 54, W = 560, H = 354;
-    var chart = document.getElementById("bdChart"), ctl = document.getElementById("bdControls"), tip = document.getElementById("bdTip");
-    if (!chart) return;
-    function circles(key){
-      var o = "";
-      rows.forEach(function(r, ri){ r[key].forEach(function(l, ci){
-        if (l) o += '<circle cx="'+(X0+ci*DX)+'" cy="'+(Y0+ri*DY)+'" r="'+R[l]+'" style="animation-delay:-'+(((ri*7+ci*3)%10)*0.6).toFixed(1)+'s"/>';
-      }); });
-      return o;
+    var card = document.querySelector("#range .jv-card");
+    if (!card) return;
+    // Range | Depth toggle
+    var views = {range: document.getElementById("jvRangeView"), depth: document.getElementById("jvDepthView")};
+    var eyebrow = document.getElementById("jvEyebrow");
+    // Keep the card the same height in both views so the page below doesn't jump.
+    function syncHeight(){
+      var rh0 = views.range.hidden, dh0 = views.depth.hidden;
+      views.range.style.minHeight = views.depth.style.minHeight = "";
+      views.range.hidden = false; var a = views.range.offsetHeight; views.range.hidden = rh0;
+      views.depth.hidden = false; var b = views.depth.offsetHeight; views.depth.hidden = dh0;
+      var h = Math.max(a, b) + "px"; views.range.style.minHeight = h; views.depth.style.minHeight = h;
     }
-    var svg = '<svg class="bd-svg" viewBox="0 0 '+W+' '+H+'" xmlns="http://www.w3.org/2000/svg">' +
-      '<defs><filter id="bdGoo" filterUnits="userSpaceOnUse" x="0" y="0" width="'+W+'" height="'+H+'"><feGaussianBlur in="SourceGraphic" stdDeviation="6" result="b"/><feColorMatrix in="b" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"/></filter></defs>';
-    cols.forEach(function(c, ci){ svg += '<text class="bd-hdr" transform="rotate(-40 '+(X0+ci*DX-6)+' 66)" x="'+(X0+ci*DX-6)+'" y="66">'+c[0]+'</text>'; });
-    rows.forEach(function(r, ri){ svg += '<text class="bd-row" x="0" y="'+(Y0+ri*DY+6)+'">'+r.n+'</text>'; });
-    svg += '<g class="bd-layer" id="bdEn" filter="url(#bdGoo)" fill="#b3a98a">'+circles("en")+'</g>';
-    svg += '<g class="bd-layer" id="bdSt" filter="url(#bdGoo)" fill="#4a6845">'+circles("st")+'</g>';
-    rows.forEach(function(r, ri){ cols.forEach(function(c, ci){ svg += '<circle class="bd-hit" data-r="'+ri+'" data-c="'+ci+'" cx="'+(X0+ci*DX)+'" cy="'+(Y0+ri*DY)+'" r="26"/>'; }); });
-    svg += '</svg>';
-    chart.innerHTML = svg;
-
-    function d(r, ci){ return stage === "s" ? [r.st[ci],0] : stage === "e" ? [0,r.en[ci]] : [r.st[ci], r.en[ci]]; }
-    chart.querySelectorAll(".bd-hit").forEach(function(el){
-      el.addEventListener("mousemove", function(e){
-        var r = rows[+el.dataset.r], ci = +el.dataset.c, v = d(r, ci), l = Math.max(v[0], v[1]);
-        tip.innerHTML = "<b>"+r.n+" &times; "+cols[ci][1]+"</b>"+(l ? names[l]+" &middot; "+(v[0] ? "Startup / growth-stage" : "Enterprise")+"<br>"+r.c : "No depth in this view");
-        tip.style.left = Math.min(e.clientX+14, innerWidth-230)+"px"; tip.style.top = (e.clientY+14)+"px"; tip.style.opacity = 1;
+    window.addEventListener("resize", syncHeight);
+    window.addEventListener("load", syncHeight);
+    card.querySelectorAll(".jv-toggle .bd-seg").forEach(function(btn){
+      btn.addEventListener("click", function(){
+        var v = btn.dataset.view;
+        card.querySelectorAll(".jv-toggle .bd-seg").forEach(function(x){ x.setAttribute("aria-pressed", x === btn); });
+        views.range.hidden = v !== "range"; views.depth.hidden = v !== "depth";
+        eyebrow.textContent = v === "range" ? "Range" : "Depth";
       });
-      el.addEventListener("mouseleave", function(){ tip.style.opacity = 0; });
     });
-    function legend(){
-      var dots = [1,2,3].map(function(l){ var s = 6+l*3; return '<span><i style="width:'+s+'px;height:'+s+'px;background:#4a6845"></i>'+names[l]+'</span>'; }).join("");
-      document.getElementById("bdLegend").innerHTML = dots + '<span><i style="width:10px;height:10px;background:#4a6845"></i>Startup / growth-stage</span><span><i style="width:10px;height:10px;background:#b3a98a"></i>Enterprise</span>';
-    }
-    function apply(){
-      document.getElementById("bdSt").style.opacity = stage === "e" ? 0 : 1;
-      document.getElementById("bdEn").style.opacity = stage === "s" ? 0 : 1;
-    }
-    [["all","All"],["s","Startup / growth-stage"],["e","Enterprise"]].forEach(function(k){
-      var b = document.createElement("button"); b.className = "bd-seg"; b.type = "button"; b.textContent = k[1];
-      b.setAttribute("aria-pressed", k[0] === "all");
-      b.onclick = function(){ stage = k[0]; ctl.querySelectorAll(".bd-seg").forEach(function(x){ x.setAttribute("aria-pressed", x === b); }); apply(); };
-      ctl.appendChild(b);
+
+    // Depth view: same frame as Range (W, L, column bands, row height) so toggling only swaps what's inside.
+    // Levels: 0 not a focus, 1 familiar, 2 experienced, 3 deep.
+    // Hummingbird: HealthTech row from the capability map. Attuned: its own row from the earlier heat map, mapped to these columns, with Discovery, GTM, and AI raised.
+    var bands=[["Product","#4a6845",[["Discovery","Product & discovery"],["Strategy","Product strategy"],["GTM","Go-to-market"]]],
+               ["Program management","#7a9875",[["Program & PMO","Program & PMO"],["Change mgmt","Change management"]]],
+               ["Strategy & operations","#1e2820",[["Planning","Strategic planning"],["Process","Process improvement"],["Org design","Org design"],["Op model","Operating model"],["AI","AI enablement"]]]];
+    var drows=[
+      {co:"Vistaprint",ind:"E-commerce",d:[[3,2,2],[3,3],[1,3,2,2,0]]},
+      {co:"TripAdvisor",ind:"Travel",d:[[2,3,1],[3,3],[3,3,2,2,0]]},
+      {co:"Chegg",ind:"EdTech",d:[[3,2,2],[3,3],[3,3,3,3,2]]},
+      {co:"Hummingbird Healthcare",ind:"Healthcare consulting",d:[[3,2,3],[3,3],[3,3,3,3,3]]},
+      {co:"Attuned Intelligence",ind:"Healthcare AI",d:[[3,2,2],[3,2],[1,2,2,2,3]]}
+    ];
+    var names=["Not a focus","Familiar","Experienced","Deep"], alpha=[0,.25,.55,1];
+    var W=1000,L=250,cw=(W-L)/3,tp=92,rh=116,H=tp+drows.length*rh+10,SQ=40;
+    function cy(r){return tp+rh*r+rh/2-8}
+    var g='<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="Depth by discipline and company">';
+    bands.forEach(function(bd,i){
+      g+='<rect x="'+(L+cw*i+4)+'" y="0" width="'+(cw-8)+'" height="'+H+'" fill="#f8f6f0" opacity="'+(i%2?.5:1)+'"/>';
+      g+='<text x="'+(L+cw*i+cw/2)+'" y="30" text-anchor="middle" font-size="11" letter-spacing="1.2" fill="'+bd[1]+'" font-weight="500">'+bd[0].toUpperCase()+'</text>';
+      g+='<line x1="'+(L+cw*i+20)+'" x2="'+(L+cw*(i+1)-20)+'" y1="44" y2="44" stroke="'+bd[1]+'" stroke-width="2.5"/>';
+      var n=bd[2].length, sw=(cw-24)/n;
+      bd[2].forEach(function(sc,k){
+        var x=L+cw*i+12+sw*(k+.5), parts=sc[0].split(" ");
+        var l1=sc[0], l2="";
+        if (sc[0].length>6 && parts.length>1){ l1=parts.slice(0,-1).join(" "); l2=parts[parts.length-1]; }
+        g+='<text x="'+x+'" y="'+(l2?64:70)+'" text-anchor="middle" font-size="8.5" letter-spacing="0" fill="#5a6855">'+l1.toUpperCase().replace("&","&amp;")+'</text>';
+        if (l2) g+='<text x="'+x+'" y="76" text-anchor="middle" font-size="8.5" letter-spacing="0" fill="#5a6855">'+l2.toUpperCase()+'</text>';
+      });
     });
-    legend(); apply();
+    drows.forEach(function(r,ri){
+      var y=cy(ri);
+      if (ri) g+='<line x1="0" x2="'+W+'" y1="'+(tp+rh*ri)+'" y2="'+(tp+rh*ri)+'" stroke="#e4e0d4"/>';
+      g+='<text x="0" y="'+(y-2)+'" font-family="Cormorant Garamond,serif" font-size="21" fill="#1e2820">'+r.co+'</text><text x="0" y="'+(y+18)+'" font-size="11" letter-spacing="1.2" fill="#5a6855">'+r.ind.toUpperCase()+'</text>';
+      bands.forEach(function(bd,i){
+        var n=bd[2].length, sw=(cw-24)/n;
+        bd[2].forEach(function(sc,k){
+          var l=r.d[i][k], x=L+cw*i+12+sw*(k+.5)-SQ/2;
+          g+='<rect class="dp-sq" data-r="'+ri+'" data-b="'+i+'" data-k="'+k+'" x="'+x+'" y="'+(y-SQ/2+6)+'" width="'+SQ+'" height="'+SQ+'" rx="2" fill="'+(l?'#4a6845':'#fff')+'" fill-opacity="'+(l?alpha[l]:1)+'" stroke="'+(l?'none':'#e4e0d4')+'"/>';
+        });
+      });
+    });
+    document.getElementById("dpChart").innerHTML=g+'</svg>';
+
+    var tip=document.getElementById("dpTip");
+    document.querySelectorAll("#dpChart .dp-sq").forEach(function(el){
+      el.addEventListener("mousemove",function(e){
+        var r=drows[+el.dataset.r], bd=bands[+el.dataset.b], sc=bd[2][+el.dataset.k], l=r.d[+el.dataset.b][+el.dataset.k];
+        tip.innerHTML="<b>"+r.co+" &times; "+sc[1].replace("&","&amp;")+"</b>"+names[l];
+        tip.style.left=Math.min(e.clientX+14,innerWidth-250)+"px"; tip.style.top=(e.clientY+14)+"px"; tip.style.opacity=1;
+      });
+      el.addEventListener("mouseleave",function(){ tip.style.opacity=0; });
+    });
+
+    function sw(l){ return '<i style="background:'+(l?'#4a6845':'#fff')+';opacity:'+(l?alpha[l]:1)+'"></i>'; }
+    document.getElementById("dpLegend").innerHTML=
+      '<span>'+sw(3)+'<b>Deep</b><span class="dl-def">Led the function or built it from scratch</span></span>'+
+      '<span>'+sw(2)+'<b>Experienced</b><span class="dl-def">Owned major initiatives with repeatable results</span></span>'+
+      '<span>'+sw(1)+'<b>Familiar</b><span class="dl-def">Worked in or alongside the discipline</span></span>'+
+      '<span>'+sw(0)+'<b>Not a focus</b></span>';
+
+    setTimeout(syncHeight, 0);
+    // Mobile: same company rows as the Range list, with a small square per discipline
+    document.getElementById("dpRows").innerHTML=
+      '<div class="dp-key">'+bands.map(function(bd){return '<span style="color:'+bd[1]+'">'+bd[0]+'</span>';}).join("")+'</div>'+
+      drows.map(function(r){
+        return '<div class="dp-r"><b>'+r.co+'</b><small>'+r.ind.toUpperCase()+'</small><div class="dp-gs">'+
+          bands.map(function(bd,i){ return '<span class="dp-g">'+r.d[i].map(function(l){ return '<i style="background:'+(l?'#4a6845':'#fff')+';opacity:'+(l?alpha[l]:1)+'"></i>'; }).join("")+'</span>'; }).join("")+
+          '</div></div>';
+      }).join("");
   })();
   </script>
 <script>
 (function(){
 var cols=[["Product","#4a6845"],["Program management","#7a9875"],["Strategy & operations","#1e2820"]];
-var rows=[{co:"Vistaprint",ind:"E-commerce",s:[[2,"Cut design cycle time from 14 to 6 days"],[0,"Led product for a new service line"]]},{co:"TripAdvisor",ind:"Travel",s:[[0,"Product manager, vacation rentals"],[2,"Led strategic visioning & leadership offsites"]]},{co:"Chegg",ind:"EdTech",s:[[0,"Growth product"],[1,"Implemented a major B2B partnership"],[2,"Built the PMO & strategic planning practice"]]},{co:"Hummingbird Healthcare",ind:"HealthTech",s:[[2,"Org design & enterprise architecture"],[0,"Built the product function & frameworks"]]},{co:"Attuned Intelligence",ind:"HealthTech",s:[[1,"Deployed voice AI agents across partners"],[0,"Designed & launched Coverage for Medicaid"]]}];
-var W=1000,L=250,cw=(W-L)/3,tp=70,rh=116,H=tp+rows.length*rh+10;
+var rows=[{co:"Vistaprint",ind:"E-commerce",s:[[2,"Cut design cycle time from 14 to 6 days"],[0,"Led product for a new service line"]]},{co:"TripAdvisor",ind:"Travel",s:[[0,"Product manager, vacation rentals"],[2,"Led strategic visioning & leadership offsites"]]},{co:"Chegg",ind:"EdTech",s:[[0,"Growth product"],[1,"Implemented a major B2B partnership"],[2,"Built the PMO & strategic planning practice"]]},{co:"Hummingbird Healthcare",ind:"Healthcare consulting",s:[[2,"Org design & enterprise architecture"],[0,"Built the product function & frameworks"]]},{co:"Attuned Intelligence",ind:"Healthcare AI",s:[[1,"Deployed voice AI agents across partners"],[0,"Designed & launched Coverage for Medicaid"]]}];
+var W=1000,L=250,cw=(W-L)/3,tp=92,rh=116,H=tp+rows.length*rh+10;
 function wrap(t,x){var ls=[t];if(t.length>30){var m=t.length/2,best=-1;for(var i=0;i<t.length;i++)if(t[i]==" "&&(best<0||Math.abs(i-m)<Math.abs(best-m)))best=i;if(best>0)ls=[t.slice(0,best),t.slice(best+1)]}return ls.map(function(l,i){return '<tspan x="'+x+'" dy="'+(i?14:0)+'">'+l+'</tspan>'}).join("")}
 function cx(i){return L+cw*i+cw/2}function cy(r){return tp+rh*r+rh/2-8}
 var s='<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="Role shifts by company"><defs><marker id="jvar" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto"><path d="M0,0 L5,2.5 L0,5 z" fill="#d3ccb6"/></marker></defs>';
