@@ -1460,9 +1460,9 @@
 .dp-r b{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:1.25rem}.dp-r small{display:block;font-size:.66rem;letter-spacing:.12em;color:var(--warm-grey);margin-bottom:.5rem}
 .dp-gs{display:flex;gap:1rem;flex-wrap:wrap}
 .dp-g{display:flex;gap:3px}
-.dp-g i{display:block;width:18px;height:18px;border:1px solid var(--stone)}
+.dp-g i{display:block;width:18px;height:18px;border:1px solid var(--stone);color:#fff;font-size:10px;line-height:16px;text-align:center;font-style:normal}
 .dp-key{display:flex;gap:1rem;flex-wrap:wrap;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;margin:.2rem 0 .6rem}
-@media (max-width:700px){.dm-legend{flex-direction:column;gap:.4rem}.dm-legend .dl-def{display:none}}
+@media (max-width:700px){.dm-legend{flex-direction:column;gap:.4rem}.dm-legend .dl-def{display:none}.dp-hover{display:none}}
 @media (max-width:700px){.jv-sec{padding:1rem 1rem 3rem}.jv-card{padding:1.4rem 1rem}.jv-desk{display:none}.jv-mob{display:block}.jv-hero{padding:9rem 1.2rem 2.5rem !important}}
 </style></head>
 <body>
@@ -1524,8 +1524,8 @@
       <div id="jvRows" class="jv-mob"></div>
     </div>
     <div id="jvDepthView" hidden>
-      <h2 class="jv-h2">Ten disciplines, five companies. <em>Real depth.</em></h2>
-      <p class="jv-sub">Where I've led product, programs, and operations, from enterprise scale to seed-stage startups.</p>
+      <h2 class="jv-h2">Nine disciplines, five companies. <em>Real depth.</em></h2>
+      <p class="jv-sub">Where I've led product, programs, and operations, from enterprise scale to seed-stage startups, with AI and automation built in where they earn their place.<span class="dp-hover"> Hover a square for details.</span></p>
       <div id="dpChart" class="jv-desk"></div>
       <div id="dpRows" class="jv-mob"></div>
       <div class="dm-legend" id="dpLegend"></div>
@@ -1903,18 +1903,20 @@
     // Depth view: same frame as Range (W, L, column bands, row height) so toggling only swaps what's inside.
     // Levels: 0 not a focus, 1 familiar, 2 experienced, 3 deep.
     // Hummingbird: HealthTech row from the capability map. Attuned: its own row from the earlier heat map, mapped to these columns, with Discovery, GTM, and AI raised.
-    var bands=[["Product","#4a6845",[["Discovery","Product & discovery"],["Strategy","Product strategy"],["GTM","Go-to-market"]]],
-               ["Program management","#7a9875",[["Program & PMO","Program & PMO"],["Change mgmt","Change management"]]],
-               ["Strategy & operations","#1e2820",[["Planning","Strategic planning"],["Process","Process improvement"],["Org design","Org design"],["Op model","Operating model"],["AI","AI enablement"]]]];
+    var bands=[["Product","#4a6845",[["Discovery","Discovery & customer insight"],["Strategy","Product strategy & roadmapping"],["Launch & GTM","Launch & go-to-market"]]],
+               ["Program management","#7a9875",[["Portfolio & PMO","Portfolio & PMO"],["Implementation","Cross-functional implementation"],["Change mgmt","Change management & adoption"]]],
+               ["Strategy & operations","#1e2820",[["Planning","Strategic planning & operating cadence"],["Org & op model","Org design & operating model"],["Process & systems","Process & systems improvement"]]]];
+    // ai: true where AI and automation were part of the work (shown as a marker on Process & systems, not its own column)
+    // Implementation levels for TripAdvisor and Hummingbird are estimates; confirm.
     var drows=[
-      {co:"Vistaprint",ind:"E-commerce",d:[[3,2,2],[3,3],[1,3,2,2,0]]},
-      {co:"TripAdvisor",ind:"Travel",d:[[2,3,1],[3,3],[3,3,2,2,0]]},
-      {co:"Chegg",ind:"EdTech",d:[[3,2,2],[3,3],[3,3,3,3,2]]},
-      {co:"Hummingbird Healthcare",ind:"Healthcare consulting",d:[[3,2,3],[3,3],[3,3,3,3,3]]},
-      {co:"Attuned Intelligence",ind:"Healthcare AI",d:[[3,2,2],[3,2],[1,2,2,2,3]]}
+      {co:"Vistaprint",ind:"E-commerce",d:[[3,2,2],[3,3,3],[1,2,3]],ai:false},
+      {co:"TripAdvisor",ind:"Travel",d:[[2,3,1],[3,2,3],[3,2,3]],ai:false},
+      {co:"Chegg",ind:"EdTech",d:[[3,2,2],[3,3,3],[3,3,3]],ai:true},
+      {co:"Hummingbird Healthcare",ind:"Healthcare consulting",d:[[3,2,3],[3,3,3],[3,3,3]],ai:true},
+      {co:"Attuned Intelligence",ind:"Healthcare AI",d:[[3,2,2],[3,3,2],[1,2,3]],ai:true}
     ];
     var names=["Not a focus","Familiar","Experienced","Deep"], alpha=[0,.25,.55,1];
-    var W=1000,L=250,cw=(W-L)/3,tp=92,rh=116,H=tp+drows.length*rh+10,SQ=40;
+    var W=1000,L=250,cw=(W-L)/3,tp=92,rh=116,H=tp+drows.length*rh+10,SQ=46;
     function cy(r){return tp+rh*r+rh/2-8}
     var g='<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="Depth by discipline and company">';
     bands.forEach(function(bd,i){
@@ -1925,9 +1927,9 @@
       bd[2].forEach(function(sc,k){
         var x=L+cw*i+12+sw*(k+.5), parts=sc[0].split(" ");
         var l1=sc[0], l2="";
-        if (sc[0].length>6 && parts.length>1){ l1=parts.slice(0,-1).join(" "); l2=parts[parts.length-1]; }
-        g+='<text x="'+x+'" y="'+(l2?64:70)+'" text-anchor="middle" font-size="8.5" letter-spacing="0" fill="#5a6855">'+l1.toUpperCase().replace("&","&amp;")+'</text>';
-        if (l2) g+='<text x="'+x+'" y="76" text-anchor="middle" font-size="8.5" letter-spacing="0" fill="#5a6855">'+l2.toUpperCase()+'</text>';
+        if (sc[0].length>10 && parts.length>1){ l1=parts.slice(0,-1).join(" "); l2=parts[parts.length-1]; }
+        g+='<text x="'+x+'" y="'+(l2?64:70)+'" text-anchor="middle" font-size="9" letter-spacing="0" fill="#5a6855">'+l1.toUpperCase().replace("&","&amp;")+'</text>';
+        if (l2) g+='<text x="'+x+'" y="76" text-anchor="middle" font-size="9" letter-spacing="0" fill="#5a6855">'+l2.toUpperCase()+'</text>';
       });
     });
     drows.forEach(function(r,ri){
@@ -1939,6 +1941,7 @@
         bd[2].forEach(function(sc,k){
           var l=r.d[i][k], x=L+cw*i+12+sw*(k+.5)-SQ/2;
           g+='<rect class="dp-sq" data-r="'+ri+'" data-b="'+i+'" data-k="'+k+'" x="'+x+'" y="'+(y-SQ/2+6)+'" width="'+SQ+'" height="'+SQ+'" rx="2" fill="'+(l?'#4a6845':'#fff')+'" fill-opacity="'+(l?alpha[l]:1)+'" stroke="'+(l?'none':'#e4e0d4')+'"/>';
+          if (r.ai && i===2 && k===2) g+='<text x="'+(x+SQ-8)+'" y="'+(y-SQ/2+6+14)+'" text-anchor="middle" font-size="12" fill="#fff" pointer-events="none">&#10022;</text>';
         });
       });
     });
@@ -1948,7 +1951,7 @@
     document.querySelectorAll("#dpChart .dp-sq").forEach(function(el){
       el.addEventListener("mousemove",function(e){
         var r=drows[+el.dataset.r], bd=bands[+el.dataset.b], sc=bd[2][+el.dataset.k], l=r.d[+el.dataset.b][+el.dataset.k];
-        tip.innerHTML="<b>"+r.co+" &times; "+sc[1].replace("&","&amp;")+"</b>"+names[l];
+        tip.innerHTML="<b>"+r.co+" &times; "+sc[1].replace("&","&amp;")+"</b>"+names[l]+(r.ai && +el.dataset.b===2 && +el.dataset.k===2 ? "<br>&#10022; Includes AI and automation" : "");
         tip.style.left=Math.min(e.clientX+14,innerWidth-250)+"px"; tip.style.top=(e.clientY+14)+"px"; tip.style.opacity=1;
       });
       el.addEventListener("mouseleave",function(){ tip.style.opacity=0; });
@@ -1959,7 +1962,8 @@
       '<span>'+sw(3)+'<b>Deep</b><span class="dl-def">Led the function or built it from scratch</span></span>'+
       '<span>'+sw(2)+'<b>Experienced</b><span class="dl-def">Owned major initiatives with repeatable results</span></span>'+
       '<span>'+sw(1)+'<b>Familiar</b><span class="dl-def">Worked in or alongside the discipline</span></span>'+
-      '<span>'+sw(0)+'<b>Not a focus</b></span>';
+      '<span>'+sw(0)+'<b>Not a focus</b></span>'+
+      '<span><i style="background:#4a6845;color:#fff;font-size:9px;line-height:12px;text-align:center;font-style:normal">&#10022;</i><b>AI built in</b><span class="dl-def">AI and automation were part of the work</span></span>';
 
     setTimeout(syncHeight, 0);
     // Mobile: same company rows as the Range list, with a small square per discipline
@@ -1967,7 +1971,7 @@
       '<div class="dp-key">'+bands.map(function(bd){return '<span style="color:'+bd[1]+'">'+bd[0]+'</span>';}).join("")+'</div>'+
       drows.map(function(r){
         return '<div class="dp-r"><b>'+r.co+'</b><small>'+r.ind.toUpperCase()+'</small><div class="dp-gs">'+
-          bands.map(function(bd,i){ return '<span class="dp-g">'+r.d[i].map(function(l){ return '<i style="background:'+(l?'#4a6845':'#fff')+';opacity:'+(l?alpha[l]:1)+'"></i>'; }).join("")+'</span>'; }).join("")+
+          bands.map(function(bd,i){ return '<span class="dp-g">'+r.d[i].map(function(l,k){ return '<i style="background:'+(l?'#4a6845':'#fff')+';opacity:'+(l?alpha[l]:1)+'">'+(r.ai&&i===2&&k===2?'&#10022;':'')+'</i>'; }).join("")+'</span>'; }).join("")+
           '</div></div>';
       }).join("");
   })();
