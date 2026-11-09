@@ -1448,7 +1448,12 @@
 .jv-r{padding:.9rem 0;border-top:1px solid var(--stone)}
 .jv-r b{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:1.25rem}.jv-r small{display:block;font-size:.66rem;letter-spacing:.12em;color:var(--warm-grey);margin-bottom:.5rem}
 .jv-chip{display:inline-block;font-size:.72rem;padding:.35rem .65rem;color:#fff;margin:.15rem 0}
-.jv-ar{color:var(--taupe);margin:0 .3rem}
+.jv-ar{color:var(--accent);margin:0 .35rem;font-weight:500}
+.jv-anim .jv-arrow{stroke-dashoffset:var(--len);transition:stroke-dashoffset .6s ease}
+.jv-anim .jv-step{opacity:0;transition:opacity .45s ease}
+.jv-anim.jv-on .jv-arrow{stroke-dashoffset:0}
+.jv-anim.jv-on .jv-step{opacity:1}
+.jv-count{color:var(--accent);font-weight:500}
 .jv-top{display:flex;justify-content:space-between;align-items:center;gap:1rem}
 .jv-toggle{display:flex;gap:.35rem}
 .jv-toggle .bd-seg{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;padding:.45rem 1rem}
@@ -1519,7 +1524,7 @@
     </div>
     <div id="jvRangeView">
       <h2 class="jv-h2">Whatever the business needed next. <em>I shifted with it.</em></h2>
-      <p class="jv-sub">Product leader, chief of staff, program manager, head of PMO, across e-commerce, travel, edtech, and healthcare. I've launched the functions, not just filled the seats.</p>
+      <p class="jv-sub"><span class="jv-count">Six lane changes across five companies</span>, from product to programs to operations and back. I've launched the functions, not just filled the seats.</p>
       <div id="jvChart" class="jv-desk"></div>
       <div id="jvRows" class="jv-mob"></div>
     </div>
@@ -1907,13 +1912,12 @@
                ["Program management","#7a9875",[["Portfolio & PMO","Portfolio & PMO"],["Implementation","Cross-functional implementation"],["Change mgmt","Change management & adoption"]]],
                ["Strategy & operations","#1e2820",[["Planning","Strategic planning & operating cadence"],["Org & op model","Org design & operating model"],["Process & systems","Process & systems improvement"]]]];
     // ai: true where AI and automation were part of the work (shown as a marker on Process & systems, not its own column)
-    // Implementation levels for TripAdvisor and Hummingbird are estimates; confirm.
     var drows=[
-      {co:"Vistaprint",ind:"E-commerce",d:[[3,2,2],[3,3,3],[1,2,3]],ai:false},
-      {co:"TripAdvisor",ind:"Travel",d:[[2,3,1],[3,2,3],[3,2,3]],ai:false},
-      {co:"Chegg",ind:"EdTech",d:[[3,2,2],[3,3,3],[3,3,3]],ai:true},
+      {co:"Vistaprint",ind:"E-commerce",d:[[3,2,2],[1,3,3],[1,2,3]],ai:false},
+      {co:"TripAdvisor",ind:"Travel",d:[[3,3,1],[1,3,3],[3,2,2]],ai:false},
+      {co:"Chegg",ind:"EdTech",d:[[2,2,2],[3,3,3],[3,3,3]],ai:true},
       {co:"Hummingbird Healthcare",ind:"Healthcare consulting",d:[[3,2,3],[3,3,3],[3,3,3]],ai:true},
-      {co:"Attuned Intelligence",ind:"Healthcare AI",d:[[3,2,2],[3,3,2],[1,2,3]],ai:true}
+      {co:"Attuned Intelligence",ind:"Healthcare AI",d:[[3,2,3],[2,3,3],[1,1,2]],ai:true}
     ];
     var names=["Not a focus","Familiar","Experienced","Deep"], alpha=[0,.25,.55,1];
     var W=1000,L=250,cw=(W-L)/3,tp=92,rh=116,H=tp+drows.length*rh+10,SQ=46;
@@ -1983,15 +1987,23 @@ var rows=[{co:"Vistaprint",ind:"E-commerce",s:[[2,"Cut design cycle time from 14
 var W=1000,L=250,cw=(W-L)/3,tp=92,rh=116,H=tp+rows.length*rh+10;
 function wrap(t,x){var ls=[t];if(t.length>30){var m=t.length/2,best=-1;for(var i=0;i<t.length;i++)if(t[i]==" "&&(best<0||Math.abs(i-m)<Math.abs(best-m)))best=i;if(best>0)ls=[t.slice(0,best),t.slice(best+1)]}return ls.map(function(l,i){return '<tspan x="'+x+'" dy="'+(i?14:0)+'">'+l+'</tspan>'}).join("")}
 function cx(i){return L+cw*i+cw/2}function cy(r){return tp+rh*r+rh/2-8}
-var s='<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="Role shifts by company"><defs><marker id="jvar" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto"><path d="M0,0 L5,2.5 L0,5 z" fill="#d3ccb6"/></marker></defs>';
+var s='<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="Role shifts by company">';
+var STEP=1.15,ROW=.3;
 cols.forEach(function(c,i){s+='<rect x="'+(L+cw*i+4)+'" y="0" width="'+(cw-8)+'" height="'+H+'" fill="#f8f6f0" opacity="'+(i%2?.5:1)+'"/><text x="'+cx(i)+'" y="30" text-anchor="middle" font-size="11" letter-spacing="1.2" fill="'+c[1]+'" font-weight="500">'+c[0].toUpperCase()+'</text><line x1="'+(L+cw*i+20)+'" x2="'+(L+cw*(i+1)-20)+'" y1="44" y2="44" stroke="'+c[1]+'" stroke-width="2.5"/>';});
 rows.forEach(function(r,ri){var y=cy(ri);
  if(ri)s+='<line x1="0" x2="'+W+'" y1="'+(tp+rh*ri)+'" y2="'+(tp+rh*ri)+'" stroke="#e4e0d4"/>';
  s+='<text x="0" y="'+(y-2)+'" font-family="Cormorant Garamond,serif" font-size="21" fill="#1e2820">'+r.co+'</text><text x="0" y="'+(y+18)+'" font-size="11" letter-spacing="1.2" fill="#5a6855">'+r.ind.toUpperCase()+'</text>';
- for(var j=0;j<r.s.length-1;j++){var a=cx(r.s[j][0]),b=cx(r.s[j+1][0]),d=b>a?1:-1;s+='<line x1="'+(a+d*16)+'" y1="'+y+'" x2="'+(b-d*18)+'" y2="'+y+'" stroke="#d3ccb6" stroke-width="1.5" marker-end="url(#jvar)"/>';}
- r.s.forEach(function(st,j){s+='<circle cx="'+cx(st[0])+'" cy="'+y+'" r="13" fill="'+cols[st[0]][1]+'"/><text x="'+cx(st[0])+'" y="'+(y+4)+'" text-anchor="middle" font-size="12" fill="'+(st[0]==1?'#1e2820':'#fff')+'" font-weight="500">'+(j+1)+'</text><text x="'+cx(st[0])+'" y="'+(y+34)+'" text-anchor="middle" font-size="11.5" fill="#1e2820">'+wrap(st[1],cx(st[0]))+'</text>';});
+ for(var j=0;j<r.s.length-1;j++){var a=cx(r.s[j][0]),b=cx(r.s[j+1][0]),d=b>a?1:-1,x1=a+d*17,x2=b-d*24,len=Math.abs(x2-x1),t=ri*ROW+j*STEP+.5;
+  s+='<line class="jv-arrow" x1="'+x1+'" y1="'+y+'" x2="'+x2+'" y2="'+y+'" stroke="#4a6845" stroke-width="2.5" stroke-linecap="round" style="stroke-dasharray:'+len+';--len:'+len+';transition-delay:'+t+'s"/>';
+  s+='<path class="jv-step" d="M'+(x2+d*9)+','+y+' L'+x2+','+(y-6)+' L'+x2+','+(y+6)+' z" fill="#4a6845" style="transition-delay:'+(t+.6)+'s"/>';}
+ r.s.forEach(function(st,j){var td=j?ri*ROW+(j-1)*STEP+1.1:ri*ROW;s+='<g class="jv-step" style="transition-delay:'+td+'s"><circle cx="'+cx(st[0])+'" cy="'+y+'" r="13" fill="'+cols[st[0]][1]+'"/><text x="'+cx(st[0])+'" y="'+(y+4)+'" text-anchor="middle" font-size="12" fill="'+(st[0]==1?'#1e2820':'#fff')+'" font-weight="500">'+(j+1)+'</text><text x="'+cx(st[0])+'" y="'+(y+34)+'" text-anchor="middle" font-size="11.5" fill="#5a6855">'+wrap(st[1],cx(st[0]))+'</text></g>';});
 });
 document.getElementById("jvChart").innerHTML=s+'</svg>';
+(function(){var svg=document.querySelector("#jvChart svg");
+ if(!svg||!("IntersectionObserver" in window)||matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+ svg.classList.add("jv-anim");
+ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){svg.classList.add("jv-on");io.disconnect();}});},{threshold:.3});
+ io.observe(svg);})();
 document.getElementById("jvRows").innerHTML=rows.map(function(r){return '<div class="jv-r"><b>'+r.co+'</b><small>'+r.ind.toUpperCase()+'</small>'+r.s.map(function(x,i){return (i?'<span class="jv-ar">&rarr;</span>':'')+'<span class="jv-chip" style="background:'+cols[x[0]][1]+(x[0]==1?';color:#1e2820':'')+'">'+x[1]+'</span>'}).join("")+'</div>'}).join("");
 })();
 </script></body>
