@@ -44,6 +44,4 @@
   .hsc-tag, .hsc-cta, .tc-cite, .sp-label,
   .stat-link, .about-teaser-cta { font-size: 12.5px; }
 
-  /* Range tab: full-width chips instead of a ragged stack */
-  .jv-chip { display: block; width: 100%; box-sizing: border-box; }
 }
