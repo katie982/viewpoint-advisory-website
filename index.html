@@ -1445,10 +1445,6 @@
 .jv-note{font-size:.76rem;color:var(--warm-grey);margin-top:.6rem}
 .jv-card svg{width:100%;height:auto;display:block}.jv-card svg text{font-family:'DM Sans',sans-serif}
 .jv-mob{display:none}
-.jv-r{padding:.9rem 0;border-top:1px solid var(--stone)}
-.jv-r b{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:1.25rem}.jv-r small{display:block;font-size:.66rem;letter-spacing:.12em;color:var(--warm-grey);margin-bottom:.5rem}
-.jv-chip{display:inline-block;font-size:.72rem;padding:.35rem .65rem;color:#fff;margin:.15rem 0}
-.jv-ar{color:var(--accent);margin:0 .35rem;font-weight:500}
 .jv-anim .jv-arrow{stroke-dashoffset:var(--len);transition:stroke-dashoffset .6s ease}
 .jv-anim .jv-step{opacity:0;transition:opacity .45s ease}
 .jv-anim.jv-on .jv-arrow{stroke-dashoffset:0}
@@ -1461,15 +1457,16 @@
 .dm-legend span{display:inline-flex;align-items:center;gap:.45rem}
 .dm-legend i{display:inline-block;width:12px;height:12px;border:1px solid var(--stone)}
 .dm-legend b{font-weight:500;color:var(--charcoal)}
-.dp-r{padding:.9rem 0;border-top:1px solid var(--stone)}
-.dp-r b{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:1.25rem}.dp-r small{display:block;font-size:.66rem;letter-spacing:.12em;color:var(--warm-grey);margin-bottom:.5rem}
-.dp-gs{display:flex;gap:1rem;flex-wrap:wrap}
-.dp-g{display:flex;gap:3px}
-.dp-g i{display:block;width:18px;height:18px;border:1px solid var(--stone);color:#fff;font-size:10px;line-height:16px;text-align:center;font-style:normal}
-.dp-key{display:flex;gap:1rem;flex-wrap:wrap;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;margin:.2rem 0 .6rem}
-@media (max-width:700px){.dm-legend{flex-direction:column;gap:.4rem}.dm-legend .dl-def{display:none}.dp-hover{display:none}}
+.dp-t{margin-top:1.1rem}
+.dp-t h4{font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;margin:0 0 .45rem;padding-bottom:.4rem;border-bottom:1px solid var(--stone)}
+.dp-tr{display:grid;grid-template-columns:1fr repeat(3,60px);align-items:center;column-gap:4px;padding:.28rem 0}
+.dp-tr span{font-size:.62rem;line-height:1.25;color:var(--warm-grey);text-align:center}
+.dp-tr b{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:1.05rem;color:var(--charcoal)}
+.dp-tr i{justify-self:center;display:block;width:24px;height:24px;border:1px solid var(--stone);color:#fff;font-size:11px;line-height:22px;text-align:center;font-style:normal}
+@media (max-width:700px){.dm-legend{gap:.5rem 1.2rem}.dm-legend .dl-def{display:none}.dp-hover{display:none}}
 @media (max-width:700px){.jv-sec{padding:1rem 1rem 3rem}.jv-card{padding:1.4rem 1rem}.jv-desk{display:none}.jv-mob{display:block}.jv-hero{padding:9rem 1.2rem 2.5rem !important}}
-</style></head>
+</style><link rel="stylesheet" href="mobile-fixes.css">
+</head>
 <body>
 
   <!-- NAV -->
@@ -1970,14 +1967,16 @@
       '<span><i style="background:#4a6845;color:#fff;font-size:9px;line-height:12px;text-align:center;font-style:normal">&#10022;</i><b>AI built in</b><span class="dl-def">AI and automation were part of the work</span></span>';
 
     setTimeout(syncHeight, 0);
-    // Mobile: same company rows as the Range list, with a small square per discipline
-    document.getElementById("dpRows").innerHTML=
-      '<div class="dp-key">'+bands.map(function(bd){return '<span style="color:'+bd[1]+'">'+bd[0]+'</span>';}).join("")+'</div>'+
-      drows.map(function(r){
-        return '<div class="dp-r"><b>'+r.co+'</b><small>'+r.ind.toUpperCase()+'</small><div class="dp-gs">'+
-          bands.map(function(bd,i){ return '<span class="dp-g">'+r.d[i].map(function(l,k){ return '<i style="background:'+(l?'#4a6845':'#fff')+';opacity:'+(l?alpha[l]:1)+'">'+(r.ai&&i===2&&k===2?'&#10022;':'')+'</i>'; }).join("")+'</span>'; }).join("")+
-          '</div></div>';
-      }).join("");
+    // Mobile: one small table per discipline group, every column labeled
+    document.getElementById("dpRows").innerHTML=bands.map(function(bd,i){
+      return '<div class="dp-t"><h4 style="color:'+bd[1]+'">'+bd[0]+'</h4>'+
+        '<div class="dp-tr"><span></span>'+bd[2].map(function(c){return '<span>'+c[0]+'</span>';}).join("")+'</div>'+
+        drows.map(function(r){
+          return '<div class="dp-tr"><b>'+r.co.split(" ")[0]+'</b>'+r.d[i].map(function(l,k){
+            return '<i title="'+bd[2][k][1]+'" style="background:'+(l?'#4a6845':'#fff')+';opacity:'+(l?alpha[l]:1)+'">'+(r.ai&&i===2&&k===2?'&#10022;':'')+'</i>';
+          }).join("")+'</div>';
+        }).join("")+'</div>';
+    }).join("");
   })();
   </script>
 <script>
@@ -2004,7 +2003,31 @@ document.getElementById("jvChart").innerHTML=s+'</svg>';
  svg.classList.add("jv-anim");
  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){svg.classList.add("jv-on");io.disconnect();}});},{threshold:.3});
  io.observe(svg);})();
-document.getElementById("jvRows").innerHTML=rows.map(function(r){return '<div class="jv-r"><b>'+r.co+'</b><small>'+r.ind.toUpperCase()+'</small>'+r.s.map(function(x,i){return (i?'<span class="jv-ar">&rarr;</span>':'')+'<span class="jv-chip" style="background:'+cols[x[0]][1]+(x[0]==1?';color:#1e2820':'')+'">'+x[1]+'</span>'}).join("")+'</div>'}).join("");
+// Mobile: the same three lanes, turned vertical. Each shift runs across, then down.
+(function(){var MW=330,mc=MW/3,LH=13.5;function mx(i){return mc*i+mc/2}
+ function mwrap(t){var w=t.split(" "),ls=[],cur="";w.forEach(function(x){if(cur&&(cur+" "+x).length>17){ls.push(cur);cur=x}else cur=cur?cur+" "+x:x});ls.push(cur);return ls}
+ var hd=[["PRODUCT"],["PROGRAM","MANAGEMENT"],["STRATEGY &","OPERATIONS"]],m="",y=62;
+ rows.forEach(function(r,ri){
+  m+='<line x1="0" x2="'+MW+'" y1="'+(y-6)+'" y2="'+(y-6)+'" stroke="#e4e0d4"/><text x="12" y="'+(y+18)+'" font-family="Cormorant Garamond,serif" font-size="20" fill="#1e2820">'+r.co+'</text><text x="12" y="'+(y+34)+'" font-size="9.5" letter-spacing="1.1" fill="#5a6855">'+r.ind.toUpperCase()+'</text>';
+  var sy=y+62,pts=[];
+  r.s.forEach(function(st,j){var ls=mwrap(st[1]);pts.push([st[0],sy,ls]);sy+=26+ls.length*LH+30;});
+  for(var j=0;j<pts.length-1;j++){var a=mx(pts[j][0]),b=mx(pts[j+1][0]),ya=pts[j][1],yb=pts[j+1][1]-21,d=b>a?1:-1,x1=a+d*14,
+    len=Math.abs(b-x1)+(yb-ya),t=ri*ROW+j*STEP+.5;
+   m+='<path class="jv-arrow" d="M'+x1+','+ya+' H'+b+' V'+yb+'" fill="none" stroke="#4a6845" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="stroke-dasharray:'+len+';--len:'+len+';transition-delay:'+t+'s"/>'+
+    '<path class="jv-step" d="M'+b+','+(yb+8)+' L'+(b-6)+','+yb+' L'+(b+6)+','+yb+' z" fill="#4a6845" style="transition-delay:'+(t+.6)+'s"/>';}
+  pts.forEach(function(p,j){var c=mx(p[0]),td=j?ri*ROW+(j-1)*STEP+1.1:ri*ROW;
+   m+='<g class="jv-step" style="transition-delay:'+td+'s"><circle cx="'+c+'" cy="'+p[1]+'" r="12" fill="'+cols[p[0]][1]+'"/><text x="'+c+'" y="'+(p[1]+4)+'" text-anchor="middle" font-size="11.5" font-weight="500" fill="'+(p[0]==1?'#1e2820':'#fff')+'">'+(j+1)+'</text>'+
+    p[2].map(function(l,k){return '<text x="'+c+'" y="'+(p[1]+30+k*LH)+'" text-anchor="middle" font-size="11" fill="#5a6855">'+l+'</text>'}).join("")+'</g>';});
+  y=sy-8;});
+ var bg="";cols.forEach(function(c,i){bg+='<rect x="'+(mc*i+3)+'" y="0" width="'+(mc-6)+'" height="'+y+'" fill="#f8f6f0" opacity="'+(i%2?.5:1)+'"/>'+
+  hd[i].map(function(l,k){return '<text x="'+mx(i)+'" y="'+(16+k*13)+'" text-anchor="middle" font-size="9.5" letter-spacing="1" font-weight="500" fill="'+c[1]+'">'+l+'</text>'}).join("")+
+  '<line x1="'+(mc*i+14)+'" x2="'+(mc*(i+1)-14)+'" y1="40" y2="40" stroke="'+c[1]+'" stroke-width="2.5"/>';});
+ var el=document.getElementById("jvRows");el.innerHTML='<svg viewBox="0 0 '+MW+' '+y+'" width="100%" style="display:block;max-width:440px" role="img" aria-label="Career path across product, program management, and strategy and operations">'+bg+m+'</svg>';
+ var svg=el.querySelector("svg");
+ if(!("IntersectionObserver" in window)||matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+ svg.classList.add("jv-anim");
+ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){svg.classList.add("jv-on");io.disconnect();}});},{threshold:.15});
+ io.observe(svg);})();
 })();
 </script></body>
 </html>

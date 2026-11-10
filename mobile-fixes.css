@@ -1,0 +1,47 @@
+/* Viewpoint Advisory Group - shared mobile fixes
+   Linked LAST in <head> on every page so these rules win over each page's inline styles. */
+
+/* ---- Mobile menu (hamburger) - same design as the homepage ---- */
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; width: 44px; height: 44px; flex-direction: column; justify-content: center; align-items: center; gap: 5px; z-index: 110; }
+.nav-toggle span { display: block; width: 24px; height: 1.5px; background: var(--charcoal, #2b2b2b); transition: transform 0.3s ease, opacity 0.2s ease; }
+.nav-open .nav-toggle span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
+.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+@media (max-width: 900px) {
+  nav { padding: 1rem 1.5rem; }
+  .nav-logo img { height: 48px; }
+  .nav-logo-viewpoint { font-size: 1rem; }
+  .nav-logo-advisory { font-size: 0.52rem; letter-spacing: 0.5em; }
+  .nav-toggle { display: flex; }
+
+  .nav-links {
+    position: fixed; top: 0; right: 0; height: 100vh; width: min(78vw, 320px);
+    flex-direction: column; flex-wrap: nowrap; justify-content: center; align-items: flex-start;
+    gap: 0.25rem; padding: 5rem 2.5rem;
+    background: var(--cream, #f8f6f0); border-left: 1px solid var(--stone, #c0b89e);
+    transform: translateX(100%);
+    /* Closed: hidden and shadowless, so no gray fade bleeds onto the right edge */
+    visibility: hidden; box-shadow: none;
+    transition: transform 0.35s ease, visibility 0s linear 0.35s;
+  }
+  .nav-open .nav-links {
+    transform: translateX(0);
+    visibility: visible; box-shadow: -20px 0 40px rgba(30, 40, 32, 0.08);
+    transition: transform 0.35s ease, visibility 0s;
+  }
+  .nav-links a { display: block; padding: 12px 0; font-size: 1rem; letter-spacing: 0.15em; } /* ~44px tap target */
+  body.nav-open { overflow: hidden; }
+}
+
+/* ---- Phone-only polish ---- */
+@media (max-width: 767px) {
+  /* Easier-to-tap inline links */
+  .about-teaser-cta, .contact-link, .stat-link { display: inline-block; padding: 12px 0; }
+
+  /* Small uppercase labels: 11.5px up to 12.5px */
+  .hero-eyebrow, .section-eyebrow, .jv-eyebrow, .hsd-eyebrow,
+  .hsc-tag, .hsc-cta, .tc-cite, .sp-label,
+  .stat-link, .about-teaser-cta { font-size: 12.5px; }
+
+}
