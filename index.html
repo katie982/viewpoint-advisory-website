@@ -2008,7 +2008,7 @@ document.getElementById("jvChart").innerHTML=s+'</svg>';
  function mwrap(t){var w=t.split(" "),ls=[],cur="";w.forEach(function(x){if(cur&&(cur+" "+x).length>17){ls.push(cur);cur=x}else cur=cur?cur+" "+x:x});ls.push(cur);return ls}
  var hd=[["PRODUCT"],["PROGRAM","MANAGEMENT"],["STRATEGY &","OPERATIONS"]],m="",y=62;
  rows.forEach(function(r,ri){
-  m+='<line x1="0" x2="'+MW+'" y1="'+(y-6)+'" y2="'+(y-6)+'" stroke="#e4e0d4"/><text x="0" y="'+(y+18)+'" font-family="Cormorant Garamond,serif" font-size="20" fill="#1e2820">'+r.co+'</text><text x="0" y="'+(y+34)+'" font-size="9.5" letter-spacing="1.1" fill="#5a6855">'+r.ind.toUpperCase()+'</text>';
+  m+='<line x1="0" x2="'+MW+'" y1="'+(y-6)+'" y2="'+(y-6)+'" stroke="#e4e0d4"/><text x="12" y="'+(y+18)+'" font-family="Cormorant Garamond,serif" font-size="20" fill="#1e2820">'+r.co+'</text><text x="12" y="'+(y+34)+'" font-size="9.5" letter-spacing="1.1" fill="#5a6855">'+r.ind.toUpperCase()+'</text>';
   var sy=y+62,pts=[];
   r.s.forEach(function(st,j){var ls=mwrap(st[1]);pts.push([st[0],sy,ls]);sy+=26+ls.length*LH+30;});
   for(var j=0;j<pts.length-1;j++){var a=mx(pts[j][0]),b=mx(pts[j+1][0]),ya=pts[j][1],yb=pts[j+1][1]-21,d=b>a?1:-1,x1=a+d*14,
