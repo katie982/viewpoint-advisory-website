@@ -5,7 +5,7 @@
 .nav-logo { gap: 0.45rem; align-items: flex-end; }
 .nav-logo img { height: 64px; }
 .nav-logo-text { align-items: flex-start; }
-.nav-logo-viewpoint { font-family: 'Montserrat', sans-serif; font-weight: 500; font-size: 1.9rem; letter-spacing: 0.14em; color: var(--accent, #4a6845); line-height: 0.8; padding-bottom: 1px; }
+.nav-logo-viewpoint { font-family: 'Georgia Pro', Georgia, serif; font-weight: 400; font-size: 1.9rem; letter-spacing: 0.165em; color: var(--accent, #4a6845); line-height: 0.8; padding-bottom: 1px; }
 @media (max-width: 900px) { .nav-logo img { height: 52px; } .nav-logo-viewpoint { font-size: 1.55rem; } }
 @media (max-width: 600px) { .nav-logo { gap: 0.35rem; } .nav-logo img { height: 40px; } .nav-logo-viewpoint { font-size: 1.2rem; letter-spacing: 0.12em; } }
 
