@@ -1461,13 +1461,13 @@
 .dm-legend span{display:inline-flex;align-items:center;gap:.45rem}
 .dm-legend i{display:inline-block;width:12px;height:12px;border:1px solid var(--stone)}
 .dm-legend b{font-weight:500;color:var(--charcoal)}
-.dp-r{padding:.9rem 0;border-top:1px solid var(--stone)}
-.dp-r b{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:1.25rem}.dp-r small{display:block;font-size:.66rem;letter-spacing:.12em;color:var(--warm-grey);margin-bottom:.5rem}
-.dp-gs{display:flex;gap:1rem;flex-wrap:wrap}
-.dp-g{display:flex;gap:3px}
-.dp-g i{display:block;width:18px;height:18px;border:1px solid var(--stone);color:#fff;font-size:10px;line-height:16px;text-align:center;font-style:normal}
-.dp-key{display:flex;gap:1rem;flex-wrap:wrap;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;margin:.2rem 0 .6rem}
-@media (max-width:700px){.dm-legend{flex-direction:column;gap:.4rem}.dm-legend .dl-def{display:none}.dp-hover{display:none}}
+.dp-t{margin-top:1.1rem}
+.dp-t h4{font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;margin:0 0 .45rem;padding-bottom:.4rem;border-bottom:1px solid var(--stone)}
+.dp-tr{display:grid;grid-template-columns:1fr repeat(3,60px);align-items:center;column-gap:4px;padding:.28rem 0}
+.dp-tr span{font-size:.62rem;line-height:1.25;color:var(--warm-grey);text-align:center}
+.dp-tr b{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:1.05rem;color:var(--charcoal)}
+.dp-tr i{justify-self:center;display:block;width:24px;height:24px;border:1px solid var(--stone);color:#fff;font-size:11px;line-height:22px;text-align:center;font-style:normal}
+@media (max-width:700px){.dm-legend{gap:.5rem 1.2rem}.dm-legend .dl-def{display:none}.dp-hover{display:none}}
 @media (max-width:700px){.jv-sec{padding:1rem 1rem 3rem}.jv-card{padding:1.4rem 1rem}.jv-desk{display:none}.jv-mob{display:block}.jv-hero{padding:9rem 1.2rem 2.5rem !important}}
 </style><link rel="stylesheet" href="mobile-fixes.css">
 </head>
@@ -1971,14 +1971,16 @@
       '<span><i style="background:#4a6845;color:#fff;font-size:9px;line-height:12px;text-align:center;font-style:normal">&#10022;</i><b>AI built in</b><span class="dl-def">AI and automation were part of the work</span></span>';
 
     setTimeout(syncHeight, 0);
-    // Mobile: same company rows as the Range list, with a small square per discipline
-    document.getElementById("dpRows").innerHTML=
-      '<div class="dp-key">'+bands.map(function(bd){return '<span style="color:'+bd[1]+'">'+bd[0]+'</span>';}).join("")+'</div>'+
-      drows.map(function(r){
-        return '<div class="dp-r"><b>'+r.co+'</b><small>'+r.ind.toUpperCase()+'</small><div class="dp-gs">'+
-          bands.map(function(bd,i){ return '<span class="dp-g">'+r.d[i].map(function(l,k){ return '<i style="background:'+(l?'#4a6845':'#fff')+';opacity:'+(l?alpha[l]:1)+'">'+(r.ai&&i===2&&k===2?'&#10022;':'')+'</i>'; }).join("")+'</span>'; }).join("")+
-          '</div></div>';
-      }).join("");
+    // Mobile: one small table per discipline group, every column labeled
+    document.getElementById("dpRows").innerHTML=bands.map(function(bd,i){
+      return '<div class="dp-t"><h4 style="color:'+bd[1]+'">'+bd[0]+'</h4>'+
+        '<div class="dp-tr"><span></span>'+bd[2].map(function(c){return '<span>'+c[0]+'</span>';}).join("")+'</div>'+
+        drows.map(function(r){
+          return '<div class="dp-tr"><b>'+r.co.split(" ")[0]+'</b>'+r.d[i].map(function(l,k){
+            return '<i title="'+bd[2][k][1]+'" style="background:'+(l?'#4a6845':'#fff')+';opacity:'+(l?alpha[l]:1)+'">'+(r.ai&&i===2&&k===2?'&#10022;':'')+'</i>';
+          }).join("")+'</div>';
+        }).join("")+'</div>';
+    }).join("");
   })();
   </script>
 <script>
